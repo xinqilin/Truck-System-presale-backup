@@ -149,7 +149,7 @@
 			check : null
 		}, {
 			id : 2,
-			name : "我的待處理",
+			name : "請假",
 			check : null
 		}, {
 			id : 3,
