@@ -31,7 +31,8 @@ tr .form-control {
                 <!-- <th st-sort="weaknessid" width="5%">員工編號</th> -->
                 
                 <th st-sort="priority" width="10%">職位</th>
-                <th st-sort="device" width="15%">駐點地</th>
+                <th st-sort="device" width="10%">駐點地</th>
+                <th st-sort="weaknessid" width="10%">假別</th>
                 <th st-sort="ticketName" width="20%">事由</th>
                 <th st-sort="createDate" width="15%">填寫日</th>
                 <th st-sort="expectedDate" width="15%">申請日</th>
@@ -49,7 +50,8 @@ tr .form-control {
                 
                 <th>
                     <select st-search="priority" class="form-control">
-                        <option>PG</option>
+                        <option value="">請選擇職位</option>
+                        <option >PG</option>
                         <option>BOSS</option>
                         <option>Team Leader</option>
                         <option>PM</option>
@@ -60,7 +62,7 @@ tr .form-control {
                 </th>                               
                 <th>
                     <select st-search="device" class="form-control">
-                        <option>請選擇駐點</option>
+                        <option value="">請選擇駐點</option>
                         <option>HY本部</option>
                         <option>板橋遠傳</option>
                         <option>內湖遠傳</option>
@@ -68,7 +70,17 @@ tr .form-control {
                         <option>兆豐</option>
                     </select>
                 </th>
-                
+                <th>
+                    <select st-search="weaknessid" class="form-control">
+                        <option value="">請選擇</option>
+                     <option value="spe">特休</option>
+                    <option value="issue">事假</option>
+                    <option value="sick1">支薪病假</option>
+                    <option value="sick2">不支薪病假</option>
+                    <option value="sick2">預支假</option>
+                    </select>
+                </th>
+
                 <th>
                     <input st-search="ticketName" placeholder="請輸入事由" class="form-control" type="search" />
                 </th>
@@ -119,7 +131,7 @@ tr .form-control {
     </table>
 </div><br>
 <div style="text-align: center;">
-    <button id="buttonApp" style="text-align: center;border: none;background-color: #4CAF50;color: white;font-size: 16px;border-radius:10px;">申請</button>
+    <button id="buttonApp" style="text-align: center;border: none;background-color: rgb(56, 161, 59);color: white;font-size: 16px;border-radius:10px;">申請</button>
 </div>
 <script>
     
