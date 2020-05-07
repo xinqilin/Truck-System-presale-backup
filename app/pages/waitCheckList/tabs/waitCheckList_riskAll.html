@@ -51,9 +51,10 @@ input.search-input {
             <td class="table-id">{{item.createDate}}</td>
             <!-- <td class="table-id">{{item.status}}</td> -->
             <td>
-                <span ng-class="item.priority">{{item.priority  | priorityMapping}}&nbsp;</span>
+                <!-- <span ng-class="item.priority">{{item.priority  | priorityMapping}}&nbsp;</span>
                 <i ng-show="item.newpriority" class='ion-arrow-right-c'></i>
-                <span ng-class="item.newpriority">&nbsp;{{item.newpriority | priorityMapping}}</span>
+                <span ng-class="item.newpriority">&nbsp;{{item.newpriority | priorityMapping}}</span> -->
+                {{item.lastName}}
             </td>
             <td>{{item.ticketName}}</td>
             <td>{{item.handler}}</td>
