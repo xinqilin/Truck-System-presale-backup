@@ -14,7 +14,7 @@ input.search-input {
 <table class="table table-condensed table-hover" st-table="riskAll">
     <thead>
         <tr class="sortable">
-	      <th st-sort="pluginid" width="8%" >日期</th>
+	      <th st-sort="createDate" width="8%" >日期</th>
 	      <!-- <th st-sort="status" width="8%" >駐點地</th> -->
 	      <th st-sort="lastName" width="12%" >假別</th>
 	      <th st-sort="ticketName" width="64%">事由</th> 
@@ -22,7 +22,7 @@ input.search-input {
         </tr>
         <tr>
             <th>
-                <input st-search="pluginid" placeholder="搜尋日期" class="input-sm form-control search-input" type="search" />
+                <input st-search="createDate" placeholder="搜尋日期" class="input-sm form-control search-input" type="search" />
             </th>
             <!-- <th>
                 <input st-search="type" placeholder="駐點地" class="input-sm form-control search-input" type="search" />
@@ -30,11 +30,11 @@ input.search-input {
             <th>
                 <select st-search="lastName"" class="input-sm form-control search-input">
                     <option value="">請選擇</option>
-                    <option value="spe">特休</option>
-                    <option value="issue">事假</option>
-                    <option value="sick1">支薪病假</option>
-                    <option value="sick2">不支薪病假</option>
-                    <option value="sick2">預支假</option>
+                    <option value="特休">特休</option>
+                    <option value="事假">事假</option>
+                    <option value="支薪病假">支薪病假</option>
+                    <option value="不支薪病假">不支薪病假</option>
+                    <option value="預支假">預支假</option>
                 </select>
             </th>
             <th>
