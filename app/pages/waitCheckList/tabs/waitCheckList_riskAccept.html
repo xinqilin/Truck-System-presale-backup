@@ -22,7 +22,7 @@ input.search-input {
 <table class="table table-condensed table-hover" st-table="criticalTicket">
     <thead>
         <tr class="sortable">
-	      <th st-sort="pluginid" width="8%" >職位</th>
+	      <th st-sort="pluginid" width="8%" >日期</th>
 	      <!-- <th st-sort="status" width="8%" >駐點地</th> -->
 	      <th st-sort="priority" width="12%" >假別</th>
 	      <th st-sort="ticketName" width="64%">事由</th> 
@@ -30,7 +30,7 @@ input.search-input {
         </tr>
         <tr>
             <th>
-                <input st-search="pluginid" placeholder="搜尋職位" class="input-sm form-control search-input" type="search" />
+                <input st-search="pluginid" placeholder="搜尋日期" class="input-sm form-control search-input" type="search" />
             </th>
             <!-- <th>
                 <input st-search="type" placeholder="駐點地" class="input-sm form-control search-input" type="search" />
@@ -57,7 +57,7 @@ input.search-input {
         <!--弱點編號 簽核類別 弱點層級 弱點名稱 申請人-->
         <tr ng-repeat="item in criticalTicket" ng-click="clickRow(item.status)">
             <!--<td class="table-id">{{item.id}}</td> -->
-            <td class="table-id">{{item.pluginid }}</td>
+            <td class="table-id">{{item.createDate }}</td>
             <!-- <td class="table-id">{{item.status}}</td> -->
             <td><span ng-class="item.priority">{{item.priority  | priorityMapping}}</span></td>
             <td>{{item.ticketName}}</td>
