@@ -1,0 +1,68 @@
+<!--   <table class="table table-hover">   table-condensed table-hover-->
+<!--  單雙變色   table-striped -->
+<!--     <tr class="black-muted-bg"> -->
+<style>
+input.search-input {
+    margin-left: -2px;
+}
+.bootstrap-select > .dropdown-toggle {
+	width: 100%;
+}
+.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+    width: 60px;
+}
+</style>
+
+
+<div class="horizontal-scroll">
+
+	<div class="form-group">
+		<label>每頁顯示</label> <select class="selectpicker" selectpicker
+			ng-model="checkingListSize"
+			ng-options="i for i in [5,10,15,20,25]">
+		</select> 
+		<label>筆</label>
+	</div>
+
+
+  <table class="table table-condensed table-hover"  st-table="criticalTicket">
+    <thead>
+    <tr class="sortable">
+      <th class="table-id" st-sort="id">風險編號</th>
+      <th st-sort="type">簽核類別</th>
+      <th st-sort="priority">嚴重性</th>
+      <th st-sort="systemType">系統別</th>
+      <th st-sort="riskName">風險名稱</th>
+      <th>處理人員</th>
+      <th st-sort="createDate">開單日期</th>
+      <th st-sort="expectedDate">預計完成日</th>
+      <th st-sort="createtimes">最後一次更新</th>
+      
+    </tr>
+    </thead>
+    <tbody>
+
+    <!--     弱點編號 狀態 嚴重性 系統別 弱點名稱 處理人員 開單日期 預計完成 最後新 -->
+    <tr ng-repeat="item in criticalTicket | filter : {status:typeMapping[viewRisk]} | orderBy:'id'" ng-click="clickRow(item.status)">
+      <td class="table-id">{{item.id}}</td>
+      <td>{{item.status}}</td>
+      <td><span ng-class="statusMapping[item.priority]">{{statusMapping[item.priority]}}</span></td>
+      <td>{{item.systemType}}</td>
+      <td>{{item.ticketName}}</td>
+      <td>{{item.handler}}</td>
+      <td>{{item.createDate}}</td>
+      <td>{{item.expectedDate}}</td>
+      <td>{{item.updateDate}}</td>
+    </tr>
+    </tbody>
+    <!-- 分頁 -->
+	<tfoot>
+		<tr>
+			<td colspan="10" class="text-center">
+				
+        <div st-pagination="" st-items-by-page="checkingListSize"  st-template="app/theme/smarttable/pagination.html"></div>
+			</td>
+		</tr>
+	</tfoot>    
+  </table>
+</div>

@@ -1,0 +1,43 @@
+<form class="form-horizontal" ng-hide="edit">
+    <div class="form-group col-md-12">
+        <label class="col-md-2 control-label">CODE CATE</label>
+        <div class="col-md-2 col-form-item">
+            <input ng-model="search.code_cate" class="form-control" type="text" placeholder="CODE CATE">
+        </div>
+        <label class="col-md-2 control-label">CATE NAME</label>
+        <div class="col-md-2 col-form-item">
+            <input ng-model="search.cate_name" class="form-control" type="text" placeholder="CATE NAME">
+        </div>
+    </div>
+    <div class="form-group col-md-12">
+        <label class="col-md-2 control-label">CODE</label>
+        <div class="col-md-2 col-form-item">
+            <input ng-model="search.code" class="form-control" type="text" placeholder="CODE">
+        </div>
+        <label class="col-md-2 control-label">CODE NAME</label>
+        <div class="col-md-2 col-form-item">
+            <input ng-model="search.code_name" class="form-control" type="text" placeholder="CODE NAME">
+        </div>
+    </div>
+    <div class="form-group col-md-12">
+        <label class="col-md-2 control-label">CODE VALUE</label>
+        <div class="col-md-2 col-form-item">
+            <input ng-model="search.code_value" class="form-control" type="text" placeholder="CODE VALUE">
+        </div>
+    </div>
+    <div class="col-md-12 text-right">
+        <button type="button" class="btn btn-info" ng-click="edit =!edit">搜尋</button>
+        <button type="button" class="btn btn-default" ng-click="cleanCodition()">清除</button>
+    </div>
+</form>
+<div ng-show="edit">
+    <label class="form-group  col-md-2 taglabel text-right">搜尋條件</label>
+    <div class="form-group taglabel text-left flexcontainer col-md-6">
+        <span class="label label-info border-radius labelmargin" ng-repeat="item in search">{{item}}</span>
+    </div>
+    <div>
+        <div class="col-md-4 text-left">
+            <button type="button" class="btn btn-info" ng-click="edit =!edit">重新搜尋</button>
+        </div>
+    </div>
+</div>

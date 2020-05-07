@@ -1,0 +1,15 @@
+<uib-tabset active="$tabSetStatus.activeTab" class="megabank-theme">
+    <uib-tab heading="申請資訊">
+        <div ng-include="'app/pages/riskToLongGoal/riskToLongGoal_apply.html'"></div>
+    </uib-tab>
+    <uib-tab heading="弱點資訊">
+        <div ng-include="'app/pages/workOrderDetail/tabs/Summary.html'"></div>
+    </uib-tab>
+    <uib-tab heading="詳細內容">
+        <div ng-include="'app/pages/workOrderDetail/tabs/Information.html'">
+        </div>
+    </uib-tab>
+    <uib-tab heading="歷程">
+        <div ng-include="'app/pages/workOrderDetail/tabs/Record.html'"></div>
+    </uib-tab>
+</uib-tabset>

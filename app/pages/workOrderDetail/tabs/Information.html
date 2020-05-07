@@ -1,0 +1,41 @@
+<div class="row ">
+    <!--問題概要-->
+    <div class="form-group col-xs-12 col-sm-12 col-md-12 ">
+        <label class="control-label col-xs-5 col-sm-2 col-md-2 text-right" style="color:gray">
+            問題概要</label>
+        <p class="col-xs-6 col-sm-9 col-md-9">
+            The remote Windows host may be vulnerable to code execution attacks.
+        </p>
+    </div>
+    <!--問題描述-->
+    <div class="form-group  col-xs-12 col-sm-12 col-md-12 ">
+        <label class="col-xs-5 col-sm-2 col-md-2 text-right" style="color:gray">
+            問題描述</label>
+        <p class="col-xs-6 col-sm-9 col-md-9">
+            The remote host is missing Microsoft KB2264107 or an associated registry change, which provides a mechanism for mitigating binary planting or DLL preloading attacks.
+            <br>
+            <br> Insecurely implemented applications look in their current working directory when resolving DLL dependencies. If a malicious DLL with the same name as a required DLL is located in the application's current working directory, the malicious DLL will be loaded.
+            <br>
+            <br> A remote attacker could exploit this issue by tricking a user into accessing a vulnerable application via a network share or WebDAV folder where a malicious DLL resides, resulting in arbitrary code execution.
+        </p>
+    </div>
+    <!--參考資訊-->
+    <div class="form-group  col-xs-12 col-sm-12 col-md-12 ">
+        <label class="control-label col-xs-5 col-sm-2 col-md-2 text-right" style="color:gray">
+            參考資訊</label>
+        <p class="col-xs-6 col-sm-9 col-md-9">
+            http://technet.microsoft.com/en-us/security/advisory/2269637
+            <br> http://www.nessus.org/u?960d4ef0 http://support.microsoft.com/kb/2264107
+        </p>
+    </div>
+    <!--處理建議-->
+    <div class="form-group  col-xs-12 col-sm-12 col-md-12 ">
+        <label class="control-label col-xs-5 col-sm-2 col-md-2 text-right" style="color:gray">
+            處理建議</label>
+        <p class="col-xs-6 col-sm-9 col-md-9">
+            Microsoft has released a set of patches for Windows XP, 2003, Vista, 2008, 7, and 2008 R2 :
+            <br>
+            <br> Please note this update provides a method of mitigating a class of vulnerabilities rather than fixing any specific vulnerabilities. Additionally, these patches must be used in conjunction with the 'CWDIllegalInDllSearch' registry setting to have any effect. These protections could be applied in a way that breaks functionality in existing applications. Refer to the Microsoft advisory for more information.
+        </p>
+    </div>
+</div>

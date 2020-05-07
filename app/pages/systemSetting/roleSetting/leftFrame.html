@@ -1,0 +1,54 @@
+<style>
+.table>thead>tr>th:last-child {
+	padding-right: 8px;
+}
+
+.table>tbody>tr>td:last-child {
+	padding-right: 8px !important;
+}
+</style>
+
+
+<!-- 
+<div class="panel panel-default">
+	<div class="panel-heading">新增角色</div>
+	<div class="panel-body">
+	
+	</div>
+</div>
+ -->
+<div class="panel panel-default">
+	<div class="panel-body">
+
+		<div class="col-lg-12 col-md-12">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th class="table-id">#</th>
+						<th class="align-left">角色名稱</th>
+						<th class="align-right"><i ng-class="showButtonIcon"
+							style="font-size: 20px; color: #2dacd1"
+							ng-click="showDeleteButton()"></i></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="item in RoleTableData"
+						ng-click="changeTableDetails(item.name)">
+						<td class="table-id">{{item.num}}</td>
+						<td class="align-left"">{{item.name}}</td>
+						<td class="align-right"><i class="fa fa-minus-circle"
+							style="font-size: 23px; color: red" ng-click="doublecheck(item,'sm')"
+							ng-show="isShowDeleteButton"></i></td>
+					</tr>
+				</tbody>
+				<tfoot ng-show="isEditing">
+
+					<td>{{nextNum}}</td>
+					<td><input type="text" class="form-control "
+						ng-model="context.inputNewRole" placeholder="請輸入新增角色名稱" ng-keypress="pressEnter($event)"></td>
+					<td class="align-right"><i class="fa fa-plus-circle" style="font-size: 23px; color: #209e91" ng-click="addNewRole()"></i></td>
+				</tfoot>
+			</table>
+		</div>
+	</div>
+</div>

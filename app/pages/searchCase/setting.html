@@ -1,0 +1,98 @@
+<style>
+.form-group {
+	margin-bottom: 5px;
+}
+
+.input-group {
+	margin-bottom: 0px;
+}
+</style>
+<form class="form-horizontal">
+	<div>
+		<div class="form-group col-md-12">
+			<!--關鍵字搜尋-->
+			<label class="col-md-2 control-label">關鍵字搜尋</label>
+			<div class="col-md-3">
+				<div class="col-form-item">
+					<input ng-model="inputKeyword" class="form-control" type="text"
+						placeholder="請輸入關鍵字">
+				</div>
+			</div>
+			<!--處理人員-->
+			<label class="col-md-2 control-label">處理人員</label>
+			<div class="col-md-3" class="col-form-group">
+				<select ng-model="inputHandler" title="請選擇" class="form-control"
+					selectpicker ng-options="Handler for Handler in data.handler">
+				</select>
+			</div>
+		</div>
+		<div class="form-group col-md-12">
+			<!--狀態-->
+			<label class="col-md-2 control-label">狀態</label>
+			<div class="col-md-3" class="col-form-group">
+				<select ng-model="inputStatus" title="請選擇" class="form-control"
+					selectpicker ng-options="Status for Status in data.status">
+				</select>
+			</div>
+			<!--層級-->
+			<label class="col-md-2 control-label">層級</label>
+			<div class="col-md-3" class="col-form-group">
+				<select ng-model="inputPriority" title="請選擇" class="form-control"
+				selectpicker ng-options="Priority for Priority in data.priority">
+				</select>
+			</div>
+		</div>
+		<div class="form-group col-md-12">
+			<!--成單日期-->
+			<label class="col-md-2 control-label">成單日</label>
+			<div class="col-md-3" class="col-form-group">
+				<datepicker-range clear-hide='true' before="inputCreateBeforeDate"
+					after="inputCreateAfterDate"> </datepicker-range>
+			</div>
+			<!--預計完成日-->
+			<label class="col-md-2 control-label">預計完成日</label>
+			<div class="col-md-3" class="col-form-group">
+				<datepicker-range clear-hide='true' before="inputExpectedBeforeDate"
+					after="inputExpectedAfterDate" menu-right="true"> </datepicker-range>
+			</div>
+		</div>
+		<div class="form-group col-md-12">
+			<!--系統別-->
+			<label class="col-md-2 control-label">系統別</label>
+			<div class="col-md-3" class="col-form-group">
+				<select ng-model="inputDevice" title="請選擇" class="form-control "
+					selectpicker ng-options="DE for DE in data.device">
+				</select>
+			</div>
+			<!--IP & Port-->
+			<label class="col-md-2 control-label">IP</label>
+			<div class="col-md-3" class="col-form-group">
+				<select ng-model="inputIPandPort" title="請選擇" class="form-control "
+					selectpicker ng-options="IP for IP in data.IPandPort">
+				</select>
+			</div>
+		</div>
+		<div class="form-group col-md-12">
+			<!--OS搜尋-->
+			<label class="col-md-2 control-label">OS版本</label>
+			<div class="col-md-3" class="col-form-group">
+				<select class="form-control" title="請選擇" multiple selectpicker
+					ng-model="filterCondition.selectedOSandVer"
+					ng-options="OS for OS in data.OSandVer">
+					<select class="form-control" title="請選擇" multiple selectpicker
+					ng-model="filterCondition.selectedOSandVer"
+					ng-options="OS for OS in data.OSandVer">
+				</select>
+			</div>
+			<div class="col-md-2"></div>
+			<div class="col-md-3 text-right"></div>
+
+		</div>
+		<div class="form-group col-md-12 text-right">
+			<button type="button" class="btn btn-info" ng-click="searchCase()">搜尋</button>
+			<button type="button" class="btn btn-default"
+				ng-click="cleanCodition()">清除</button>
+		</div>
+
+	</div>
+</form>

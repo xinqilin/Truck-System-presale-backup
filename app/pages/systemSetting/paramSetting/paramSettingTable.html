@@ -1,0 +1,64 @@
+<style>
+input.search-input {
+    margin-left: -2px;
+}
+
+.bootstrap-select>.dropdown-toggle {
+    width: 100%;
+}
+
+.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+    width: 60px;
+}
+.table > thead > tr > th:first-child{
+   text-align: left;
+}
+.table > tbody > tr > td:first-child{
+    text-align: left;
+}
+</style>
+<table class="table table-hover" st-table="paramTableData">
+    <thead>
+        <tr class="sortable">
+            <th class="col-xs-3 col-sm-3 col-md-3 text-left" st-sort="code_cate">CODE CATE</th>
+            <th class="col-xs-2 col-sm-2 col-md-2" st-sort="cate_name">CATE NAME</th>
+            <th class="col-xs-4 col-sm-4 col-md-4" st-sort="code">CODE</th>
+            <th class="col-xs-2 col-sm-2 col-md-2" st-sort="codeName">CODE NAME</th>
+            <th class="col-xs-1 col-sm-1 col-md-1" st-sort="codeValue">CODE VALUE</th>
+        </tr>
+        <tr>
+            <th>
+                <input st-search="code_cate" placeholder="CODE CATE" class="input-sm form-control search-input" type="search" />
+            </th>
+            <th>
+                <input st-search="cate_name" placeholder="CATE NAME" class="input-sm form-control search-input" type="search" />
+            </th>
+            <th>
+                <input st-search="code" placeholder="CODE" class="input-sm form-control search-input" type="search" />
+            </th>
+            <th>
+                <input st-search="codeName" placeholder="CODE NAME" class="input-sm form-control search-input" type="search" />
+            </th>
+            <th>
+                <input st-search="codeValue" placeholder="CODE VALUE" class="input-sm form-control search-input" type="search" />
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="no-top-border" data-toggle="modal" ng-click="open('app/pages/systemSetting/paramSetting/changeParam.html','md')" ng-repeat="item in paramTableData">
+            <td class=" text-left"><span>{{item.code_cate}}</span></td>
+            <td><span>{{item.cate_name}}</span></td>
+            <td><span>{{item.code}}</span></td>
+            <td><span>{{item.code_name}}</span></td>
+            <td class="text-right"><span>{{item.code_value}}</span></td>
+            <!-- <td></td> -->
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5" class="text-center">
+                <div st-pagination="" st-items-by-page="10"  st-template="app/theme/smarttable/pagination.html"></div>
+            </td>
+        </tr>
+    </tfoot>
+</table>

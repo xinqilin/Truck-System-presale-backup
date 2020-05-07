@@ -1,0 +1,12 @@
+<uib-tabset active="$tabSetStatus.activeTab" class="megabank-theme">
+    <uib-tab heading="全部顯示">
+        <div ng-include="'app/pages/waitCheckList/tabs/waitCheckList_riskAll.html'"></div>
+    </uib-tab>
+    <uib-tab heading="風險調整">
+        <div ng-include="'app/pages/waitCheckList/tabs/waitCheckList_riskAdjust.html'">
+        </div>
+    </uib-tab>    
+    <uib-tab heading="風險接受">
+        <div ng-include="'app/pages/waitCheckList/tabs/waitCheckList_riskAccept.html'"></div>
+    </uib-tab>
+</uib-tabset>

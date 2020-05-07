@@ -1,0 +1,46 @@
+<form class="form-horizontal">
+    <div class="panel">
+        <div class="panel-heading">
+            <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+                <em class="ion-ios-close-empty sn-link-close"></em>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">參數修改</h4>
+        </div>
+        <div class="modal-body form-horizontal">
+            <div class="form-group" class="col-md-12">
+                <label class="col-xs-3 col-sm-3 col-md-3 control-label">CODE CATE</label>
+                <div class="col-xs-8 col-sm-8 col-md-8">
+                    <input ng-model="chang.code_cate" class="form-control" type="text" placeholder="CODE CATE">
+                </div>
+            </div>
+            <div class="form-group" class="col-md-12">
+                <label class="col-xs-3 col-sm-3 col-md-3 control-label">CATE NAME</label>
+                <div class="col-xs-8 col-sm-8 col-md-8">
+                    <input ng-model="chang.cate_name" class="form-control" type="text" placeholder="CATE NAME">
+                </div>
+            </div>
+            <div class="form-group" class="col-md-12">
+                <label class="col-xs-3 col-sm-3 col-md-3 control-label">CODE</label>
+                <div class="col-xs-8 col-sm-8 col-md-8">
+                    <input ng-model="chang.code" class="form-control" type="text" placeholder="CODE">
+                </div>
+            </div>
+            <div class="form-group" class="col-md-12">
+                <label class="col-xs-3 col-sm-3 col-md-3 control-label">CODE NAME</label>
+                <div class="col-xs-8 col-sm-8 col-md-8">
+                    <input ng-model="chang.code_name" class="form-control" type="text" placeholder="CODE NAME">
+                </div>
+            </div>
+            <div class="form-group" class="col-md-12">
+                <label class="col-xs-3 col-sm-3 col-md-3 control-label">CODE VALUE</label>
+                <div class="col-xs-8 col-sm-8 col-md-8 ">
+                    <input ng-model="chang.code_value" class="form-control" type="text" placeholder="CODE VALUE">
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-info" ng-click="$dismiss()">儲存</button>
+            <button type="button" class="btn btn-default" ng-click="$dismiss()">取消</button>
+        </div>
+    </div>
+</form>

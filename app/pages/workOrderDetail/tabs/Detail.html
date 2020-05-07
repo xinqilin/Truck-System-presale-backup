@@ -1,0 +1,62 @@
+<style>
+.form-horizontal .control-label.text-left {
+    text-align: left;
+}
+
+
+/*mtbt = margin-top button*/
+
+.form-group .mtbt {
+    margin-top: 6px;
+}
+</style>
+<div class="modal-content">
+    <div class="panel-heading">
+        <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+            <em class="ion-ios-close-empty sn-link-close"></em>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">詳細資料</h4>
+    </div>
+    <div class="modal-body form-horizontal">
+        <div class="form-group col-xs-12 col-sm-12 col-md-12">
+            <!--人員-->
+            <label class="control-label col-xs-5 col-sm-2 col-md-2 text-right" style="color:gray">
+                人員 </label>
+            <label class="col-xs-6 col-sm-3 col-md-3">
+                {{note.handler}}</label>
+            <!--時間-->
+            <label class="control-label col-xs-5 col-sm-2 col-md-2 text-right" style="color:gray">
+                時間 </label>
+            <label class="col-xs-6 col-sm-3 col-md-3">
+                {{note.date}}</label>
+        </div>
+        <!--發生原因-->
+        <div class="form-group col-xs-12 col-sm-12 col-md-12" ng-show="note.cause">
+            <label class="col-xs-5 col-sm-2 col-md-2 text-right" style="color:gray">
+                發生原因</label>
+            <label class="col-xs-6 col-sm-9 col-md-9">
+                {{note.cause}}
+            </label>
+        </div>
+        <!--說明-->
+        <div class="form-group col-xs-12 col-sm-12 col-md-12">
+            <label class="col-xs-5 col-sm-2 col-md-2 text-right" style="color:gray">
+                說明</label>
+            <p class="col-xs-6 col-sm-9 col-md-9">
+                {{note.note}}
+            </p>
+        </div>
+        <!--附加檔案-->
+        <div class="form-group col-xs-12 col-sm-12 col-md-12" ng-show="note.file">
+            <label class="col-xs-5 col-sm-2 col-md-2 text-right" style="color:gray">
+                附加檔案</label>
+            <label class="col-xs-6 col-sm-9 col-md-9">
+                <i class="ion-document"></i> {{note.file}}
+            </label>
+        </div>
+        <div class="separator col-xs-12 col-sm-12 col-md-12" ng-show="!$last"></div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="$dismiss()">關閉</button>
+    </div>
+</div>

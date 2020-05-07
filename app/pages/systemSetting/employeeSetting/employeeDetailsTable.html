@@ -1,0 +1,53 @@
+<style>
+input.search-input {
+	margin-left: -2px;
+}
+
+.bootstrap-select>.dropdown-toggle {
+	width: 100%;
+}
+
+.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+    width: 60px;
+}
+</style>
+
+<div class="horizontal-scroll">
+
+
+	<table class="table table-hover" st-table="peopleTableData">
+		<thead>
+			<tr class="sortable ">
+				<th width="10%" class="table-id">員工編號</th>
+				<th width="25%">姓名</th>
+				<th width="65%">角色</th>
+			</tr>
+			<tr>
+				<th><input st-search="id" placeholder="搜尋編號"
+					class="form-control" type="search" /></th>
+				<th><input st-search="name" placeholder="搜尋姓名"
+					class="form-control" type="search" /></th>
+				<th><input st-search="roleString" placeholder="搜尋角色"
+					class="form-control" type="search" /></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="no-top-border" ng-repeat="item in peopleTableData"
+				data-toggle="modal"
+				ng-click="settingAuthority('sm',{{item.id}})">
+				<td>{{item.id}}</td>
+				<td>{{item.name}}</td>
+				<td>{{item.roleString}}</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="10" class="text-center">
+					<div st-pagination="" st-items-by-page="10"  st-template="app/theme/smarttable/pagination.html"></div>
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+</div>
+
+

@@ -1,0 +1,34 @@
+<form class="form-horizontal">
+	<div>
+		<div class="form-group" class="col-md-12">
+			<label class="col-md-2 control-label">簽核類別
+			 </label>
+			 <div class="col-md-8">
+<!-- 	 			 <select class="form-control selectpicker" ng-model="select"> -->
+<!-- 					<option value="">全部顯示</option> -->
+<!-- 					<option>風險調整</option> -->
+<!-- 					<option>風險接受</option> -->
+<!-- 					<option>中長期目標</option> -->
+<!-- 				</select> -->
+					<div class="btn-group" role="group" aria-label="Basic example">
+						<button type="button"
+							ng-model="viewRisk"
+							ng-class="viewRisk=='all'?selectedButton:otherButton"
+							ng-click="changeCheck('all')">全部顯示</button>
+						<button type="button"
+							ng-model="viewRisk"
+							ng-class="viewRisk=='adjust'?selectedButton:otherButton"
+							ng-click="changeCheck('adjust')">風險調整</button>
+						<button type="button"
+							ng-model="viewRisk"
+							ng-class="viewRisk=='accept'?selectedButton:otherButton"
+							ng-click="changeCheck('accept')">風險接受</button>
+						<button type="button"
+							ng-model="viewRisk"
+							ng-class="viewRisk=='goal'?selectedButton:otherButton"
+							ng-click="changeCheck('goal')">中長期目標</button>
+					</div>
+			 </div>			
+		</div>
+	</div>
+</form>

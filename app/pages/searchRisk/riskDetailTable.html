@@ -1,0 +1,75 @@
+<style>
+input.search-input {
+    margin-left: -2px;
+}
+
+.bootstrap-select>.dropdown-toggle {
+    width: 100%;
+}
+
+.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+    width: 60px;
+}
+</style>
+<table class="table table-condensed table-hover" st-table="riskAll">
+    <thead>
+        <tr class="sortable">
+          <th st-sort="pluginid" width="8%" >弱點編號</th>
+          <th st-sort="status" width="8%" >狀態</th>
+          <th st-sort="FlowType" width="8%" >簽核類別</th>
+          <th st-sort="priority" width="12%" >層級</th>
+          <th st-sort="ticketName" width="56%">弱點名稱</th> 
+          <th st-sort="handler" width="8%" >申請人</th>  
+        </tr>
+        <tr>
+            <th>
+                <input st-search="pluginid" placeholder="搜尋編號" class="input-sm form-control search-input" type="search" />
+            </th>
+            <th>
+                <input st-search="status" placeholder="狀態" class="input-sm form-control search-input" type="search" />
+            </th>
+            <th>
+                <input st-search="FlowType" placeholder="簽核類別" class="input-sm form-control search-input" type="search" />
+            </th>
+            <th>
+                <select st-search="priority" class="input-sm form-control search-input">
+                    <option value="">請選擇</option>
+                    <option value="Critical">Crit</option>
+                    <option value="High">High</option>
+                    <option value="Medium">Med</option>
+                    <option value="Low">Low</option>
+                </select>
+            </th>
+            <th>
+                <input st-search="ticketName" placeholder="搜尋弱點名稱" class="input-sm form-control search-input" type="search" />
+            </th>
+            <th>
+                <input st-search="handler" placeholder="申請人" class="input-sm form-control search-input" type="search" />
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <!--     弱點編號 狀態 簽核類別 層級 弱點名稱 申請人 -->
+        <tr ng-repeat="item in riskAll" ng-click="clickRow(item.status)">
+            <td class="table-id">{{item.pluginid}}</td>
+            <td >{{item.status}}</td>
+            <td>{{item.FlowType}}</td>
+            <td>
+                <span ng-class="item.priority">{{item.priority  | priorityMapping}}&nbsp;</span>
+                <i ng-show="item.newpriority" class='ion-arrow-right-c'></i>
+                <span ng-class="item.newpriority">&nbsp;{{item.newpriority | priorityMapping}}</span>
+            </td>
+            <td>{{item.ticketName}}</td>
+            <td>{{item.handler}}</td>
+        </tr>
+    </tbody>
+    <!-- 分頁 -->
+    <tfoot>
+        <tr>
+            <td colspan="10" class="text-center">
+                <div st-pagination="" st-items-by-page="10"  st-template="app/theme/smarttable/pagination.html"></div>
+            </td>
+        </tr>
+    </tfoot>
+</table>
+<!-- </div> -->

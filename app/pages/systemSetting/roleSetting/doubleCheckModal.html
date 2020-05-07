@@ -1,0 +1,20 @@
+<div ng-app="BlurAdmin.pages.systemSetting.roleSetting"
+	ng-controller="RoleSettingCtrl">
+	<div class="modal-content">
+		<div class="panel-heading">
+			<button type="button" class="close" ng-click="$dismiss()"
+				aria-label="Close">
+				<em class="ion-ios-close-empty sn-link-close"></em>
+			</button>
+			<h4 class="modal-title" id="myModalLabel">{{role.name}}角色刪除</h4>
+		</div>
+		<div class="modal-body" style="vertical-align: middle;font-size: 20px;line-height:20px">
+			<div class="text-left">
+				確定要刪除「{{role.name}}」此角色?</div>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-danger" ng-click="ok()">刪除</button>
+			<button type="button" class="btn btn-default" ng-click="cancel()">取消</button>
+		</div>
+	</div>
+</div>

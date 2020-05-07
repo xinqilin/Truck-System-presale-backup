@@ -1,0 +1,69 @@
+<style>
+/*刪除input箭頭下拉樣式*/
+input::-webkit-calendar-picker-indicator {
+  display: none;
+}
+</style>
+
+
+<!-- 上半部 -->
+<form class="form-horizontal">
+    	<div class="form-group">
+			<label
+				class="control-label col-xs-4 col-sm-2 col-md-2 text-right">
+				弱點項目</label>
+			<div class="control-label col-xs-6 col-sm-4 col-md-4">
+				<input class="form-control" type="text" list="browsers" name="browser" ng-model="value" placeholder="請輸入關鍵字" ng-change="checkSeverity(value)"/>
+			    <datalist id="browsers" >
+			      <option  value="{{item.id}} {{item.name}}" ng-repeat="item in arrays"></option>
+			    </datalist>
+			</div>
+		</div>
+    	<div class="form-group">
+			<label
+				class="control-label col-xs-4 col-sm-2 col-md-2 text-right">
+				原風險層級</label>
+			<div class="control-label col-xs-6 col-sm-10 col-md-10 toLeft" >
+					<div class="btn-group" role="group" aria-label="Basic example">
+						<button type="button" disabled
+							ng-model="oldSeverity"
+							ng-class="oldSeverity=='Info'?selectedButton:otherButton"
+							>Info</button>
+						<button type="button" disabled
+							ng-model="oldSeverity"
+							ng-class="oldSeverity=='Low'?selectedButton:otherButton"
+							>Low</button>
+						<button type="button" disabled
+							ng-model="oldSeverity"
+							ng-class="oldSeverity=='Medium'?selectedButton:otherButton"
+							>Medium</button>
+						<button type="button" disabled
+							ng-model="oldSeverity"
+							ng-class="oldSeverity=='High'?selectedButton:otherButton"
+							>High</button>
+						<button type="button" disabled
+							ng-model="oldSeverity"
+							ng-class="oldSeverity=='Critical'?selectedButton:otherButton"
+							>Critical</button>							
+					</div>
+			</div>
+		</div>					
+    	<div class="form-group">
+    		<label class="control-label col-xs-4 col-sm-2 col-md-2 text-right">
+					說明</label>
+			<div class="control-label col-xs-8 col-sm-8 col-md-8">	
+    			<textarea class="form-control" placeholder="請輸入說明文字，字數上限為300字"></textarea>
+    		</div>
+    	</div>
+    	<div class="form-group">
+			<a class="control-label col-xs-4 col-sm-2 col-md-2 text-right">
+					<i class="ion-folder"></i>附加檔案</a>
+			<label class="control-label col-xs-6 col-sm-2 col-md-2">
+					<i class="ion-document"></i> fixed.png (100KB)</label>
+			<button type="button" class="btn btn-default btn-xs"><i class="ion-trash-a"></i></button>
+    		
+    	</div>
+
+</form>	
+<!-- 上半部 -->
+

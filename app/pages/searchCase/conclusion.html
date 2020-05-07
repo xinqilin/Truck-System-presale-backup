@@ -1,0 +1,38 @@
+<style>
+.taglabel {
+	padding: 6px 12px;
+	padding-right: 0px;
+	font-size: 12px;
+	color: #666666;
+}
+
+.border-radius {
+	border-radius: .25em;
+}
+
+.labelmargin {
+	padding: 6px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+}
+.flexcontainer {
+  display: flex;
+  flex-flow: row wrap;
+}
+</style>
+
+
+
+
+<div class="col-md-12">
+
+	<label class="col-md-2 taglabel text-right" style="vertical-align:middle; margin-top: 5px;">搜尋條件</label>
+	<div class="form-group taglabel text-left flexcontainer col-md-6">
+			<span class="label label-info border-radius labelmargin"
+				ng-repeat="item in concludeCodition">{{item}}</span>
+	</div>
+	<div>
+		<div class="col-md-4 text-left">
+			<button type="button" class="btn btn-info" ng-click="reSearch()">重新搜尋</button>
+		</div>
+	</div>

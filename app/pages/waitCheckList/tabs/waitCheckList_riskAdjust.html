@@ -1,0 +1,81 @@
+<style>
+input.search-input {
+    margin-left: -2px;
+}
+.bootstrap-select > .dropdown-toggle {
+	width: 100%;
+}
+.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+    width: 60px;
+}
+</style>
+
+
+<!-- <div class="horizontal-scroll"> -->
+
+<!-- 	<div class="form-group"> -->
+<!-- 		<label>每頁顯示</label> <select class="selectpicker" selectpicker -->
+<!-- 			ng-model="checkingListSize" -->
+<!-- 			ng-options="i for i in [5,10,15,20,25]"> -->
+<!-- 		</select>  -->
+<!-- 		<label>筆</label> -->
+<!-- 	</div> -->
+
+
+  <table class="table table-condensed table-hover"  st-table="riskAdjustList" >
+    <thead>
+	    <tr class="sortable">
+	      <th width="8%" st-sort="pluginid">弱點編號</th>
+	      <th width="8%" st-sort="type">簽核類別</th>
+	      <th width="12%" st-sort="priority">層級</th>
+	      <th width="64%" st-sort="ticketName">弱點名稱</th> 
+	      <th width="8%" st-sort="handler">申請人</th>  
+	    </tr>
+	    
+		<tr>
+			<th><input st-search="pluginid" placeholder="搜尋編號"
+				class="input-sm form-control search-input" type="search" /></th>	
+			<th><input st-search="status" placeholder="簽核類別"
+				class="input-sm form-control search-input" type="search" /></th>								
+			<th><select st-search="priority"
+				class="input-sm form-control search-input">
+					<option value="">請選擇</option>
+					<option value="Critical">Crit</option>
+					<option value="High">High</option>
+					<option value="Medium">Med</option>
+					<option value="Low">Low</option>
+			</select></th>		
+			<th><input st-search="ticketName" placeholder="搜尋弱點名稱"
+				class="input-sm form-control search-input" type="search" /></th>
+			<th><input st-search="handler" placeholder="申請人"
+				class="input-sm form-control search-input" type="search" /></th>				
+		</tr>
+    
+    </thead>
+    <tbody>
+
+	    <!--弱點編號 簽核類別 弱點層級 弱點名稱 申請人-->
+	    <tr ng-repeat="item in riskAdjustList " ng-click="clickRow(item.status)">
+<!-- ng-repeat="item in riskAdjustList | filter : {status:typeMapping['adjust']} | orderBy:'id'" -->
+<!-- 	      <td class="table-id">{{item.id}}</td> -->
+	      <td class="table-id">{{item.pluginid}}</td>
+	      <td class="table-id">{{item.status}}</td>
+	      <td>
+                <span ng-class="item.priority">{{item.priority  | priorityMapping}}&nbsp;</span>
+                <i ng-show="item.newpriority" class='ion-arrow-right-c'></i>
+                <span ng-class="item.newpriority">&nbsp;{{item.newpriority | priorityMapping}}</span>
+	      </td>	 
+	      <td>{{item.ticketName}}</td>
+	      <td>{{item.handler}}</td>
+	    </tr>
+    </tbody>
+    <!-- 分頁 -->
+	<tfoot>
+		<tr>
+			<td colspan="10" class="text-center">
+				<div st-pagination="" st-items-by-page="10"  st-template="app/theme/smarttable/pagination.html"></div>
+			</td>
+		</tr>
+	</tfoot>    
+  </table>
+<!-- </div> -->

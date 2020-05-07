@@ -1,0 +1,180 @@
+<style>
+
+/*向左靠*/
+.form-horizontal .toLeft{
+	text-align : left;
+}
+.table > tbody > tr > td:first-child, .table > thead > tr > th:first-child{
+	text-align : left;
+}
+
+.form-horizontal .control-label{
+}
+
+.input-group{
+	margin-bottom:5px;
+}
+
+.table > thead > tr > th{
+	padding : 0px;
+}
+</style>
+
+	<!-- 右下半部-->
+	<!-- 套用時效欄位 -->
+<!-- 	<div class="form-group" style=""> -->
+<!-- 		<label -->
+<!-- 			class="control-label col-xs-3 col-sm-2 col-md-2 text-right"> -->
+<!-- 			套用時效</label> -->
+<!-- 		<div class="control-label col-xs-9 col-sm-4 col-md-4"> -->
+<!-- 	    	<datepicker-group ng-model='date' maxdate='maxdate' mindate='mindate' clear-hide='true'>	         	 -->
+<!-- 	    	</datepicker-group> -->
+<!-- 		</div> -->
+<!-- 	</div>   -->
+	<!-- 套用時效欄位 -->
+
+    <!--預計影響弱點單數-->
+    <div class="form-group" >
+        <label class="control-label col-xs-3 col-sm-2 col-md-2 text-right">
+            影響弱點數</label>
+        <label class="control-label col-xs-9 col-sm-4 col-md-4 toLeft" style="color:red">
+            720筆</label>
+    </div>  	
+    <!--預計影響弱點單數-->  
+		
+	<!--備註-->	
+	<div class="form-group">
+		<label class="control-label col-xs-4 col-sm-2 col-md-2 text-right">
+			備註</label>
+		<div class="control-label col-xs-8 col-sm-8 col-md-8">
+			<textarea class="form-control" placeholder="請輸入文字說明，字數上限為300字（此備註將送至掃描工具管理員信箱)"></textarea>
+		</div>
+	</div>
+	<!--備註-->	
+	
+	
+	
+	
+
+
+
+<!-- 以下可能都不需要了以下可能都不需要了以下可能都不需要了以下可能都不需要了以下可能都不需要了以下可能都不需要了以下可能都不需要了以下可能都不需要了 -->	
+	<!-- 套用範圍欄位 -->
+<!--    	<div class="form-group"> -->
+<!-- 		<label class="control-label col-xs-3 col-sm-2 col-md-2 text-right "> -->
+<!-- 			套用範圍 -->
+<!-- 		</label> -->
+<!-- 		<div class="col-xs-9 col-sm-10 col-md-10"> -->
+<!-- 			<div class="row"> -->
+<!-- 				<div class="control-label toLeft col-xs-12 col-sm-12 col-md-12"> -->
+<!-- 					<div class="btn-group" role="group" aria-label="Basic example"> -->
+<!-- 						<button type="button"  -->
+<!-- 							ng-model="scope" -->
+<!-- 							ng-class="scope=='All'?selectedButton:otherButton" -->
+<!-- 							ng-click="selectScope('All')">All</button> -->
+<!-- 						<button type="button"  -->
+<!-- 							ng-model="scope" -->
+<!-- 							ng-class="scope=='IPs'?selectedButton:otherButton" -->
+<!-- 							ng-click="selectScope('IPs')">IPs</button> -->
+<!-- 						<button type="button"  -->
+<!-- 							ng-model="scope" -->
+<!-- 							ng-class="scope=='Asset'?selectedButton:otherButton" -->
+<!-- 							ng-click="selectScope('Asset')">Asset</button>						 -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 	    	</div>	 -->
+<!-- 	    </div>	 -->
+<!-- 	</div>  -->
+	<!-- 套用範圍欄位 -->   
+
+	<!-- IP/Port欄位 -->
+<!--    	<div class="form-group" ng-show="isShowIP">     -->
+<!--  		<label class="control-label col-xs-3 col-sm-2 col-md-2 text-right "> -->
+<!-- 			IP/Port -->
+<!-- 		</label> -->
+<!-- 		<div class="col-xs-9 col-sm-10 col-md-10">  	 -->
+<!-- 			<div class="row col-sm-7 col-md-7"> -->
+<!-- 			  <div class="control-label toLeft">		 -->
+	    		
+<!-- 	    		<table class="table table-hover" > -->
+	    			<!-- IP/port輸入欄位 -->
+<!-- 					<thead> -->
+<!-- 						<tr> -->
+<!-- 							<th class="col-xs-8 col-sm-8 col-md-8" style="padding:0px"> -->
+<!-- 								<input class="form-control" ng-model="IP.ip" type="text" placeholder="請輸入IP" maxlength="15" auto-focus="isIPFocus" ng-keypress="typeIP($event)"/> 				 -->
+<!-- 							</th> -->
+<!-- 							<th class="col-xs-3 col-sm-3 col-md-3" style="padding:0px"> -->
+<!-- 								<input class="form-control" ng-model="IP.port" type="text" placeholder="Port" maxlength="3" ng-blur="addIP(IP.ip , IP.port, false)" ng-keypress="addIP(IP.ip , IP.port, true, $event)"   auto-focus="isPortFocus"/> -->
+<!-- 							</th> -->
+<!-- 							<th class="col-xs-1 col-sm-1 col-md-1" style="padding-left:6px; padding-bottom:3px;"> -->
+<!-- 								<i class="fa fa-plus-circle" style="font-size: 23px; color: #209e91" ng-click="addIP(IP.ip , IP.port, false)"></i>	    			 -->
+<!-- 							</th> -->
+<!-- 						</tr> -->
+<!-- 					</thead>  -->
+					<!-- IP/port輸入欄位 -->
+					<!-- IP/port顯示欄位 -->
+<!-- 					<tbody>   		 -->
+<!-- 			    		<tr ng-repeat="IP in IPs track by $index"> -->
+<!-- 							<td >{{IP.ip}}</td>		 -->
+<!-- 				    		<td >{{IP.port}}</td> -->
+<!-- 				    		<td style="padding-left:6px; padding-top:2px;">	 -->
+<!-- 								<i class="fa fa-minus-circle" style="font-size: 23px; color: red" ng-click="removeIP($index)" ></i>	    			 -->
+<!-- 				    		</td> -->
+<!-- 			    		</tr>	 -->
+<!-- 	    			</tbody> -->
+	    			<!-- IP/port顯示欄位 -->		    	
+<!-- 				</table>    		 -->
+
+<!-- 	  		  </div>								 -->
+<!-- 			</div> -->
+<!--     	</div>	  										    					    				 -->
+<!-- 	</div>	 -->
+	<!-- IP/Port欄位 -->		
+
+	<!-- Asset欄位 -->
+<!--    	<div class="form-group" ng-show="isShowAsset"> -->
+<!-- 		<label -->
+<!-- 			class="control-label col-xs-4 col-sm-2 col-md-2 text-right"> -->
+<!-- 			Asset</label> -->
+<!-- 		<div class="control-label col-xs-6 col-sm-4 col-md-4"> -->
+<!-- 			<input class="form-control" type="text" list="browsers" name="browser" ng-model="value" placeholder="請輸入關鍵字" ng-change="checkSeverity(value)"/> -->
+<!-- 		    <datalist id="browsers" > -->
+<!-- 		      <option  value="{{asset}}" ng-repeat="asset in assetList"></option> -->
+<!-- 		    </datalist> -->
+<!-- 		</div> -->
+<!-- 	</div> -->
+	<!-- Asset欄位 -->
+
+	<!-- Protocol欄位 -->
+<!--    	<div class="form-group">	    	 -->
+<!--  		<label class="control-label col-xs-3 col-sm-2 col-md-2 text-right "> -->
+<!-- 			通訊協議 -->
+<!-- 		</label> -->
+<!-- 		<div class="col-xs-9 col-sm-10 col-md-10">  	 -->
+<!-- 			<div class="control-label toLeft"> -->
+<!-- 				<div class="btn-group" role="group" aria-label="Basic example"> -->
+<!-- 					<button type="button"  -->
+<!-- 						ng-model="protocol" -->
+<!-- 						ng-class="protocol=='Any'?selectedButton:otherButton" -->
+<!-- 						ng-click="selectProtocol('Any')">Any</button> -->
+<!-- 					<button type="button"  -->
+<!-- 						ng-model="protocol" -->
+<!-- 						ng-class="protocol=='TCP'?selectedButton:otherButton" -->
+<!-- 						ng-click="selectProtocol('TCP')">TCP</button> -->
+<!-- 					<button type="button"  -->
+<!-- 						ng-model="protocol" -->
+<!-- 						ng-class="protocol=='UDP'?selectedButton:otherButton" -->
+<!-- 						ng-click="selectProtocol('UDP')">UDP</button>	 -->
+<!-- 					<button type="button"  -->
+<!-- 						ng-model="protocol" -->
+<!-- 						ng-class="protocol=='ICMP'?selectedButton:otherButton" -->
+<!-- 						ng-click="selectProtocol('ICMP')">ICMP</button> -->
+<!-- 					<button type="button"  -->
+<!-- 						ng-model="protocol" -->
+<!-- 						ng-class="protocol=='Unknown'?selectedButton:otherButton" -->
+<!-- 						ng-click="selectProtocol('Unknown')">未知</button>							 -->
+<!-- 				</div>								 -->
+<!-- 			</div>		    	 -->
+<!-- 	    </div>	 -->
+<!-- 	</div>  -->
+	<!-- Protocol欄位 -->   

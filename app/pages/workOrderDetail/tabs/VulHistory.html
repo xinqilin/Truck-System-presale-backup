@@ -1,0 +1,32 @@
+<table st-table="record" class="table ">
+    <thead>
+        <tr>
+            <th class="col-xs-3 col-sm-2 col-md-2">時間</th>
+            <th class="col-xs-3 col-sm-2 col-md-2">操作</th>
+            <th class="col-xs-3 col-sm-2 col-md-2">處理人員</th>
+            <th class="col-xs-3 col-sm-2 col-md-2">備註</th>
+            <th class="col-xs-5 col-sm-4 col-md-4"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <!--時間 操作 處理人員 備註-->
+        <tr ng-repeat="item in record">
+            <td>{{item.date| date : "yyyy-MM-dd HH:mm"}}</td>
+            <td>{{item.operate}}</td>
+            <td>{{item.handler}}</td>
+            <td colspan="2">
+                <a ng-show="item.operate =='新增說明'" ng-click="open('app/pages/workOrderDetail/tabs/Detail.html','lg')">
+                   <u> {{item.note}}</u>
+                </a>
+                <div ng-show="!(item.operate =='新增說明')">{{item.note}}</div>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5" class="text-center">
+                <div st-pagination="" st-items-by-page="5"  st-template="app/theme/smarttable/pagination.html"></div>
+            </td>
+        </tr>
+    </tfoot>
+</table>

@@ -1,0 +1,126 @@
+<style>
+.panel>.panel-heading {
+	color: #ffffff;
+}
+</style>
+
+<div class="row">
+	<div class="col-lg-8 col-md-12">
+		<div class="panel panel-warning bootstrap-panel" id="expiringDiv">
+			<div class="panel-heading">
+				<span class="panelHead">即將逾期弱點</span><span class="badge">7</span>
+			</div>
+			<div class="panel-body">
+				<table class="table table-condensed table-textcut ">
+					<thead>
+						<tr>
+							<th class="col-lg-2 col-md-2">層級</th>
+							<th class="col-lg-2 col-md-2">弱點編號</th>
+							<th class="col-lg-2 col-md-2">人員</th>
+							<th class="col-lg-4 col-md-4">弱點名稱</th>
+							<th class="col-lg-2 col-md-2">預計完成日</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="item in ExpiringTableData">
+							<td><span class="{{item.serverity}}">{{item.serverity}}</span></td>
+							<td>{{item.id}}</td>
+							<td>{{item.owner}}</td>
+							<td><span class="textcut" uib-tooltip="{{item.Name}}"
+								tooltip-placement="bottom-left" tooltip-class="customClass">{{item.Name}}</span></td>
+							<td>{{item.deadline}}</td>
+						</tr>
+					</tbody>
+				</table>
+				<div style="text-align: right;">
+					<a href="#/searchCase"><u>See More...</u></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-4 col-md-4">
+		<div class="panel panel-info bootstrap-panel">
+			<div class="panel-body text-center" ng-style="{'min-height' : dashboardHeight,'max-height' : dashboardHeight}">
+				<canvas id="pie" class="chart chart-pie" chart-legend="true"
+					chart-options="options" chart-data="data" chart-labels="labels" ng-style="{'max-height' : chartHeight,'max-width' : chartWidth}">
+      				</canvas>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="col-lg-6 col-md-12">
+		<div class="panel panel-info bootstrap-panel">
+			<div class="panel-heading">
+				<span class="panelHead">最近新增弱點</span><span class="badge">21</span>
+			</div>
+			<div class="panel-body">
+				<div class="col-lg-12 col-md-12 ">
+					<table class="table table-condensed table-textcut">
+						<thead>
+							<tr>
+								<th class="col-lg-2 col-md-2">層級</th>
+								<th class="col-lg-2 col-md-2">弱點編號</th>
+								<th class="col-lg-2 col-md-2">人員</th>
+								<th class="col-lg-4 col-md-4">弱點名稱</th>
+								<th class="col-lg-2 col-md-2">預計完成日</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="item in newTableData">
+								<td><span class="{{item.serverity}}">{{item.serverity}}</span></td>
+								<td>{{item.id}}</td>
+								<td>{{item.owner}}</td>
+								<td><span class="textcut" uib-tooltip="{{item.Name}}"
+									tooltip-placement="bottom-left" tooltip-class="customClass">{{item.Name}}</span></td>
+								<td>{{item.deadline}}</td>
+							</tr>
+						</tbody>
+					</table>
+					<div style="text-align: right;">
+						<a href="#/searchCase"><u>See More...</u></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-lg-6 col-md-12">
+		<div class="panel panel-danger bootstrap-panel">
+			<div class="panel-heading">
+				<span class="panelHead">已逾期弱點</span><span class="badge">4</span>
+			</div>
+			<div class="panel-body">
+				<div class="col-lg-12 col-md-12 ">
+					<table class="table table-condensed table-textcut">
+						<thead>
+							<tr>
+								<th class="col-lg-2 col-md-2">層級</th>
+								<th class="col-lg-2 col-md-2">弱點編號</th>
+								<th class="col-lg-2 col-md-2">人員</th>
+								<th class="col-lg-4 col-md-4">弱點名稱</th>
+								<th class="col-lg-2 col-md-2">預計完成日</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="item in ExpireTableData">
+								<td><span class="{{item.serverity}}">{{item.serverity}}</span></td>
+								<td>{{item.id}}</td>
+								<td>{{item.owner}}</td>
+								<td><span class="textcut" uib-tooltip="{{item.Name}}"
+									tooltip-placement="bottom-left" tooltip-class="customClass">{{item.Name}}</span></td>
+								<td>{{item.deadline}}</td>
+							</tr>
+						</tbody>
+					</table>
+
+				</div>
+				<div style="text-align: right;">
+					<a href="#/searchCase"><u>See More...</u></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>

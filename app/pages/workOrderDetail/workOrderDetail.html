@@ -1,0 +1,41 @@
+<style type="text/css">
+.dividers {
+    height: 1px;
+    background: gainsboro;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.form-horizontal .control-label{
+	padding-top:0px;
+}
+.tab-pane   div[ng-include]{
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+</style>
+
+<div class="content-top clearfix">
+    <h1 class="al-title">0303001 MS KB2269637: Insecure Library Loading Could Allow Remote Code Execution</h1>
+</div>
+
+<div class="horizontal-tabs tabs-panel panel">
+    <div class="medium-panel" ng-include="'app/pages/workOrderDetail/workOrderDetail_tabs.html'"></div>
+</div>
+
+<div class="panel">
+    <div ng-include="'app/pages/workOrderDetail/workOrderDetailProcess.html'"></div>
+</div>
+
+<!-- buttons -->
+<div class="row">
+    <div class="col-xs-12 text-right">
+        <button type="button" class="btn btn-warning" ng-click="openExtent('app/pages/riskToLongGoalApply/riskToLongGoalApply.html','lg')">展延申請</button>
+        <button type="button" class="btn btn-warning" ng-click="open('app/pages/workOrderDetail/workOrderDetailAppoint.html','md')">轉派</button>
+        <button type="button" class="btn btn-info" ng-click="newVulHistory()">新增說明</button>
+        <button type="button" class="btn btn-info" ng-click="rescan()">執行複掃</button>
+        <button type="button" class="btn btn-default" ng-click="backPage()">取消</button>
+    </div>
+</div>

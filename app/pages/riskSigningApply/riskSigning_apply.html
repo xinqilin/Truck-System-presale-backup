@@ -1,0 +1,197 @@
+<style>
+
+/*default高度太高要調低*/
+.filesLinehight{
+	height:34px;
+}
+
+/*刪除input箭頭下拉樣式*/
+input::-webkit-calendar-picker-indicator {
+  display: none;
+}
+/*Input File 樣式*/
+.js .inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile + label {
+	margin-bottom : 0px;
+    max-width: 80%;
+    font-size: 1.25rem;
+    /* 20px */
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    padding: 0rem 1.25rem;
+    /* 10px 20px */
+}
+
+.no-js .inputfile + label {
+    display: none;
+}
+
+.inputfile:focus + label,
+.inputfile.has-focus + label {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+.inputfile + label * {
+    /* pointer-events: none; */
+    /* in case of FastClick lib use */
+}
+
+.inputfile + label svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+    margin-top: -0.25em;
+    /* 4px */
+    margin-right: 0.25em;
+    /* 4px */
+}
+
+
+/* style 1 */
+
+.inputfile-1 + label {
+    border-radius: 10px;
+    color: #f1e5e6;
+    background-color: #209e91;
+}
+
+.inputfile-1:focus + label,
+.inputfile-1.has-focus + label,
+
+/*Input File 樣式*/
+</style>
+
+
+<!-- 上半部 -->
+<form class="form-horizontal">
+
+    	<div class="form-group">
+			<label
+				class="control-label col-xs-4 col-sm-2 col-md-2 text-right">
+				申請類型</label>
+			<div class="control-label col-xs-6 col-sm-10 col-md-10 toLeft" >
+					<div class="btn-group" role="group" aria-label="Basic example">
+						<button type="button" 
+							ng-click="changeType('riskAdjust')"
+							ng-model="applyType"
+							ng-class="applyType==true?selectedButton:otherButton"
+							>風險調整</button>
+						<button type="button" 
+							ng-click="changeType('riskAccept')"
+							ng-model="applyType"
+							ng-class="applyType==false?selectedButton:otherButton"
+							>風險接受</button>						
+					</div>
+			</div>
+		</div>
+		
+    	<div class="form-group">
+			<label
+				class="control-label col-xs-4 col-sm-2 col-md-2 text-right">
+				弱點項目</label>
+			<div class="control-label col-xs-6 col-sm-4 col-md-4">
+				<input class="form-control" type="text" list="browsers" name="browser" ng-model="value" placeholder="請輸入關鍵字" ng-change="checkSeverity(value)"/>
+			    <datalist id="browsers" >
+			      <option  value="{{item.id}} {{item.name}}" ng-repeat="item in arrays"></option>
+			    </datalist>
+			</div>
+		</div>
+    	<div class="form-group">
+			<label
+				class="control-label col-xs-4 col-sm-2 col-md-2 text-right">
+				原弱點層級</label>
+			<div class="control-label col-xs-6 col-sm-10 col-md-10 toLeft" >
+					<div class="btn-group" role="group" aria-label="Basic example">
+						<button type="button" disabled
+							ng-model="oldSeverity"
+							ng-class="oldSeverity=='Info'?selectedButton:otherButton"
+							>Info</button>
+						<button type="button" disabled
+							ng-model="oldSeverity"
+							ng-class="oldSeverity=='Low'?selectedButton:otherButton"
+							>Low</button>
+						<button type="button" disabled
+							ng-model="oldSeverity"
+							ng-class="oldSeverity=='Medium'?selectedButton:otherButton"
+							>Medium</button>
+						<button type="button" disabled
+							ng-model="oldSeverity"
+							ng-class="oldSeverity=='High'?selectedButton:otherButton"
+							>High</button>
+						<button type="button" disabled
+							ng-model="oldSeverity"
+							ng-class="oldSeverity=='Critical'?selectedButton:otherButton"
+							>Critical</button>							
+					</div>
+			</div>
+		</div>		
+    	<div class="form-group" ng-show="applyType">
+			<label
+				class="control-label col-xs-4 col-sm-2 col-md-2 text-right">
+				新弱點層級</label>
+			<div class="control-label col-xs-6 col-sm-10 col-md-10 toLeft" >
+					<div class="btn-group" role="group" aria-label="Basic example">
+						<button type="button"
+							ng-model="newSeverity"
+							ng-class="newSeverity=='Info'?selectedButton:otherButton"
+							ng-click="changeCheck('Info')">Info</button>
+						<button type="button"
+							ng-model="newSeverity"
+							ng-class="newSeverity=='Low'?selectedButton:otherButton"
+							ng-click="changeCheck('Low')">Low</button>
+						<button type="button"
+							ng-model="newSeverity"
+							ng-class="newSeverity=='Medium'?selectedButton:otherButton"
+							ng-click="changeCheck('Medium')">Medium</button>
+						<button type="button"
+							ng-model="newSeverity"
+							ng-class="newSeverity=='High'?selectedButton:otherButton"
+							ng-click="changeCheck('High')">High</button>
+						<button type="button"
+							ng-model="newSeverity"
+							ng-class="newSeverity=='Critical'?selectedButton:otherButton"
+							ng-click="changeCheck('Critical')">Critical</button>							
+					</div>
+			</div>
+		</div>		
+    	<div class="form-group">
+    		<label class="control-label col-xs-4 col-sm-2 col-md-2 text-right">
+					說明</label>
+			<div class="control-label col-xs-8 col-sm-8 col-md-8">	
+    			<textarea ng-model="explain" class="form-control" placeholder="請輸入說明文字，字數上限為300字"></textarea>
+    		</div>
+    	</div>
+    	<div class="form-group">
+			<label class="control-label col-xs-4 col-sm-2 col-md-2 text-right">
+					附加檔案</label>
+			<div class="control-label col-xs-6 col-sm-10 col-md-10 js toLeft">		
+				<input type="file"  id="inputFile" class="inputfile inputfile-1" data-multiple-caption="{count} files selected" multiple  onchange="angular.element(this).scope().addFile(this)"  ng-model="inputfile"  />
+				<label for="inputFile"><i class="fa fa-upload"></i> <span>選擇檔案</span></label>	
+  				<!-- 上傳檔案 -->
+  				<div class="filesLinehight" ng-repeat="uploadFile in uploadFiles">
+  					<br>
+	  				<label >
+	  					<i class="ion-document"></i>{{ uploadFile.name }}({{ uploadFile.size/1024/1024|number:3 }}MB)
+						<button type="button" class="btn btn-default btn-xs" ng-click="deleteFile($index)"><i class="ion-trash-a"></i></button>
+	    			</label>  	
+  				</div>
+
+    		</div>
+    	</div>
+
+</form>	
+<!-- 上半部 -->

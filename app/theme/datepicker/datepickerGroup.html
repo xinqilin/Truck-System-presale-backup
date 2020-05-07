@@ -1,0 +1,26 @@
+<style type="text/css">
+.form-control[readonly] {
+    background-color: #ffffff;
+    color: #333;
+    border-color: #e2e2e2;
+}
+
+.uib-day .btn-default {
+    background-color: orange;
+}
+
+.uib-day .btn-default:hover {
+    background-color: white;
+}
+</style>
+<div ng-class="{'input-group':!(btnHide && clearHide)}" ng-click="popup.opened = !popup.opened">
+    <input type="text" class="form-control" ng-model="dt" uib-datepicker-popup="{{formatGroup}}" datepicker-options="dateOptions" ng-required="true" alt-input-formats="altInputFormats" is-open="popup.opened" readonly="true" close-text="關閉" clear-text="清除" current-text="今天" />
+    <span class="input-group-btn">
+        <button type="button" class="btn btn-danger" ng-if="!clearHide" ng-click="clear()">
+            <i class="ion-close-round"></i>
+        </button>
+        <button type="button" class="btn btn-default" ng-if="!btnHide" >
+            <i class="glyphicon glyphicon-calendar"></i>
+        </button>
+    </span>
+</div>

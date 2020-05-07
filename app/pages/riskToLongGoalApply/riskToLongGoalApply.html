@@ -1,0 +1,71 @@
+<style>
+.form-horizontal .control-label.text-left {
+    text-align: left;
+}
+
+/*mtbt = margin-top button*/
+.form-group .mtbt{
+	margin-top:6px;
+}
+
+/*展延表單間距*/
+.form-group label{
+	margin-bottom : 0px;
+}
+
+.fixHeight{
+	height : 34px;
+}
+</style>
+
+<div class="modal-content">
+    <div class="panel-heading">
+        <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+            <em class="ion-ios-close-empty sn-link-close"></em>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">展延申請</h4>
+    </div>
+    
+    <div class="modal-body form-horizontal">
+        <div class="form-group">
+            <label class="control-label col-xs-6 col-sm-2 col-md-2 text-right">
+                原預計完成日:</label>
+            <label class="col-xs-6 col-sm-10 col-md-10 ">
+                {{showOriginalDay}}
+            </label>
+        </div>
+    	<div class="form-group fixHeight">
+			<label
+				class="control-label col-xs-6 col-sm-2 col-md-2 text-right" >
+				新預計完成日:</label>
+			<div class="control-label col-xs-6 col-sm-4 col-md-4" >
+		         <datepicker-group ng-model='date' maxdate='maxdate' mindate='mindate' clear-hide='true' >	         	
+		         </datepicker-group>
+			</div>
+			<div class="col-xs-12 col-sm-2 col-md-2 text-left" ng-model="extendedDay" >
+		    	<label style="color:red;">{{getExtendedDay()}}</label>
+			</div>
+		</div>	
+    	<div class="form-group">
+    		<label class="control-label col-xs-6 col-sm-2 col-md-2 text-right">
+					說明</label>
+			<div class="control-label col-xs-12 col-sm-8 col-md-8">	
+    			<textarea class="form-control" placeholder="請輸入說明文字，字數上限為300字"></textarea>
+    		</div>
+    	</div>
+    	<div class="form-group">
+			<a class="control-label col-xs-6 col-sm-2 col-md-2 text-right">
+					<i class="ion-folder"></i>附加檔案</a>
+			<label class="control-label col-xs-6 col-sm-2 col-md-2">
+					<i class="ion-document"></i> fixed.png (100KB)</label>
+			<button type="button" class="btn btn-default btn-xs mtbt"><i class="ion-trash-a"></i></button>
+    		
+    	</div>		
+    </div>
+    
+    
+    <div class="modal-footer">
+		<button type="button" class="btn btn-info" ng-click="backToWaitDeal()">送出</button>
+		<button type="button" class="btn btn-default" ng-click="$dismiss()">取消</button>
+    </div>
+</div>

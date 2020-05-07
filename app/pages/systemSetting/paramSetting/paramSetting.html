@@ -1,0 +1,15 @@
+<style>
+.form-group {
+    margin-bottom: 5px;
+}
+
+.input-group {
+    margin-bottom: 0px;
+}
+</style>
+<div class="panel panel-default panel-body">
+    <div include-with-scope="app/pages/systemSetting/paramSetting/paramSearch.html"></div>
+</div>
+<div class="panel panel-default  panel-body" ng-show="edit">
+    <div include-with-scope="app/pages/systemSetting/paramSetting/paramSettingTable.html"></div>
+</div>

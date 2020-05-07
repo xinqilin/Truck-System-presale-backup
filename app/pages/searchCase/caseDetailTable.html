@@ -1,0 +1,88 @@
+<style>
+input.search-input {
+    margin-left: -2px;
+}
+
+.bootstrap-select>.dropdown-toggle {
+    width: 100%;
+}
+
+.col-md-2 {
+    padding-left: 0px
+}
+
+.border-radius {
+    border-radius: .25em;
+}
+
+.label {
+    font-weight: normal;
+}
+
+.table>tbody>tr>td {
+    vertical-align: middle;
+    padding: 4px 8px;
+}
+
+.small-linehegiht {
+    line-height: 23px !important;
+}
+
+.table>tbody>tr>td:first-child {
+    text-align: right;
+}
+</style>
+<div class="horizontal-scroll">
+	<!-- 要注意如果smart table的資料是會異動的話，要加上stSafeSrc，st-table的資料會隨著 stSafeSrc而異動-->
+    <table class="table table-hover table-responsive table-textcut " st-table="displayCollection" st-safe-src="displayData">
+        <thead>
+            <tr class="sortable">
+                <th st-sort="id" width="5%">單號</th>
+                <th st-sort="weaknessid" width="5%">弱點編號</th>
+                <th st-sort="status" width="5%">狀態</th>
+                <th st-sort="priority" width="5%">層級</th>
+                <th st-sort="device" width="10%">系統別</th>
+                <th st-sort="ticketName" width="30%">弱點名稱</th>
+                <th st-sort="OSandVer" width="15%">OS版本</th>
+                <th st-sort="handler" width="10%">處理人員</th>
+                <th st-sort="createDate" width="10%">成單日</th>
+                <th st-sort="expectedDate" width="10%">預計完成日</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in displayCollection" ng-click="clickRow(item.id)">
+                <td>{{item.id}}</td>
+                <td class="text-center">{{item.weaknessid}}</td>
+                <td class="text-center small-linehegiht">
+                    <div ng-show="{{!item.deadline==''}}">
+                        <label class="{{labelClassMapping[item.deadline]}}">{{labelContextMapping[item.deadline]}}</label>
+                        <br />
+                    </div>{{item.status}}</td>
+                <td><span class="{{priorityClassMapping[item.priority]}}">{{item.priority}}</div></td>
+				<td class="small-linehegiht">
+                    <span class="textcut" uib-tooltip="{{item.device}}" tooltip-placement="bottom-left" tooltip-class="customClass">{{item.device}}</span>
+                    <div style="font-size: 1px;color:#999999a8">{{item.IPandPort}}</div>
+                </td>
+                <td>
+                    <span class="textcut" uib-tooltip="{{item.ticketName}}" tooltip-placement="bottom-left" tooltip-class="customClass">{{item.ticketName}}</span>
+                </td>
+                <td>{{item.OSandVer}}</td>
+                <td>{{item.handler}}</td>
+                <td>{{item.createDate}}</td>
+                <td>{{item.expectedDate}}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+            	<td>
+            	</td>
+                <td colspan="8" class="text-center">
+                    <div st-pagination="" st-items-by-page="10"  st-template="app/theme/smarttable/pagination.html"></div>
+                </td>
+                <td class="text-right">
+                    <button type="button" class="btn btn-info">匯出</button>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

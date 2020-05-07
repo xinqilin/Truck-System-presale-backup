@@ -1,0 +1,53 @@
+<style>
+input.search-input {
+    margin-left: -2px;
+}
+
+.bootstrap-select>.dropdown-toggle {
+    width: 100%;
+}
+
+.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+    width: 60px;
+}
+.table > thead > tr > th:first-child{
+   text-align: left;
+}
+.table > tbody > tr > td:first-child{
+    text-align: left;
+}
+</style>
+
+<div class="horizontal-scroll panel panel-default col  panel-body">
+    <table class="table table-hover" st-table="noticeTableData">
+        <thead>
+            <tr class="sortable">
+                <th class=" col-xs-2 col-sm-2 col-md-2" st-sort="eventName" class="table-id" st-sort="id">事件名稱</th>
+                <th class=" col-xs-10 col-sm-10 col-md-10" st-sort="target">通知角色</th>
+            </tr>
+            <tr>
+                <th>
+                    <input st-search="eventName" placeholder="事件名稱" class="input-sm form-control search-input" type="search" />
+                </th>
+                <th>
+                    <input st-search="target" placeholder="通知角色" class="input-sm form-control search-input" type="search" />
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="no-top-border" data-toggle="modal"
+            ng-repeat="item in noticeTableData"
+            ng-click="open('app/pages/systemSetting/noticeSetting/noticeEmailSetting.html','lg','noticeSettingCtrl')"  >
+                <td>{{item.eventName}}</td>
+                <td>{{item.target}}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5" class="text-center">
+                    <div st-pagination="" st-items-by-page="10"  st-template="app/theme/smarttable/pagination.html"></div>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

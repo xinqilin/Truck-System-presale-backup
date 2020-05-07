@@ -1,0 +1,27 @@
+<style>
+.form-group {
+	margin-bottom: 5px;
+}
+</style>
+
+<form class="form-horizontal">
+	<div class="form-group" class="col-md-12">
+		<label class="col-md-2 control-label">員工姓名 </label>
+		<div class="col-md-2">
+			<div class="col-form-item">
+				<input ng-model="inputName" class="form-control" type="text"
+					placeholder="請輸入姓名">
+			</div>
+		</div>
+		<label class="col-md-2 control-label">部門</label>
+		<div class="col-md-2" class="col-form-group">
+			<select ng-model="inputDepartment" class="form-control selectpicker">
+				<option ng-repeat="DT in department" value="{{DT}}">{{DT}}</option>
+			</select>
+		</div>
+		<div class="col-md-2">
+			<button type="button" class="btn btn-info">搜尋</button>
+			<button type="button" class="btn btn-danger" ng-click="cleanCodition()">清除</button>
+		</div>
+	</div>
+</form>

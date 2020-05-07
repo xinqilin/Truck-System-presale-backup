@@ -1,0 +1,50 @@
+<form class="form-horizontal">
+	<div id="conditionBlock">
+		<div class="form-group" class="col-md-12">
+			<label class="col-md-2 control-label">篩選條件
+			 	<button class="btn btn-primary btn-xs" ng-click="addCondition()">+</button>
+			 </label>
+			<div class="col-md-2">
+				<div class="col-form-item">
+					<select class="form-control selectpicker">
+						<option>狀態</option>
+					</select>
+				</div>
+			</div>
+			<div class="col-md-2">
+				<div class="col-form-item">
+					<select class="form-control selectpicker">
+						<option>等於</option>
+					</select>
+				</div>
+			</div>
+			<div class="col-md-2">
+				<div class="col-form-group">
+					<select class="form-control selectpicker">
+						<option>處理中</option>
+						<option>已完成</option>
+						<option>待分派</option>
+					</select>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="form-group" class="col-md-12">
+		<label class="col-md-2 control-label">結果分組</label>
+		<div class="col-md-2">
+			<div class="col-form-item">
+				<select class="form-control selectpicker">
+					<option>層級</option>
+				</select>
+			</div>
+		</div>
+		<div class="col-md-2">
+		</div>
+		<div class="col-md-2">
+		</div>
+		<div class="col-md-2">
+		     <button type="submit" class="btn btn-default btn-sm">清除</button>
+		     <button type="submit" class="btn btn-primary btn-sm" ng-click="toggleSetting()">確認</button>
+		</div>
+	</div>
+</form>

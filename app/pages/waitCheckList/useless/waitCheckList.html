@@ -1,0 +1,32 @@
+<style>
+.panel-default>.panel-heading {
+	background-color: #ffffff;
+}
+.form-group{
+	margin-bottom:0px;
+}
+</style>
+
+
+<div class="widgets">
+<div class="row" ng-show="editorMode2">
+	<div class="col-md-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">篩選條件　</div>
+		    <div class="panel-body">
+		    	<div include-with-scope="app/pages/waitCheckList/setting.html"></div>
+		    </div>
+		</div>
+	</div>
+</div>
+  <div class="row">
+    <div class="col-md-12">
+   		<div class="panel panel-default">
+	    <div class="panel-body">
+	    	<div include-with-scope="app/pages/waitCheckList/detailTable.html"></div>
+	    </div>
+	</div>
+
+    </div>
+  </div>
+</div>

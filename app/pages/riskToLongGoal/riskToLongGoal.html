@@ -1,0 +1,82 @@
+<style>
+.panel-default > .panel-heading {
+	background-color: #ffffff;
+}
+
+.form-horizontal .toLeft{
+	text-align : left;
+}
+
+.form-horizontal .control-label{
+	padding-top:0px;
+}
+
+.dividers {
+    height: 1px;
+    background: gainsboro;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+</style>
+
+
+<div class="widgets">
+	<div class="row">
+		<div class="col-md-12">
+			<!-- from workOrderDetail 基本上tab2內容複製workOrderDetail內容-->
+			<div class="horizontal-tabs tabs-panel panel">
+			    <div class="medium-panel" ng-include="'app/pages/riskToLongGoal/workOrderDetail_tabs2.html'"></div>
+			</div>
+			<!-- from workOrderDetail -->
+			
+		</div>
+	</div>
+	<div class="row" >
+		<div class="col-md-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">審核作業　</div>
+				<div class="panel-body" ng-show="true">
+					<form class="form-horizontal">
+				    	<div class="form-group">
+				    	
+							<label class="control-label col-xs-3 col-sm-2 col-md-2 text-right">
+								允許與否
+							</label>
+							
+							<div class="control-label col-xs-9 col-sm-2 col-md-2 toLeft">
+								<div class="btn-group" role="group" aria-label="Basic example">
+									<button type="button"
+										ng-model="state"
+										ng-class="state=='accept'?selectedButton:otherButton"
+										ng-click="changeCheck('accept')">核可</button>
+									<button type="button"
+										ng-model="state"
+										ng-class="state=='refuse'?selectedButton:otherButton"
+										ng-click="changeCheck('refuse')">拒絕</button>
+								</div>	
+							</div>
+							
+							<div class="col-xs-12 col-sm-8 col-md-8">
+								<!-- 拒絕內容 -->							   
+						   		<div ng-show="state == 'refuse'" include-with-scope="app/pages/riskToLongGoal/riskToLongGoal_refuse.html"></div>				   		
+								<!-- 拒絕內容 -->	
+							</div>
+	
+						</div>
+					</form>	
+				</div>	  
+
+			</div>
+		</div>
+	</div>
+	
+	<!-- button -->
+	<div>
+		<div class="text-right">
+			<button type="button" class="btn btn-info" ng-click="sendAndBack()">送出</button>
+			<button type="button" class="btn btn-default" ng-click="back()">取消</button>
+		</div>
+	</div>
+	<!-- button -->
+</div>

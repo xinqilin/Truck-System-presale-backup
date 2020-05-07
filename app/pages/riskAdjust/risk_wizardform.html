@@ -1,0 +1,155 @@
+<style>
+/*去掉RWD的左右padding*/
+.clearPadding {
+  padding: 0px;
+}
+
+.timeline {
+  padding-left: 0px;
+  padding-top: 30px;
+  list-style-type: none;
+  display: flex;
+  /*這是垂直置中*/
+  /*align-items: center;*/
+  /*左右置中*/
+  justify-content: center;
+}
+
+.li {
+  transition: all 200ms ease-in;
+}
+
+.status {
+  padding: 0px 10px;
+  display: flex;
+  justify-content: center;
+  border-top: 2px solid #D6DCE0;
+  position: relative;
+  transition: all 200ms ease-in;
+}
+
+.status label {
+  margin-top: 12px;
+  text-align: center;
+}
+/*球*/
+.status:before {
+  content: "";
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  position: absolute;
+  top: -15px;
+  left: 42%;
+  transition: all 200ms ease-in;
+}
+
+/*線 #66DC71(藍綠)*/
+.li.complete .status {
+  border-top: 2px solid #209e91;
+}
+/*球(藍綠)*/
+.li.complete .status:before {
+  background-color: #209e91;
+  border: none;
+  transition: all 200ms ease-in;
+}
+/*文字(藍綠)*/
+.li.complete .status label {
+  color: #209e91;
+}
+
+/*線(紅)*/
+.li.reject .status {
+  border-top: 2px solid #ed7878;
+}
+/*球(紅)*/
+.li.reject .status:before {
+  background-color: #ed7878;
+  border: none;
+  transition: all 200ms ease-in;
+}
+/*文字(紅)*/
+.li.reject .status label {
+  color: #ed7878;
+}
+
+/*線(藍)*/
+.li.current .status {
+  border-top: 2px solid #2dacd1;
+}
+/*球(藍)*/
+.li.current .status:before {
+  background-color: #2dacd1;
+  border: none;
+  transition: all 200ms ease-in;
+}
+/*文字(藍)*/
+.li.current .status label {
+  color: #2dacd1;
+}
+
+
+@media (min-device-width: 320px) and (max-device-width: 700px) {
+  .timeline {
+    list-style-type: none;
+    display: block;
+  }
+
+  .li {
+    transition: all 200ms ease-in;
+    display: flex;
+    width: inherit;
+  }
+
+
+  .status:before {
+    left: -8%;
+    top: 30%;
+    transition: all 200ms ease-in;
+  }
+</style>
+
+
+
+<ul class="timeline" id="timeline">
+	<div class="col-sm-2 clearPadding">	
+        <li class="li complete">
+          <div class="status">
+            <label> 處理者(申請人)<br>Will</label>
+          </div>
+        </li>
+	</div>
+    <div class="col-sm-2 clearPadding">	  
+        <li class="li complete">
+          	<div class="status">
+            	<label>直屬主管<br>Johnson</label>
+          	</div>
+        </li>
+	</div>
+    <div class="col-sm-2 col-sm-offset-0 clearPadding">	  
+        <li class="li current">
+          	<div class="status">
+            	<label>資安組直屬主管<br>流星雨</label>
+         	 </div>
+        </li>
+	</div>
+    <div class="col-sm-2 clearPadding">	  
+    	<li class="li">
+        	<div class="status">
+            	<label>資安組乙級主管<br></label>
+        	</div>
+      	</li>
+	</div>
+    <div class="col-sm-2 col-sm-offset-0 clearPadding">	  
+      	<li class="li">
+       		<div class="status">
+          		<label>資安組主管<br></label>
+        	</div>
+      	</li>
+	</div>
+</ul>   
+
+	
