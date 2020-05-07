@@ -9,18 +9,18 @@
       .config(routeConfig);
 
   /** @ngInject */
-  function routeConfig($stateProvider) {
-    $stateProvider
-        .state('searchRisk', {
-          url: '/searchRisk',
-          templateUrl: 'app/pages/searchRisk/searchRisk.html',
-          title: '審核查詢',
-          controller: 'searchRiskCtrl',
-          sidebarMeta: {
-            icon: 'ion-search',
-            order: 3,
-          },
-        });
-  }
+  // function routeConfig($stateProvider) {
+  //   $stateProvider
+  //       .state('searchRisk', {
+  //         url: '/searchRisk',
+  //         templateUrl: 'app/pages/searchRisk/searchRisk.html',
+  //         title: '審核查詢',
+  //         controller: 'searchRiskCtrl',
+  //         sidebarMeta: {
+  //           icon: 'ion-search',
+  //           order: 3,
+  //         },
+  //       });
+  // }
 
 })();

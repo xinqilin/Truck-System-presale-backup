@@ -9,19 +9,19 @@
       .config(routeConfig);
 
   /** @ngInject */
-  function routeConfig($stateProvider) {
-    $stateProvider
-        .state('riskSigningApply', {
-          url: '/riskSigningApply',
-          templateUrl: 'app/pages/riskSigningApply/riskSigningApply.html',
-          title: '風險簽核申請',
-          sidebarMeta: {
-            icon: 'ion-edit',
-            order: 5,
-          },
-          //controller: 'datepickerCtrl',
-          controller: 'riskSigningApplyCtrl'
-        });
-  }
+  // function routeConfig($stateProvider) {
+  //   $stateProvider
+  //       .state('riskSigningApply', {
+  //         url: '/riskSigningApply',
+  //         templateUrl: 'app/pages/riskSigningApply/riskSigningApply.html',
+  //         title: '風險簽核申請',
+  //         sidebarMeta: {
+  //           icon: 'ion-edit',
+  //           order: 5,
+  //         },
+  //         //controller: 'datepickerCtrl',
+  //         controller: 'riskSigningApplyCtrl'
+  //       });
+  // }
 
 })();

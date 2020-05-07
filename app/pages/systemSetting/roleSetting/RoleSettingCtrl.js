@@ -151,35 +151,38 @@
 			id : 2,
 			name : "休假申請",
 			check : null
-		}, {
+		}, 
+		{
 			id : 3,
 			name : "休假查詢",
 			check : null
-		}, {
-			id : 4,
-			name : "展延待審核",
-			check : null
-		}, {
-			id : 5,
-			name : "弱點查詢",
-			check : null
-		}, {
-			id : 6,
-			name : "風險簽核申請",
-			check : null
-		}, {
-			id : 7,
-			name : "通知設定",
-			check : null
-		}, {
-			id : 8,
-			name : "系統設定",
-			check : null
-		}, {
-			id : 9,
-			name : "待復掃清單",
-			check : null
-		} ];
+		},
+		//  {
+		// 	id : 4,
+		// 	name : "展延待審核",
+		// 	check : null
+		// }, {
+		// 	id : 5,
+		// 	name : "弱點查詢",
+		// 	check : null
+		// }, {
+		// 	id : 6,
+		// 	name : "風險簽核申請",
+		// 	check : null
+		// }, {
+		// 	id : 7,
+		// 	name : "通知設定",
+		// 	check : null
+		// }, {
+		// 	id : 8,
+		// 	name : "系統設定",
+		// 	check : null
+		// }, {
+		// 	id : 9,
+		// 	name : "待復掃清單",
+		// 	check : null
+		// }
+	 ];
 	}
 
 	// 給doubleCheckModal準備專屬Controller

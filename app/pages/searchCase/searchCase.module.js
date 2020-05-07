@@ -9,18 +9,18 @@
       .config(routeConfig);
 
   /** @ngInject */
-  function routeConfig($stateProvider) {
-    $stateProvider
-        .state('searchCase', {
-          url: '/searchCase',
-          templateUrl: 'app/pages/searchCase/searchCase.html',
-          title: '弱點查詢',
-          controller: 'searchCaseCtrl',
-          sidebarMeta: {
-            icon: 'ion-search',
-            order: 3,
-          },
-        });
-  }
+  // function routeConfig($stateProvider) {
+  //   $stateProvider
+  //       .state('searchCase', {
+  //         url: '/searchCase',
+  //         templateUrl: 'app/pages/searchCase/searchCase.html',
+  //         title: '弱點查詢',
+  //         controller: 'searchCaseCtrl',
+  //         sidebarMeta: {
+  //           icon: 'ion-search',
+  //           order: 3,
+  //         },
+  //       });
+  // }
 
 })();

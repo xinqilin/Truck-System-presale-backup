@@ -14,19 +14,19 @@
       .config(routeConfig);
 
   /** @ngInject */
-  function routeConfig($stateProvider) {
-    $stateProvider
-        .state('systemSetting', {
-          url: '/systemSetting',
-          template : '<ui-view></ui-view>',
-          controller: 'systemSettingCtrl',
-          abstract: true,
-          title: '系統設定',
-          sidebarMeta: {
-            icon: 'ion-gear-a',
-            order: 7,
-          },
-        });
-  }
+  // function routeConfig($stateProvider) {
+  //   $stateProvider
+  //       .state('systemSetting', {
+  //         url: '/systemSetting',
+  //         template : '<ui-view></ui-view>',
+  //         controller: 'systemSettingCtrl',
+  //         abstract: true,
+  //         title: '系統設定',
+  //         sidebarMeta: {
+  //           icon: 'ion-gear-a',
+  //           order: 7,
+  //         },
+  //       });
+  // }
 
 })();
