@@ -153,7 +153,7 @@
 			check : null
 		}, {
 			id : 3,
-			name : "休假審核",
+			name : "休假查詢",
 			check : null
 		}, {
 			id : 4,

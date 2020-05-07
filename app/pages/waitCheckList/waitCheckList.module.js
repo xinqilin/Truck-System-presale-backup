@@ -14,7 +14,7 @@
         .state('waitCheckList', {
           url: '/waitCheckList',
           templateUrl: 'app/pages/waitCheckList/waitCheckList.html',
-          title: '休假審核',
+          title: '休假查詢',
           controller: 'waitCheckListCtrl',
           sidebarMeta: {
             icon: 'ion-wrench',

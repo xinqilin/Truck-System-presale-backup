@@ -28,12 +28,14 @@ tr .form-control {
         <thead>
             <tr class="sortable">
                 <!-- <th st-sort="id" width="5%">編號&nbsp;</th> -->
-                <th st-sort="createDate" width="5%">填寫日</th>
-                <th st-sort="expectedDate" width="5%">休假日</th>
-                <th st-sort="weaknessid" width="5%">休假時數</th>
-                <th st-sort="priority" width="7%">職位</th>
+                <!-- <th st-sort="weaknessid" width="5%">員工編號</th> -->
+                
+                <th st-sort="priority" width="10%">職位</th>
                 <th st-sort="device" width="15%">駐點地</th>
-                <th st-sort="ticketName" width="55%">員工名稱</th>
+                <th st-sort="ticketName" width="20%">事由</th>
+                <th st-sort="createDate" width="15%">填寫日</th>
+                <th st-sort="expectedDate" width="15%">申請日</th>
+                <th st-sort="time" width="10%">時數</th>
                 
                 <!-- <th st-sort="createtimes" width="3%">人員重複數</th> -->
             </tr>
@@ -41,15 +43,10 @@ tr .form-control {
                 <!-- <th>
                     <input st-search="id" placeholder="請輸入" class="form-control" type="search" />
                 </th> -->
-                <th>
-                    <st-date-range predicate="createDate" before="createDate.before" after="createDate.after" clear-hide="true" menu-right="true" ></st-date-range>
-                </th>
-                <th>
-                    <st-date-range predicate="expectedDate" before="expectedDate.before" after="expectedDate.after" clear-hide="true" menu-right="true" ></st-date-range>
-                </th>
-                <th>
+                <!-- <th>
                     <input st-search="weaknessid" placeholder="請輸入" class="form-control" type="search" />
-                </th>
+                </th> -->
+                
                 <th>
                     <select st-search="priority" class="form-control">
                         <option>PG</option>
@@ -71,8 +68,28 @@ tr .form-control {
                         <option>兆豐</option>
                     </select>
                 </th>
+                
                 <th>
-                    <input st-search="ticketName" placeholder="請輸入您的姓名"" class="form-control" type="search" value="Bill"/>
+                    <input st-search="ticketName" placeholder="請輸入事由" class="form-control" type="search" />
+                </th>
+                <th>
+                    <!-- <st-date-range predicate="createDate" after="createDate.after" clear-hide="true" menu-right="true" ></st-date-range> -->
+                    <input type="text" id="createTime" readonly class="form-control">
+                </th>
+                <th>
+                    <st-date-range predicate="expectedDate" before="expectedDate.before" after="expectedDate.after" clear-hide="true" menu-right="true" ></st-date-range>
+                </th>
+                <th>
+                    <select st-search="time" class="form-control">
+                        <option>1 hr</option>
+                        <option>2 hr</option>
+                        <option>3 hr</option>
+                        <option>4 hr</option>
+                        <option>5 hr</option>
+                        <option>6 hr</option>
+                        <option>7 hr</option>
+                        <option>8 hr</option>
+                    </select>
                 </th>
                 
                 <!-- <th>
@@ -80,31 +97,81 @@ tr .form-control {
                 </th> -->
             </tr>
         </thead>
-        <tbody>
+        <!-- <tbody>
             <tr ng-repeat="item in criticalTicket" ng-click="clickRow(item.id)">
-                <!-- <td class="align-right">{{item.id}}</td> -->
+                <td class="align-right">{{item.id}}</td>
                 <td class="text-center">{{item.weaknessid}}</td>
                 <td><span class="{{item.priority}}">{{item.priority | priorityMapping}}</span></td>
                 <td><span class="textcut" uib-tooltip="{{item.device}}" tooltip-placement="bottom-left" tooltip-class="customClass">{{item.device}}</span></td>
                 <td><span class="textcut" uib-tooltip="{{item.ticketName}}" tooltip-placement="bottom-left" tooltip-class="customClass">{{item.ticketName}}</span></td>
                 <td>{{item.createDate}}</td>
                 <td>{{item.expectedDate}}</td>
-                <!-- <td class="text-right">{{item.createtimes}}</td> -->
+                <td class="text-right">{{item.createtimes}}</td>
             </tr>
-        </tbody>
-        <tfoot>
+        </tbody> -->
+        <!-- <tfoot>
             <tr>
                 <td colspan="8" class="text-center">
                     <div st-pagination="" st-items-by-page="10" st-template="app/theme/smarttable/pagination.html"></div>
                 </td>
             </tr>
-        </tfoot>
+        </tfoot> -->
     </table>
+</div><br>
+<div style="text-align: center;">
+    <button id="buttonApp">申請</button>
 </div>
 <script>
     
+    var Today=new Date();
+    $('#createTime').val(Today.getFullYear()+'/'+(Today.getMonth()+1) +'/'+Today.getDate());
+
+    $('#buttonApp').click(function(){
+        alert('申請成功');
+    });
 </script>
-<script
-  src="https://code.jquery.com/jquery-3.5.1.js"
-  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-  crossorigin="anonymous"></script>
+
+<!--
+    <h3>填選完您的資料，按下申請按鈕即可送出申請。</h3><br><br>
+        <div class="container">
+            <div class="row">
+                <div class='col-sm-2'  style="text-align:center;">
+                    <h4>填寫日</h4>
+                    <input id="datetimepicker" type="text" >
+                </div>
+                <div class="col-sm-2"   style="text-align:center;">
+                    <h4>申請日</h4>
+                    <input type="text">
+                </div>
+                <div class="col-sm-2"   style="text-align:center;">
+                    <h4>假別</h4>
+                    <select name="" id="">
+                        <option value="">特休</option>
+                        <option value="">事假</option>
+                        <option value="">扣薪病假</option>
+                        <option value="">不扣薪病假</option>
+                        <option value="">預支假</option>
+                    </select>
+                </div>
+                <div class="col-sm-2"   style="text-align:center;">
+                    <h4>時數</h4>
+                    <select name="" id="">
+                        <option value="">&nbsp&nbsp1&nbsp&nbsp</option>
+                        <option value="">&nbsp&nbsp2&nbsp&nbsp</option>
+                        <option value="">&nbsp&nbsp3&nbsp&nbsp</option>
+                        <option value="">&nbsp&nbsp4&nbsp&nbsp</option>
+                        <option value="">&nbsp&nbsp5&nbsp&nbsp</option>
+                        <option value="">&nbsp&nbsp6&nbsp&nbsp</option>
+                        <option value="">&nbsp&nbsp7&nbsp&nbsp</option>
+                        <option value="">&nbsp&nbsp8&nbsp&nbsp </option>
+                    </select>
+                </div>
+                <div class="col-sm-4"   style="text-align:center;">
+                    <h4>事由</h4>
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                </div>
+                
+                
+            </div>
+        </div>
+-->
