@@ -26,13 +26,13 @@ tr .form-control {
     <table class="table table-hover table-textcut " st-table="criticalTicket">
         <thead>
             <tr class="sortable">
-                <th st-sort="id" width="5%">單號&nbsp;</th>
-                <th st-sort="weaknessid" width="5%">弱點編號</th>
-                <th st-sort="priority" width="7%">層級</th>
-                <th st-sort="device" width="15%">系統別</th>
-                <th st-sort="ticketName" width="55%">弱點名稱</th>
-                <th st-sort="createDate" width="5%">成單日</th>
-                <th st-sort="expectedDate" width="5%">預計完成日</th>
+                <th st-sort="id" width="5%">編號&nbsp;</th>
+                <th st-sort="weaknessid" width="5%">員工編號</th>
+                <th st-sort="priority" width="7%">職位</th>
+                <th st-sort="device" width="15%">駐點地</th>
+                <th st-sort="ticketName" width="55%">員工名稱</th>
+                <th st-sort="createDate" width="5%">填寫日</th>
+                <th st-sort="expectedDate" width="5%">休假日</th>
                 <th st-sort="createtimes" width="3%">重複數</th>
             </tr>
             <tr>
@@ -44,25 +44,27 @@ tr .form-control {
                 </th>
                 <th>
                     <select st-search="priority" class="form-control">
-                        <option value="">選擇</option>
-                        <option value="Crit">Crit</option>
-                        <option value="High">High</option>
-                        <option value="Med">Med</option>
-                        <option value="Low">Low</option>
+                        <option>PG</option>
+                        <option>BOSS</option>
+                        <option>Team Leader</option>
+                        <option>PM</option>
+                        <option>SA</option>
+                        <option>SD</option>
+                        <option>Salse</option>
                     </select>    
                 </th>                               
                 <th>
                     <select st-search="device" class="form-control">
-                        <option value="">請選擇</option>
-                        <option>動態密碼系統AP Server更改IP網段</option>
-                        <option>ALM系統資料庫正式機建置需求-AP設計分析十組林宜賢</option>
-                        <option>AD與SSO同步用</option>
-                        <option>DB Audit 專案微軟 SQL Log 集中保存 Server</option>
-                        <option>KM正式機使用</option>
+                        <option>請選擇駐點</option>
+                        <option>HY本部</option>
+                        <option>板橋遠傳</option>
+                        <option>內湖遠傳</option>
+                        <option>玉山</option>
+                        <option>兆豐</option>
                     </select>
                 </th>
                 <th>
-                    <input st-search="ticketName" placeholder="搜尋弱點名稱" class="form-control" type="search" />
+                    <input st-search="ticketName" placeholder="請輸入您的姓名"" class="form-control" type="search" />
                 </th>
                 <th>
                     <st-date-range predicate="createDate" before="createDate.before" after="createDate.after" clear-hide="true" menu-right="true" ></st-date-range>
@@ -71,7 +73,7 @@ tr .form-control {
                     <st-date-range predicate="expectedDate" before="expectedDate.before" after="expectedDate.after" clear-hide="true" menu-right="true" ></st-date-range>
                 </th>
                 <th>
-                    <input st-search="createtimes" placeholder="搜尋數" class="form-control" type="search" />
+                    <input st-search="createtimes" placeholder="當天休假人數" class="form-control" type="search" />
                 </th>
             </tr>
         </thead>

@@ -149,7 +149,7 @@
 			check : null
 		}, {
 			id : 2,
-			name : "請假",
+			name : "休假管理",
 			check : null
 		}, {
 			id : 3,
