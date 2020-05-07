@@ -15,7 +15,7 @@ input.search-input {
     <thead>
         <tr class="sortable">
 	      <th st-sort="pluginid" width="8%" >職位</th>
-	      <th st-sort="status" width="8%" >駐點地</th>
+	      <!-- <th st-sort="status" width="8%" >駐點地</th> -->
 	      <th st-sort="priority" width="12%" >假別</th>
 	      <th st-sort="ticketName" width="64%">事由</th> 
 	      <th st-sort="handler" width="8%" >申請人</th>  
@@ -24,9 +24,9 @@ input.search-input {
             <th>
                 <input st-search="pluginid" placeholder="搜尋職位" class="input-sm form-control search-input" type="search" />
             </th>
-            <th>
+            <!-- <th>
                 <input st-search="type" placeholder="駐點地" class="input-sm form-control search-input" type="search" />
-            </th>
+            </th> -->
             <th>
                 <select st-search="priority" class="input-sm form-control search-input">
                     <option value="">請選擇</option>
@@ -49,7 +49,7 @@ input.search-input {
         <!--     弱點編號 狀態 嚴重性 系統別 弱點名稱 處理人員 開單日期 預計完成 最後新 -->
         <tr ng-repeat="item in riskAll" ng-click="clickRow(item.status)">
             <td class="table-id">{{item.pluginid}}</td>
-            <td class="table-id">{{item.status}}</td>
+            <!-- <td class="table-id">{{item.status}}</td> -->
             <td>
                 <span ng-class="item.priority">{{item.priority  | priorityMapping}}&nbsp;</span>
                 <i ng-show="item.newpriority" class='ion-arrow-right-c'></i>

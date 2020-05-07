@@ -103,7 +103,7 @@
           username: '@mdo',
           email: 'mdo@gmail.com',
           age: '28',
-          priority: 'Critical',
+          priority: '特休',
           status: 'HY本部',
           systemType: '網路銀行',
           ticketName: '出國玩',
