@@ -14,7 +14,7 @@
         .state('waitDeal', {
           url: '/waitDeal',
           templateUrl: 'app/pages/waitDeal/waitDeal.html',
-          title: '休假管理',
+          title: '休假申請',
           controller: 'waitDealCtrl',
           sidebarMeta: {
             icon: 'ion-wrench',

@@ -149,11 +149,11 @@
 			check : null
 		}, {
 			id : 2,
-			name : "休假管理",
+			name : "休假申請",
 			check : null
 		}, {
 			id : 3,
-			name : "風險待審核",
+			name : "休假審核",
 			check : null
 		}, {
 			id : 4,
