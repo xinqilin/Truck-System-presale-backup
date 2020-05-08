@@ -151,6 +151,10 @@ tr .form-control {
             alert('請填寫所有欄位');
             return ;
         }
+        if($('#hour').val()=='0hr'){
+            alert('請填寫正確的請假時間(時數不為零)');
+            return;
+        }
         alert('申請成功');
     });
 </script>
