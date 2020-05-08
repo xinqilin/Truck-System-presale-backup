@@ -109,7 +109,7 @@ tr .form-control {
                         <option>7 hr</option>
                         <option>8 hr</option>
                     </select> -->
-                    <input type="text" readonly class="form-control" id="hour" style="color: black;">
+                    <input type="text" disabled class="form-control" id="hour" style="color: black;">
                 </th>
                 
                 <!-- <th>
@@ -152,22 +152,37 @@ tr .form-control {
 </script>
 <script>
 // 2020-05-01T01:00    
-   
+    $('#start').change(function(){
+        if($('#end').val()==""){
+            return;
+        }
+        else{
+            var end=parseInt($('#end').val().substr(11,2),10);
+            var start=parseInt($('#start').val().substr(11,2),10);
+            var hour=end-start;
+  
+        if(hour<0){
+            $('#hour').val(0+'hr');
+        }else{
+            $('#hour').val(hour+'hr');
+        }
+        }
+    });    
+
     $('#end').change(function(){
+        if($('#start').val()==""){
+            return;
+        }
         var end=parseInt($('#end').val().substr(11,2),10);
         var start=parseInt($('#start').val().substr(11,2),10);
         var hour=end-start;
-        // alert(end-start);
-        // alert(hour);
+  
         if(hour<0){
-            $('#hour').val(0);
+            $('#hour').val(0+'hr');
         }else{
-            $('#hour').val(hour);
+            $('#hour').val(hour+'hr');
         }
-        
-        // if(start==''){
-        //     return ;
-        // }
+
 
     });
 </script>
