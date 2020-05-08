@@ -165,9 +165,26 @@ tr .form-control {
             return;
         }
         else{
+            var stM=parseInt($('#start').val().substr(5,2),10);
+            var enM=parseInt($('#end').val().substr(5,2),10);
+            var stD=parseInt($('#start').val().substr(8,2),10);
+            var enD=parseInt($('#end').val().substr(8,2),10);
             var end=parseInt($('#end').val().substr(11,2),10);
             var start=parseInt($('#start').val().substr(11,2),10);
             var hour=end-start;
+            var day=enD-stD;
+            var month=enM-stM;
+        if(month<0){
+            alert('結束日期須在起始日期之前');
+            return ;
+        }
+        if(month>0){
+            // alert('請假時間大於一個月，請聯絡部門主管');
+            hour+=month*160;
+        }
+        if(day>0){
+            hour+=day*8;
+        }
   
         if(hour<0){
             $('#hour').val(0+'hr');
@@ -181,10 +198,26 @@ tr .form-control {
         if($('#start').val()==""){
             return;
         }
+        var stM=parseInt($('#start').val().substr(5,2),10);
+        var enM=parseInt($('#end').val().substr(5,2),10);
+        var stD=parseInt($('#start').val().substr(8,2),10);
+        var enD=parseInt($('#end').val().substr(8,2),10);
         var end=parseInt($('#end').val().substr(11,2),10);
         var start=parseInt($('#start').val().substr(11,2),10);
         var hour=end-start;
-  
+        var day=enD-stD;
+        var month=enM-stM;
+        if(month<0){
+            alert('結束日期須在起始日期之前');
+            return ;
+        }
+        if(month>0){
+            // alert('請假時間大於一個月，請聯絡部門主管');
+            hour+=month*160;
+        }
+        if(day>0){
+            hour+=day*8;
+        }
         if(hour<0){
             $('#hour').val(0+'hr');
         }else{
