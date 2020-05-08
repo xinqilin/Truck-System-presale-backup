@@ -115,6 +115,9 @@ tr .form-control {
                 <!-- <th>
                     <input st-search="createtimes" placeholder="當天休假人數" class="form-control" type="search" />
                 </th> -->
+                <!-- <th>
+                    <input type="text" id="date">
+                </th> -->
             </tr>
         </thead>
     </table>
@@ -133,7 +136,7 @@ tr .form-control {
             return ;
         }
         if($('#hour').val()=='0hr'){
-            alert('請填寫正確的請假時間(時數不為零)');
+            alert('請填寫正確的請假時間(時數不為零) and 結束日期須在開始日期之後');
             return;
         }
         alert('申請成功');
@@ -156,7 +159,8 @@ tr .form-control {
             var day=enD-stD;
             var month=enM-stM;
         if(month<0){
-            alert('結束日期須在起始日期之前');
+            // alert('結束日期須在起始日期之前');
+            $('#hour').val(0+'hr');
             return ;
         }
         if(month>0){
@@ -189,7 +193,8 @@ tr .form-control {
         var day=enD-stD;
         var month=enM-stM;
         if(month<0){
-            alert('結束日期須在起始日期之前');
+            // alert('結束日期須在起始日期之前');
+            $('#hour').val(0+'hr');
             return ;
         }
         if(month>0){
@@ -207,4 +212,6 @@ tr .form-control {
 
 
     });
+
+
 </script>
