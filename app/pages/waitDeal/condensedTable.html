@@ -33,10 +33,11 @@ tr .form-control {
                 <!-- <th st-sort="priority" width="10%">職位</th> -->
                 <th st-sort="device" width="10%">據點分布</th>
                 <th st-sort="weaknessid" width="10%">假別</th>
-                <th st-sort="ticketName" width="20%">事由</th>
-                <th st-sort="createDate" width="15%">填寫日</th>
-                <th st-sort="expectedDate" width="15%">申請日</th>
-                <th st-sort="time" width="10%">時數</th>
+                <th st-sort="ticketName" width="30%">事由</th>
+                <th st-sort="createDate" width="8%">填寫日</th>
+                <th st-sort="expectedDate" width="15%">開始時間</th>
+                <th st-sort="expectedDate" width="15%">結束時間</th>
+                <th st-sort="time" width="3%">時數</th>
                 
                 <!-- <th st-sort="createtimes" width="3%">人員重複數</th> -->
             </tr>
@@ -84,13 +85,21 @@ tr .form-control {
                 </th>
                 <th>
                     <!-- <st-date-range predicate="createDate" after="createDate.after" clear-hide="true" menu-right="true" ></st-date-range> -->
-                    <input type="text" id="createTime" readonly class="form-control">
+                    <input type="text" id="createTime"  class="form-control" disabled style="color:black;">
                 </th>
                 <th>
-                    <st-date-range predicate="expectedDate" before="expectedDate.before" after="expectedDate.after" clear-hide="true" menu-right="true" ></st-date-range>
+                    <!-- <st-date-range  predicate="expectedDate" before="expectedDate.before" after="expectedDate.after" clear-hide="true" menu-right="true" ></st-date-range> -->
+                    <mat-form-field>
+                        <input matInput type="datetime-local" placeholder="start date" class="form-control" id="start">
+                    </mat-form-field>
                 </th>
                 <th>
-                    <select st-search="time" class="form-control">
+                    <mat-form-field>
+                        <input matInput type="datetime-local" placeholder="start date" class="form-control" id="end">
+                    </mat-form-field>
+                </th>
+                <th>
+                    <!-- <select st-search="time" class="form-control">
                         <option>1 hr</option>
                         <option>2 hr</option>
                         <option>3 hr</option>
@@ -99,7 +108,8 @@ tr .form-control {
                         <option>6 hr</option>
                         <option>7 hr</option>
                         <option>8 hr</option>
-                    </select>
+                    </select> -->
+                    <input type="text" readonly class="form-control" id="hour" style="color: black;">
                 </th>
                 
                 <!-- <th>
@@ -138,6 +148,27 @@ tr .form-control {
 
     $('#buttonApp').click(function(){
         alert('申請成功');
+    });
+</script>
+<script>
+// 2020-05-01T01:00    
+   
+    $('#end').change(function(){
+        var end=parseInt($('#end').val().substr(11,2),10);
+        var start=parseInt($('#start').val().substr(11,2),10);
+        var hour=end-start;
+        // alert(end-start);
+        // alert(hour);
+        if(hour<0){
+            $('#hour').val(0);
+        }else{
+            $('#hour').val(hour);
+        }
+        
+        // if(start==''){
+        //     return ;
+        // }
+
     });
 </script>
 

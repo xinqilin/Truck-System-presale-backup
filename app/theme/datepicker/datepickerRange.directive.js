@@ -22,7 +22,7 @@
     }
 
     function datepickerRangeCtrl($scope) {
-        $scope.format = 'yy/MM/dd';
+        $scope.format = 'yy/MM/dd HH:mm';
 
         initOptions();
 
