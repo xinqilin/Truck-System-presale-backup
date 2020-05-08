@@ -143,7 +143,18 @@ tr .form-control {
     });
 </script>
 <script>
-// 2020-05-01T01:00    
+// 2020-05-01T01:00   
+var opt={dateFormat: 'yy-mm-dd',
+               showSecond: true,
+               timeFormat: 'HH:mm:ss'
+               };
+    $('#start').focus(function(){
+        $('#start').datetimepicker(opt);
+    });
+    $('#end').focus(function(){
+        $('#end').datetimepicker(opt);
+    });
+
     $('#start').change(function(){
         if($('#end').val()==""){
             return;
@@ -213,17 +224,7 @@ tr .form-control {
 
     });
 
-    var opt={dateFormat: 'yy-mm-dd',
-               showSecond: true,
-               timeFormat: 'HH:mm:ss'
-               };
-    $('#start').click(function(){
-        $('#start').datetimepicker(opt);
-    });
-    $('#end').click(function(){
-        $('#end').datetimepicker(opt);
-    });
-
+    
     
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.js"></script>
