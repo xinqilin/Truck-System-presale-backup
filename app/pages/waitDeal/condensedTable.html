@@ -95,7 +95,7 @@ tr .form-control {
                 </th>
                 <th>
                     <mat-form-field>
-                        <input matInput type="datetime-local" placeholder="start date" class="form-control" id="end">
+                        <input matInput type="datetime-local" placeholder="end date" class="form-control" id="end">
                     </mat-form-field>
                 </th>
                 <th>
@@ -147,6 +147,10 @@ tr .form-control {
     $('#createTime').val(Today.getFullYear()+'/'+(Today.getMonth()+1) +'/'+Today.getDate());
 
     $('#buttonApp').click(function(){
+        if($('.form-control').val()==''){
+            alert('請填寫所有欄位');
+            return ;
+        }
         alert('申請成功');
     });
 </script>
