@@ -147,7 +147,7 @@ tr .form-control {
     $('#createTime').val(Today.getFullYear()+'/'+(Today.getMonth()+1) +'/'+Today.getDate());
 
     $('#buttonApp').click(function(){
-        if($('.form-control').val()==''){
+        if($('.form-control').val()=='' || $('#start').val()=='' || $('#end').val()==''){
             alert('請填寫所有欄位');
             return ;
         }
@@ -190,48 +190,3 @@ tr .form-control {
 
     });
 </script>
-
-<!--
-    <h3>填選完您的資料，按下申請按鈕即可送出申請。</h3><br><br>
-        <div class="container">
-            <div class="row">
-                <div class='col-sm-2'  style="text-align:center;">
-                    <h4>填寫日</h4>
-                    <input id="datetimepicker" type="text" >
-                </div>
-                <div class="col-sm-2"   style="text-align:center;">
-                    <h4>申請日</h4>
-                    <input type="text">
-                </div>
-                <div class="col-sm-2"   style="text-align:center;">
-                    <h4>假別</h4>
-                    <select name="" id="">
-                        <option value="">特休</option>
-                        <option value="">事假</option>
-                        <option value="">扣薪病假</option>
-                        <option value="">不扣薪病假</option>
-                        <option value="">預支假</option>
-                    </select>
-                </div>
-                <div class="col-sm-2"   style="text-align:center;">
-                    <h4>時數</h4>
-                    <select name="" id="">
-                        <option value="">&nbsp&nbsp1&nbsp&nbsp</option>
-                        <option value="">&nbsp&nbsp2&nbsp&nbsp</option>
-                        <option value="">&nbsp&nbsp3&nbsp&nbsp</option>
-                        <option value="">&nbsp&nbsp4&nbsp&nbsp</option>
-                        <option value="">&nbsp&nbsp5&nbsp&nbsp</option>
-                        <option value="">&nbsp&nbsp6&nbsp&nbsp</option>
-                        <option value="">&nbsp&nbsp7&nbsp&nbsp</option>
-                        <option value="">&nbsp&nbsp8&nbsp&nbsp </option>
-                    </select>
-                </div>
-                <div class="col-sm-4"   style="text-align:center;">
-                    <h4>事由</h4>
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
-                </div>
-                
-                
-            </div>
-        </div>
--->
