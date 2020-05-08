@@ -151,12 +151,10 @@ var opt={dateFormat: 'yy-mm-dd',
                showSecond: true,
                timeFormat: 'HH:mm:ss'
                };
-    $('#start').focus(function(){
-        $('#start').datetimepicker(opt);
-    });
-    $('#end').focus(function(){
-        $('#end').datetimepicker(opt);
-    });
+    $('#start').focus().datetimepicker(opt);
+    
+    
+    $('#end').focus().datetimepicker(opt);
 
     $('#start').change(function(){
         if($('#end').val()==""){
