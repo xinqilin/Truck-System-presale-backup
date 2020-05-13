@@ -1,43 +1,47 @@
 <style>
-input.search-input {
-    margin-left: -2px;
-}
+    input.search-input {
+        margin-left: -2px;
+    }
 
-.bootstrap-select>.dropdown-toggle {
-    width: 100%;
-}
+    .bootstrap-select>.dropdown-toggle {
+        width: 100%;
+    }
 
-.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
-    width: 60px;
-}
-
-
-/* filter左右padding */
-
-tr .form-control {
-    padding-left: 2px;
-    padding-right: 0px;
-}
+    .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+        width: 60px;
+    }
 
 
-/* table過濾的padding變小 */
+    /* filter左右padding */
 
-.table>thead>tr>th {
-    padding: 3px;
-}
+    tr .form-control {
+        padding-left: 2px;
+        padding-right: 0px;
+    }
 
-.table-1{
-    border:1px dashed black;
-    
-}
 
+    /* table過濾的padding變小 */
+
+    .table>thead>tr>th {
+        padding: 3px;
+    }
+
+    .table-1 {
+        border: 1px dashed black;
+
+<<<<<<< HEAD
 .table-1 th{
     border:1px solid black;
     
 }
+=======
+    }
+>>>>>>> f05e3d8a6be8729659567f058b2ee83070c1ef56
 
-</style>
+    .table-1 th {
+        border: 1px dashed black;
 
+<<<<<<< HEAD
     
     <div class="col-md-8 column">
        <table class='table-1'>
@@ -76,10 +80,86 @@ tr .form-control {
         <table>
             ddd
         </table>
-    </div>
-    
+=======
+    }
+</style>
+<div class="row">
+    <div class="col-md-9 column">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <table class="table table-hover table-textcut " st-table="criticalTicket">
+                    <thead>
+                        <tr class="sortable">
+                            <th st-sort="device" width="10%">據點分布</th>
+                            <th st-sort="weaknessid" width="10%">假別</th>
+                            <th st-sort="ticketName" width="30%">事由</th>
+                            <th st-sort="createDate" width="8%">填寫日</th>
+                            <th st-sort="expectedDate" width="15%">開始時間</th>
+                            <th st-sort="expectedDate" width="15%">結束時間</th>
+                            <th st-sort="time" width="3%">時數</th>
 
-    
+                        </tr>
+                        <tr>
+                            <th>
+                                <select st-search="device" class="form-control">
+                                    <option value="">請選擇地點</option>
+                                    <option>台北</option>
+                                    <option>林口</option>
+
+                                </select>
+                            </th>
+                            <th>
+                                <select st-search="weaknessid" class="form-control">
+                                    <option value="">請選擇</option>
+                                    <option value="spe">特休</option>
+                                    <option value="issue">事假</option>
+                                    <option value="sick1">支薪病假</option>
+                                    <option value="sick2">不支薪病假</option>
+                                    <option value="sick2">預支假</option>
+                                </select>
+                            </th>
+
+                            <th>
+                                <input st-search="ticketName" placeholder="請輸入事由" class="form-control" type="search" />
+                            </th>
+                            <th>
+                                <input type="text" id="createTime" class="form-control" disabled style="color:black;">
+                            </th>
+                            <th>
+                                <input type="text" id="start" class="form-control">
+                            </th>
+                            <th>
+                                <input type="text" id="end" class="form-control">
+                            </th>
+                            <th>
+                                <input type="text" disabled class="form-control" id="hour" style="color: black;">
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 column">
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                sassasa
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                sassasa
+            </div>
+        </div>
+>>>>>>> f05e3d8a6be8729659567f058b2ee83070c1ef56
+    </div>
+</div>
+
+
+
+
 
 
 <!--footer-->
@@ -88,18 +168,36 @@ tr .form-control {
     <div class="form-check form-check-inline">
         <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
         <label class="form-check-label" for="inlineCheckbox1">派車便條</label>
-      </div>
-      &nbsp;&nbsp;&nbsp;&nbsp;
-      <div class="form-check form-check-inline">
+    </div>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="form-check form-check-inline">
         <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
         <label class="form-check-label" for="inlineCheckbox2">訂購三聯單</label>
+<<<<<<< HEAD
       </div>
       &nbsp;&nbsp;&nbsp;&nbsp;
       <div class="form-check form-check-inline">
         <input type="button" class="btn btn-success" type="button" value="確認列印"/>
       </div>
+=======
+    </div>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+        <label class="form-check-label" for="inlineCheckbox3">一般帳款</label>
+    </div>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="form-check form-check-inline">
+        <input type="button" class="btn btn-success" type="button" value="確認列印" />
+    </div>
+>>>>>>> f05e3d8a6be8729659567f058b2ee83070c1ef56
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.js"></script>
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
