@@ -9,18 +9,18 @@
       .config(routeConfig);
 
   /** @ngInject */
-  // function routeConfig($stateProvider) {
-  //   $stateProvider
-  //       .state('waitRescanDeal', {
-  //         url: '/waitRescanDeal',
-  //         templateUrl: 'app/pages/waitRescanDeal/waitRescanDeal.html',
-  //         title: '待複掃清單',
-  //         controller: 'waitRescanDealCtrl',
-  //         sidebarMeta: {
-  //           icon: 'ion-hammer',
-  //           order: 10,
-  //         },
-  //       });
-  // }
+  function routeConfig($stateProvider) {
+    $stateProvider
+        .state('waitRescanDeal', {
+          url: '/waitRescanDeal',
+          templateUrl: 'app/pages/waitRescanDeal/waitRescanDeal.html',
+          title: '派車系統',
+          controller: 'waitRescanDealCtrl',
+          sidebarMeta: {
+            icon: 'ion-wrench',
+            order: 10,
+          },
+        });
+  }
 
 })();

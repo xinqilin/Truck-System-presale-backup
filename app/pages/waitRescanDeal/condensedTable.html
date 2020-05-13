@@ -27,7 +27,7 @@ tr .form-control {
 }
 </style>
 <div class="horizontal-scroll">
-    <table class="table table-hover table-textcut" st-table="criticalTicket" >
+    <table class="table table-hover table-textcut" st-table="criticalTicket">
         <thead>
             <tr class="sortable">
                 <th width="2%">
@@ -119,14 +119,37 @@ tr .form-control {
         </tbody>
         <tfoot>
             <tr>
-                <td colspan="2">
-                    <input class="btn btn-warning" type="button" value="取消複掃" ng-click="cancelRescanning()" />
+                <td colspan="12">
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label" for="inlineCheckbox1">匯出:</label>
+                    </div>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">派車便條</label>
+                      </div>
+                      &nbsp;&nbsp;&nbsp;&nbsp;
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                        <label class="form-check-label" for="inlineCheckbox2">訂購三聯單</label>
+                      </div>
+                      &nbsp;&nbsp;&nbsp;&nbsp;
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                        <label class="form-check-label" for="inlineCheckbox3">一般帳款</label>
+                      </div>
+                      &nbsp;&nbsp;&nbsp;&nbsp;
+                      <div class="form-check form-check-inline">
+                        <input type="button" class="btn btn-success" type="button" value="確認列印"/>
+                      </div>
                 </td>
-
-                <td colspan="6" class="text-center">
-                    <div st-pagination="" st-items-by-page="10"  st-template="app/theme/smarttable/pagination.html"></div>
-                </td>
+                  
+                
             </tr>
         </tfoot>
     </table>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
