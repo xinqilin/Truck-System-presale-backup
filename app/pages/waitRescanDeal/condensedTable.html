@@ -26,62 +26,12 @@
         padding: 3px;
     }
 
-    .table-1 {
-        border: 1px dashed black;
 
-<<<<<<< HEAD
 .table-1 th{
     border:1px solid black;
     
 }
-=======
-    }
->>>>>>> f05e3d8a6be8729659567f058b2ee83070c1ef56
-
-    .table-1 th {
-        border: 1px dashed black;
-
-<<<<<<< HEAD
     
-    <div class="col-md-8 column">
-       <table class='table-1'>
-           
-           <tr>
-                <th>地址</th>
-                <th>用車時間</th>
-                <th>時間</th>
-                <th>車型</th>
-                <th>車號</th>
-                <th>司機與隨車</th>
-                <th>載貨內容</th>
-                <th>起訖地點</th>
-                <th>備註</th>
-                <th>金額</th>
-                <th>金額分配</th>
-                <th>出車</th>
-                <th>完成</th>
-            </tr>
-           <tr></tr>
-           <tr></tr>
-           <tr></tr>
-           <tr></tr>
-           <tr></tr>
-       </table>
-    
-       <table>
-           bbb
-       </table>
-    </div>
-
-    <div class="col-md-4 column">
-        <table>
-            ccc
-        </table>
-        <table>
-            ddd
-        </table>
-=======
-    }
 </style>
 <div class="row">
     <div class="col-md-9 column">
@@ -145,15 +95,51 @@
 
         <div class="panel panel-default">
             <div class="panel-body">
-                sassasa
+                
+                <table class="table table-hover table-textcut " st-table="peopleTableData">
+                    <thread>
+                        <th>
+                            <select name="" st-search="status"  style="border-style: none;outline: none;margin-left: 30%;text-align: center;text-align-last: center;">
+                                <option value="">人員狀態</option>
+                                <option value="car">出車</option>
+                                <option value="clock">等待</option>
+                                <option value="nike">可用</option>
+                                <option value="ban">不可用</option>
+                            </select>
+                            <!-- <input st-search="status" class="input-sm form-control search-input" type="search" /> -->
+                        </th>
+                    </thread>
+                    <tbody  style="overflow-y: auto;height:170px;display: block;">
+                        <tr ng-repeat="item in peopleTableData" style="display: inline-table;">
+                            <td style="text-align: center; width:7vw;">{{item.username}}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
+
         <div class="panel panel-default">
             <div class="panel-body">
-                sassasa
+                <table class="table table-hover table-textcut " st-table="carTableData">
+                    <thread>
+                        <th>
+                            <select name="" st-search="status"  style="border-style: none;outline: none;margin-left: 30%;text-align: center;text-align-last: center;">
+                                <option value="">車輛狀態</option>
+                                <option value="car">出車</option>
+                                <option value="clock">等待</option>
+                                <option value="nike">可用</option>
+                                <option value="ban">不可用</option>
+                            </select>
+                        </th>
+                    </thread>
+                    <tbody style="overflow-y: auto;height:170px;display: block;">
+                        <tr ng-repeat="item in carTableData">
+                            <td>{{item.firstName}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item.lastName}}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
->>>>>>> f05e3d8a6be8729659567f058b2ee83070c1ef56
     </div>
 </div>
 
@@ -173,24 +159,12 @@
     <div class="form-check form-check-inline">
         <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
         <label class="form-check-label" for="inlineCheckbox2">訂購三聯單</label>
-<<<<<<< HEAD
       </div>
       &nbsp;&nbsp;&nbsp;&nbsp;
       <div class="form-check form-check-inline">
         <input type="button" class="btn btn-success" type="button" value="確認列印"/>
       </div>
-=======
     </div>
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-        <label class="form-check-label" for="inlineCheckbox3">一般帳款</label>
-    </div>
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    <div class="form-check form-check-inline">
-        <input type="button" class="btn btn-success" type="button" value="確認列印" />
-    </div>
->>>>>>> f05e3d8a6be8729659567f058b2ee83070c1ef56
 </div>
 <script
     src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.js"></script>
