@@ -111,7 +111,7 @@
                     </thread>
                     <tbody  style="overflow-y: auto;height:170px;display: block;">
                         <tr ng-repeat="item in peopleTableData" style="display: inline-table;">
-                            <td style="text-align: center; width:7vw;">{{item.username}}</td>
+                            <td style="text-align: center; width:7vw;"><img ng-src="{{item.pic}}" alt="" height="15" width="15"/>&nbsp;&nbsp;&nbsp;&nbsp;{{item.username}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -134,7 +134,7 @@
                     </thread>
                     <tbody style="overflow-y: auto;height:170px;display: block;">
                         <tr ng-repeat="item in carTableData">
-                            <td>{{item.firstName}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item.lastName}}</td>
+                            <td><img ng-src="{{item.pic}}" alt="" height="20" width="20"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item.firstName}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item.lastName}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                         </tr>
                     </tbody>
                 </table>

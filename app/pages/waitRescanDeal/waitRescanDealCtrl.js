@@ -51,6 +51,7 @@
 		// 人員資料
 		$scope.peopleTableData = [ {
 			id : 1,
+			pic:'assets/img/truck-016.ico',
 			firstName : 'AAA',
 			lastName : '500-0966',
 			username : '張三一',
@@ -58,6 +59,7 @@
 			
 		}, {
 			id : 2,
+			pic:'assets/img/truck-016.ico',
 			firstName : 'BBB',
 			lastName : '557-8901',
 			username : '李四五',
@@ -65,30 +67,35 @@
 		
 		}, {
 			id : 3,
+			pic:'assets/img/clock-016.ico',
 			firstName : 'CCC',
 			lastName : '500-0907',
 			username : '李四四',
 			status : 'clock'
 		}, {
 			id : 4,
+			pic:'assets/img/clock-016.ico',
 			firstName : 'DDD',
 			lastName : '500-0908',
 			username : '丁一一',
 			status : 'clock'
 		}, {
 			id : 5,
+			pic:'assets/img/greencheck.png',
 			firstName : 'EEE',
 			lastName : '500-0977',
 			username : '丁一二',
 			status : 'nike'
 		}, {
 			id : 6,
+			pic:'assets/img/greencheck.png',
 			firstName : 'FFF',
 			lastName : '500-0972',
 			username : '張三二',
 			status : 'nike'
 		}, {
 			id : 7,
+			pic:'assets/img/stop.jpg',
 			firstName : 'GGG',
 			lastName : '500-0971',
 			username : '張一二',
@@ -100,6 +107,7 @@
 		
 		$scope.carTableData = [ {
 			id : 1,
+			pic:'assets/img/truck-016.ico',
 			firstName : 'AAA',
 			lastName : '500-0966',
 			username : '張三一',
@@ -107,6 +115,7 @@
 			
 		}, {
 			id : 2,
+			pic:'assets/img/truck-016.ico',
 			firstName : 'BBB',
 			lastName : '557-8901',
 			username : '李四五',
@@ -114,30 +123,35 @@
 		
 		}, {
 			id : 3,
+			pic:'assets/img/clock-016.ico',
 			firstName : 'CCC',
 			lastName : '500-0907',
 			username : '李四四',
 			status : 'clock'
 		}, {
 			id : 4,
+			pic:'assets/img/clock-016.ico',
 			firstName : 'DDD',
 			lastName : '500-0908',
 			username : '丁一一',
 			status : 'clock'
 		}, {
 			id : 5,
+			pic:'assets/img/greencheck.png',
 			firstName : 'EEE',
 			lastName : '500-0977',
 			username : '丁一二',
 			status : 'nike'
 		}, {
 			id : 6,
+			pic:'assets/img/greencheck.png',
 			firstName : 'FFF',
 			lastName : '500-0972',
 			username : '張三二',
 			status : 'nike'
 		}, {
 			id : 7,
+			pic:'assets/img/stop.jpg',
 			firstName : 'GGG',
 			lastName : '500-0971',
 			username : '張一二',
