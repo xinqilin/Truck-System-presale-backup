@@ -25,109 +25,53 @@ tr .form-control {
 .table>thead>tr>th {
     padding: 3px;
 }
+
+.table-1{
+    border:1px dashed black;
+    
+}
+
+.table-1 th{
+    border:1px dashed black;
+    
+}
+
 </style>
-<div class="horizontal-scroll">
+
     
     <div class="col-md-8 column">
-        <table class="table table-hover table-textcut" st-table="criticalTicket">
-            <thead>
-                <tr class="sortable">
-                    <th width="2%">
-                        
-                    </th>
-                    <th st-sort="id" width="6%">弱點編號</th>
-                    <th st-sort="priority" width="10%">層級</th>
-                    <th st-sort="device" width="15%">系統別</th>
-                    <th st-sort="ticketName" width="35%">弱點名稱</th>
-                    <th st-sort="createDate" width="8%">成單日</th>
-                    <th st-sort="expectedDate" width="8%">預計完成日</th>
-                    <th st-sort="updateDate" width="8%">最後更新</th>
-                    <th st-sort="createtimes" width="8%">重複數</th>
-                </tr>
-                <tr>
-                    <th>
-                        <label class="custom-checkbox" >
-                            <input type="checkbox" value="" ng-model="checkall" ng-click="selectAll()">
-                            <span></span>
-                        </label>
-                    </th>
-                    <th>
-                        <input st-search="id" placeholder="請輸入" class="form-control" type="search" />
-                    </th>
-                    <th>
-                        <select st-search="priority" class="form-control">
-                            <option value="">請選擇</option>
-                            <option value="Critical">Crit</option>
-                            <option value="High">High</option>
-                            <option value="Medium">Med</option>
-                            <option value="Low">Low</option>
-                        </select>
-                    </th>
-                    <th>
-                        <select st-search="device" class="form-control">
-                            <option value="">請選擇</option>
-                            <option>動態密碼系統AP Server更改IP網段</option>
-                            <option>ALM系統資料庫正式機建置需求-AP設計分析十組林宜賢</option>
-                            <option>AD與SSO同步用</option>
-                            <option>DB Audit 專案微軟 SQL Log 集中保存 Server</option>
-                            <option>KM正式機使用</option>
-                        </select>
-                    </th>
-                    <th>
-    
-                        <input st-search="ticketName" placeholder="搜尋弱點名稱" class="form-control" type="search" />
-                    </th>
-                    <th>
-                        <datepicker-group ng-model="create" st-search="createDate" maxdate='maxdate' mindate='mindate' btn-hide="true" clear-hide="true">
-                        </datepicker-group>
-                    </th>
-                    <th>
-                        <datepicker-group ng-model="expected" st-search="expectedDate" maxdate='maxdate' mindate='mindate' btn-hide="true" clear-hide="true">
-                        </datepicker-group>
-                    </th>
-                    <th>
-                        <datepicker-group ng-model="update" st-search="updateDate" maxdate='maxdate' mindate='mindate' btn-hide="true" clear-hide="true">
-                        </datepicker-group>
-                    </th>
-                    <th>
-                        <input st-search="createtimes" placeholder="搜尋數" class="form-control" type="search" />
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="item in criticalTicket">
-                    <td class="text-center">
-                        <label class="custom-checkbox">
-                            <input type="checkbox" ng-model="item.checked" ng-checked="item.checked" ng-click="selectOne()">
-                            <span></span>
-                        </label>
-                    </td>
-                    <td class="text-center">
-                        {{item.weaknessid}}
-                    </td>
-                    <td ng-click="clickRow(item.id)">
-                        <span class="{{item.priority}}">{{item.priority | priorityMapping}}</span>
-                    </td>
-                    <td ng-click="clickRow(item.id)">
-                        <span class="textcut" uib-tooltip="{{item.device}}" tooltip-placement="bottom-left" tooltip-class="customClass">{{item.device}}</td>
-                    <td class="text" ng-click="clickRow(item.id)">
-                        <span class="textcut" uib-tooltip="{{item.ticketName}}" tooltip-placement="bottom-left" tooltip-class="customClass">{{item.ticketName}}</span>
-                    </td>
-                    <td ng-click="clickRow(item.id)">{{item.createDate}}</td>
-                    <td ng-click="clickRow(item.id)">{{item.expectedDate}}</td>
-                    <td ng-click="clickRow(item.id)">{{item.updateDate}}</td>
-                    <td class="text-right" ng-click="clickRow(item.id)">{{item.createtimes}}</td>
-                </tr>
-            </tbody>
-            
-        </table>
+       <table class='table-1'>
+           
+           <tr>
+               <th>地址</th>
+           <th>用車時間</th>
+           <th>時間</th>
+           <th>車型</th>
+           <th>車號</th>
+           <th></th>
+           <th></th>
+           <th></th>
+           <th></th>
+           <th></th>
+           <th></th>
+           <th></th>
+           <th></th></tr>
+           <tr></tr>
+           <tr></tr>
+           <tr></tr>
+           <tr></tr>
+           <tr></tr>
+       </table>
     
     </div>
-    <div class="col-md-4 column"></div>
+
+    <div class="col-md-4 column">
+        sassasa
+    </div>
     
 
     
-</div>
+
 
 <!--footer-->
 <div>
