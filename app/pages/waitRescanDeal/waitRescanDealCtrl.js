@@ -13,6 +13,19 @@
 		$scope.newRecord = {};
 
 		$scope.data=false;
+		$scope.assignNote = true;
+		$scope.triplicateForm = true;
+		$scope.rowCollection = [];
+		$scope.isEditMode = false;
+		
+		$scope.saveEdit = function(){
+			var index = $scope.rowCollection.indexOf($scope.selectedData);
+			if (index !== -1) {
+				$scope.rowCollection.splice(index, 1, $scope.selectedData);
+			}
+			console.log($scope.selectedData);
+		}
+
 		$scope.showAdd=function(){
 			$scope.data=true;
 		}
@@ -20,9 +33,23 @@
 			$scope.data=false;
 		}
 
-		$scope.showDetail = function (rowData) {
-			$scope.selectedData = rowData;
-			console.log($scope.selectedData);
+		$scope.showDetail = function (row) {
+			$scope.isEditMode = false;
+			$scope.selectedData = row;
+		}
+
+		$scope.detele = function(event,row){
+			event.stopPropagation();
+			var index = $scope.rowCollection.indexOf(row);
+			if (index !== -1) {
+				$scope.rowCollection.splice(index, 1);
+			}
+		}
+
+		$scope.edit = function(event,row){
+			event.stopPropagation();
+			$scope.selectedData = row
+			$scope.isEditMode = true;
 		}
 
 		$scope.save = function(){
@@ -71,7 +98,7 @@
 				terminal: '400台中市中區台灣大道一段1號',
 				remark: '在訂單成立後，若店家需要與顧客聯繫相關事項，或是註記出貨注意事項提醒出貨人員。店家可以在訂單頁面，運用「訂單通訊」欄位進行操作。 ',
 				amount: '10',
-				dispense: { '車輛': 4, '丁一一': 3, '丁十一': 3 },
+				dispense: { '車樣成本': 4, '丁一一': 3, '丁十一': 3 },
 				arriveTime: '12:30',
 				returnTime: '18:30'
 			},
@@ -88,7 +115,7 @@
 				terminal: '400台中市中區台灣大道一段1號',
 				remark: '在訂單成立後，若店家需要與顧客聯繫相關事項，或是註記出貨注意事項提醒出貨人員。店家可以在訂單頁面，運用「訂單通訊」欄位進行操作。 ',
 				amount: '10',
-				dispense: { '車輛': 4, '丁一一': 3, '丁十一': 3 },
+				dispense: { '車樣成本': 4, '丁一一': 3, '丁十一': 3 },
 				arriveTime: '12:30',
 				returnTime: '18:30'
 			}, {
@@ -104,7 +131,7 @@
 				terminal: '400台中市中區台灣大道一段1號',
 				remark: '在訂單成立後，若店家需要與顧客聯繫相關事項，或是註記出貨注意事項提醒出貨人員。店家可以在訂單頁面，運用「訂單通訊」欄位進行操作。 ',
 				amount: '10',
-				dispense: { '車輛': 4, '丁一一': 3, '丁十一': 3 },
+				dispense: { '車樣成本': 4, '丁一一': 3, '丁十一': 3 },
 				arriveTime: '12:30',
 				returnTime: '18:30'
 			}, {
@@ -120,7 +147,7 @@
 				terminal: '400台中市中區台灣大道一段1號',
 				remark: '在訂單成立後，若店家需要與顧客聯繫相關事項，或是註記出貨注意事項提醒出貨人員。店家可以在訂單頁面，運用「訂單通訊」欄位進行操作。 ',
 				amount: '10',
-				dispense: { '車輛': 4, '丁一一': 3, '丁十一': 3 },
+				dispense: { '車樣成本': 4, '丁一一': 3, '丁十一': 3 },
 				arriveTime: '12:30',
 				returnTime: '18:30'
 			}, {
@@ -136,7 +163,7 @@
 				terminal: '400台中市中區台灣大道一段1號',
 				remark: 'eading professional golfers are to return to competitive action for the first time in months after a shutdown due to the COVID-19 pandemic when three of the world’s top 10 women tee off in South Korea today.',
 				amount: '10',
-				dispense: { '車輛': 4, '丁一一': 3, '丁十一': 3 },
+				dispense: { '車樣成本': 4, '丁一一': 3, '丁十一': 3 },
 				arriveTime: '12:30',
 				returnTime: '18:30'
 			}, {
@@ -152,7 +179,7 @@
 				terminal: '400台中市中區台灣大道一段1號',
 				remark: '易碎物品',
 				amount: '10',
-				dispense: { '車輛': 4, '丁一一': 3, '丁十一': 3 },
+				dispense: { '車樣成本': 4, '丁一一': 3, '丁十一': 3 },
 				arriveTime: '12:30',
 				returnTime: '18:30'
 			}, {
@@ -168,7 +195,7 @@
 				terminal: '400台中市中區台灣大道一段1號',
 				remark: '在訂單成立後，若店家需要與顧客聯繫相關事項，或是註記出貨注意事項提醒出貨人員。店家可以在訂單頁面，運用「訂單通訊」欄位進行操作。',
 				amount: '10',
-				dispense: { '車輛': 4, '丁一一': 3, '丁十一': 3 },
+				dispense: { '車樣成本': 4, '丁一一': 3, '丁十一': 3 },
 				arriveTime: '12:30',
 				returnTime: '18:30'
 			}, {
@@ -184,11 +211,16 @@
 				terminal: '400台中市中區台灣大道一段1號',
 				remark: '在訂單成立後，若店家需要與顧客聯繫相關事項，或是註記出貨注意事項提醒出貨人員。店家可以在訂單頁面，運用「訂單通訊」欄位進行操作。',
 				amount: '10',
-				dispense: { '車輛': 4, '丁一一': 3, '丁十一': 3 },
+				dispense: { '車樣成本': 4, '丁一一': 3, '丁十一': 3 },
 				arriveTime: '12:30',
 				returnTime: '18:30'
 			}
 		];
+
+		
+		for(var item in $scope.truckInfo){
+			$scope.rowCollection.push($scope.truckInfo[item]);
+		}
 
 		// 人員資料
 		$scope.peopleTableData = [ {

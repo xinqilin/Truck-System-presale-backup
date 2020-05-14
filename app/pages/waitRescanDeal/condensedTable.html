@@ -24,6 +24,8 @@
     .custom-ul>li {
         display: flex;
         font-size: small;
+        padding-bottom: 8px;
+        line-height: 1.5em;
     }
 
     /* 展開flexbox底下的span的內容，避免換行 */
@@ -38,10 +40,23 @@
         padding-left: 5px;
     }
 
+    .outputSettingGroup {
+        vertical-align: text-bottom; 
+        font-size: small;
+        position: absolute;
+        bottom: 0;
+        left: 10px;
+    }
+
     /* 定義清單用的縮排 */
     .custom-ul>li>.custom-li-indentation {
         padding-right: 0.5em;
     }
+
+    .custom-ul>li:nth-of-type(even) {
+        background-color: #f7f4f4 ;
+    }
+
 
     .columtable>tbody {
         border-top: hidden;
@@ -51,6 +66,7 @@
         border-right: 1px solid #e0e0e0;
     }
 
+    
     /* .columtable>tbody>tr>td>ul {
         padding-left: 1em;
     } */
@@ -128,29 +144,42 @@
     <div class="col-md-9">
         <div class="panel panel-default">
             <div class="panel-body">
-                <table class="table table-hover table-textcut" st-table="truckInfo">
+                <table class="table table-hover table-textcut" st-safe-src = "rowCollection" st-table="truckInfo">
                     <thead>
                         <tr class="sortable">
                             <th st-sort="usedDate" style="text-align: center;" width="15%">用車日期</th>
                             <th st-sort="type" style="text-align: center;" width="5%">車型</th>
                             <th st-sort="lincenseNo" style="text-align: center;" width="10%">車號</th>
-                            <th style="text-align: center;" width="35%">收獲地點</th>
-                            <th style="text-align: center;" width="35%">備註</th>
+                            <th style="text-align: center;" width="35%">收貨地點</th>
+                            <th style="text-align: center;" width="25%">備註</th>
+                            <th width="10%"></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="row in truckInfo" ng-click="showDetail(row)">
-                            <td style="text-align: center;"><span ng-bind-html="dateFormatter(row.usedDate)"></span>
+                        <tr ng-repeat="(index, row) in truckInfo">
+                            <td style="text-align: center;" ng-click="showDetail(row)">
+                                <span ng-bind-html="dateFormatter(row.usedDate)"></span>
                             </td>
-                            <td style="text-align: center;">{{row.type}}</td>
-                            <td style="text-align: center;">
+                            <td style="text-align: center;" ng-click="showDetail(row)">{{row.type}}</td>
+                            <td style="text-align: center;" ng-click="showDetail(row)">
                                 <span class="textcut" uib-tooltip="{{row.lincenseNo}}" tooltip-placement="bottom-left"
                                     tooltip-class="customClass">{{row.lincenseNo}}</span>
                             </td>
-                            <td style="text-align: center;">
+                            <td style="text-align: center;" ng-click="showDetail(row)">
                                 {{row.terminal}}</td>
-                            <td><span class="" uib-tooltip="{{row.remark}}" tooltip-placement="bottom-left"
-                                    tooltip-class="customClass">{{row.remark|textCut:true:30:' ...'}}</span>
+                            <td ng-click="showDetail(row)"><span class="" uib-tooltip="{{row.remark}}" tooltip-placement="bottom-left"
+                                    tooltip-class="customClass">{{row.remark|textCut:true:20:' ...'}}</span>
+                            </td>
+                            <td style="text-align: center; vertical-align: middle;">
+                                <span style="font-size:15px; cursor: pointer;" ng-click="edit($event,row)">
+                                    <i class="fa fa-pencil"></i>
+                                </span>
+                                <span style="font-size:15px; cursor: pointer;" ng-click="detele($event,row)">
+                                    <i class="fa fa-times"></i>
+                                </span>
+                                <span style="font-size:15px; cursor: pointer;" ng-if="index == 1">
+                                    <i class="fa fa-lock"></i>
+                                </span>
                             </td>
                         </tr>
                     </tbody>
@@ -163,53 +192,16 @@
                 </table>
             </div>
         </div>
-        <div class="panel panel-default" ng-if="selectedData.id">
-            <div class="panel-body">
-                <table width="100%" class="table columtable">
-                    <tr>
-                        <td width="10%"
-                            style="text-align: center; vertical-align:middle; font-size: large; color: blue;">
-                            <span ng-bind-html="dateFormatter(selectedData.usedDate)"></span>
-                            <br>
-                            {{selectedData.driver}}
-
-                        </td>
-                        <td width="65%">
-                            <ul class="custom-ul">
-                                <li><span
-                                        class="custom-li-indentation">車型車號:</span>{{selectedData.type}}&nbsp;{{selectedData.lincenseNo}}
-                                </li>
-                                <li><span class="custom-li-indentation">起訖地點:</span>
-                                    <div style="width: 40%; border-right: 1px solid #e0e0e0;">
-                                        起:&nbsp;{{selectedData.starting}}
-                                    </div>
-                                    <div style="width: 40%;">
-                                        訖:&nbsp;{{selectedData.terminal}}
-                                    </div>
-                                </li>
-                                <li><span class="custom-li-indentation">載貨內容:</span>
-                                    <div>{{selectedData.cargoContent}}</div>
-                                </li>
-                                <li><span class="custom-li-indentation">備註:</span>
-                                    <div>{{selectedData.remark}}</div>
-                                </li>
-                            </ul>
-                        </td>
-                        <td width="25%">
-                            <ul class="custom-ul">
-                                <li>
-                                    <span class="custom-li-indentation">結案:</span>
-                                    <div>{{selectedData.arriveTime}}</div>
-                                </li>
-                                <li>
-                                    <span class="custom-li-indentation">回程抵達:</span>
-                                    <div>{{selectedData.returnTime}}</div>
-                                </li>
-                            </ul>
-                        </td>
-                    </tr>
-                </table>
-            </div>
+        <div ng-if="selectedData.id">
+            <uib-tabset active="$tabSetStatus.activeTab" class="megabank-theme">
+                <uib-tab heading="{{isEditMode ? '修改派車資訊':'派車資訊'}}">
+                    <div ng-include="'app/pages/waitRescanDeal/detailTab/carDetail.html'"></div>
+                </uib-tab>
+                <uib-tab heading="金額細項">
+                    <div ng-include="'app/pages/waitRescanDeal/detailTab/amountDetail.html'">
+                    </div>
+                </uib-tab>
+            </uib-tabset>
         </div>
     <!-- 新增 -->
         <div class="panel panel-default" ng-show="data">
@@ -404,7 +396,15 @@
         </div>
     </div>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css">
+
 <script>
+    var opt={dateFormat: 'yy-mm-dd',
+               showSecond: true,
+               timeFormat: 'HH:mm:ss'
+               };
     function go(id) {
         // alert(status);
         $('.persontd').removeClass("carcolor");
