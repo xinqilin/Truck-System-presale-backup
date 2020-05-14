@@ -73,12 +73,12 @@
 		
 		}, {
 			id : 3,
-			pic:'assets/img/clock-016.ico',
+			pic:'assets/img/truck-016.ico',
 			firstName : 'CCC',
 			lastName : '500-0907',
 			username : '李四四',
-			status : 'clock',
-			statustext:'等待出車',
+			status : 'car',
+			statustext:'執行業務中',
 			phone:'0912-123456',
 			elocation:'https://www.google.com.tw/'
 		}, {
@@ -94,7 +94,7 @@
 		}, {
 			id : 5,
 			pic:'assets/img/greencheck.png',
-			firstName : 'EEE',
+			firstName : 'GHG',
 			lastName : '500-0977',
 			username : '丁一二',
 			status : 'nike',
@@ -104,7 +104,7 @@
 		}, {
 			id : 6,
 			pic:'assets/img/greencheck.png',
-			firstName : 'FFF',
+			firstName : 'HGH',
 			lastName : '500-0972',
 			username : '張三二',
 			status : 'nike',
@@ -121,7 +121,38 @@
 			statustext:'休假中',
 			phone:'0912-987654',
 			elocation:''
-		} ];
+		}, {
+			id : 8,
+			pic:'assets/img/ban-16.ico',
+			firstName : 'HHH',
+			lastName : '500-0971',
+			username : '張一恩',
+			status : 'ban',
+			statustext:'休假中',
+			phone:'0912-987654',
+			elocation:''
+		}, {
+			id : 9,
+			pic:'assets/img/ban-16.ico',
+			firstName : 'HHG',
+			lastName : '500-0971',
+			username : '林一二',
+			status : 'ban',
+			statustext:'休假中',
+			phone:'0912-987654',
+			elocation:''
+		}, {
+			id : 10,
+			pic:'assets/img/truck-016.ico',
+			firstName : 'GGH',
+			lastName : '500-0971',
+			username : '我一二',
+			status : 'car',
+			statustext:'休執行業務中',
+			phone:'0912-987654',
+			elocation:''
+		}
+	 ];
 
 
 
@@ -150,12 +181,12 @@
 		
 		}, {
 			id : 3,
-			pic:'assets/img/clock-016.ico',
+			pic:'assets/img/truck-016.ico',
 			firstName : 'CCC',
 			lastName : '500-0907',
 			username : '李四四',
-			status : 'clock',
-			statustext:'等待出車',
+			status : 'car',
+			statustext:'執行業務中',
 			phone:'0912-123456',
 			elocation:'https://www.google.com.tw/'
 		}, {
@@ -171,7 +202,7 @@
 		}, {
 			id : 5,
 			pic:'assets/img/greencheck.png',
-			firstName : 'EEE',
+			firstName : 'GHG',
 			lastName : '500-0977',
 			username : '丁一二',
 			status : 'nike',
@@ -181,7 +212,7 @@
 		}, {
 			id : 6,
 			pic:'assets/img/greencheck.png',
-			firstName : 'FFF',
+			firstName : 'HGH',
 			lastName : '500-0972',
 			username : '張三二',
 			status : 'nike',
@@ -198,7 +229,38 @@
 			statustext:'休假中',
 			phone:'0912-987654',
 			elocation:''
-		} ];
+		}, {
+			id : 8,
+			pic:'assets/img/ban-16.ico',
+			firstName : 'HHH',
+			lastName : '500-0971',
+			username : '張一恩',
+			status : 'ban',
+			statustext:'休假中',
+			phone:'0912-987654',
+			elocation:''
+		}, {
+			id : 9,
+			pic:'assets/img/ban-16.ico',
+			firstName : 'HHG',
+			lastName : '500-0971',
+			username : '林一二',
+			status : 'ban',
+			statustext:'休假中',
+			phone:'0912-987654',
+			elocation:''
+		}, {
+			id : 10,
+			pic:'assets/img/truck-016.ico',
+			firstName : 'GGH',
+			lastName : '500-0971',
+			username : '我一二',
+			status : 'car',
+			statustext:'執行業務中',
+			phone:'0912-987654',
+			elocation:''
+		}
+	 ];
 
 
 
