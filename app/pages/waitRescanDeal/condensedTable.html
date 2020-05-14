@@ -169,7 +169,7 @@
                     </thread>
                     <tbody style="overflow-y: auto;height:170px;display: block;">
                         <tr ng-repeat="item in carTableData">
-                            <td id="car{{item.id}}" class="cartd">
+                            <td id="car{{item.id}}" class="cartd" onclick='go2(this.id)'>
                                 <div class="hoverblank">
                                 <img ng-src="{{item.pic}}" alt="" height="15" width="15"/>&nbsp;&nbsp;&nbsp;&nbsp;{{item.firstName}}&nbsp;&nbsp;&nbsp;{{item.lastName}}
                                     <div class="hover">
@@ -217,6 +217,15 @@
         $('.cartd').removeClass("color");
         var personID='#'+id;
         var carID=personID.replace("person","car");
+        $(personID).addClass("color");
+        $(carID).addClass("color");
+    }
+
+    function go2(id){
+        $('.persontd').removeClass("color");
+        $('.cartd').removeClass("color");
+        var carID='#'+id;
+        var personID=carID.replace("car","person");
         $(personID).addClass("color");
         $(carID).addClass("color");
     }

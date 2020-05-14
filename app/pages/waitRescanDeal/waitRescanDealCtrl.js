@@ -10,10 +10,6 @@
 		$scope.buttonClass = "btn btn-success";
 		$scope.selected = {};
 		$scope.doRescanTicket = [];
-		// $scope.color = "white";
-        // $scope.setBlack= function () {
-        //     $scope.color = "black";
-        // }
 		
 
 		$scope.statusMapping = {
