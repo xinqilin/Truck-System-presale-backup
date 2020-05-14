@@ -18,16 +18,20 @@
 		$scope.rowCollection = [];
 		$scope.isEditMode = false;
 		
+		
 		$scope.saveEdit = function(){
 			var index = $scope.rowCollection.indexOf($scope.selectedData);
 			if (index !== -1) {
 				$scope.rowCollection.splice(index, 1, $scope.selectedData);
 			}
 			console.log($scope.selectedData);
+			$scope.data=false;
+			$scope.isEditMode = false;
 		}
 
 		$scope.showAdd=function(){
 			$scope.data=true;
+			$scope.isEditMode = false;
 		}
 		$scope.hideAdd=function(){
 			$scope.data=false;
@@ -36,6 +40,7 @@
 		$scope.showDetail = function (row) {
 			$scope.isEditMode = false;
 			$scope.selectedData = row;
+			$scope.data=false;
 		}
 
 		$scope.detele = function(event,row){
@@ -49,6 +54,7 @@
 		$scope.edit = function(event,row){
 			event.stopPropagation();
 			$scope.selectedData = row
+			$scope.data=false;
 			$scope.isEditMode = true;
 		}
 

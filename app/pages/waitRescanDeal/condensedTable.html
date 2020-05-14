@@ -192,18 +192,8 @@
                 </table>
             </div>
         </div>
-        <div ng-if="selectedData.id">
-            <uib-tabset active="$tabSetStatus.activeTab" class="megabank-theme">
-                <uib-tab heading="{{isEditMode ? '修改派車資訊':'派車資訊'}}">
-                    <div ng-include="'app/pages/waitRescanDeal/detailTab/carDetail.html'"></div>
-                </uib-tab>
-                <uib-tab heading="金額細項">
-                    <div ng-include="'app/pages/waitRescanDeal/detailTab/amountDetail.html'">
-                    </div>
-                </uib-tab>
-            </uib-tabset>
-        </div>
-    <!-- 新增 -->
+
+        <!-- 新增 -->
         <div class="panel panel-default" ng-show="data">
             <div class="panel-body">
                 <table width="100%" class="table columtable">
@@ -318,6 +308,20 @@
                 </table>
             </div>
         </div>
+
+        
+        <div ng-if="selectedData.id">
+            <uib-tabset active="$tabSetStatus.activeTab" class="megabank-theme">
+                <uib-tab heading="{{isEditMode ? '修改派車資訊':'派車資訊'}}">
+                    <div ng-include="'app/pages/waitRescanDeal/detailTab/carDetail.html'"></div>
+                </uib-tab>
+                <uib-tab heading="金額細項">
+                    <div ng-include="'app/pages/waitRescanDeal/detailTab/amountDetail.html'">
+                    </div>
+                </uib-tab>
+            </uib-tabset>
+        </div>
+    
 
 
     </div>
@@ -443,28 +447,3 @@
     }
     
 </script>
-<!--footer-->
-<div>
-    <div class="form-check form-check-inline">
-        <label class="form-check-label" for="inlineCheckbox1">匯出:</label>
-    </div>
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-        <label class="form-check-label" for="inlineCheckbox1">派車便條</label>
-    </div>
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-        <label class="form-check-label" for="inlineCheckbox2">訂購三聯單</label>
-    </div>
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-        <label class="form-check-label" for="inlineCheckbox3">一般帳款</label>
-    </div>
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    <div class="form-check form-check-inline">
-        <input type="button" class="btn btn-success" type="button" value="確認列印" />
-    </div>
-</div>
