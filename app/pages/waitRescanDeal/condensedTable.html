@@ -1,38 +1,45 @@
 <style>
+    /* 覆寫table行高 */
     .table>tbody>tr>td {
         line-height: 25px;
     }
 
+    /* 自定義list符號 ------start------- */
     .custom-ul {
         list-style: none;
         padding: 0;
     }
 
-    .custom-ul>li {
-        padding-left: 1.3em;
-        display: flex;
-    }
-
-    /* 限制資料內容寬度，避免 */
-    .custom-ul>li>div {
-        width: 80%;
-        overflow-wrap: break-word;
-    }
-
-    .custom-ul>li:before {
+    /* .custom-ul>li:before {
         content: "\f192";
-        /* FontAwesome Unicode */
         font-family: "FontAwesome";
         font-weight: 300;
         display: inline-block;
         margin-left: -1.3em;
-        /* same as padding-left set on li */
         width: 1.3em;
-        /* same as padding-left set on li */
+    } */
+    /* 自定義list符號 ------end------- */
+
+    /* 調整padding並讓子元素以flexbox呈現 */
+    .custom-ul>li {
+        display: flex;
+        font-size: small;
     }
 
+    /* 展開flexbox底下的span的內容，避免換行 */
+    .custom-ul>li>span {
+        flex-shrink: 0;
+    }
+
+    /* 限制資料內容寬度，避免超出邊界 */
+    .custom-ul>li>div {
+        width: 80%;
+        overflow-wrap: break-word;
+        padding-left: 5px;
+    }
+
+    /* 定義清單用的縮排 */
     .custom-ul>li>.custom-li-indentation {
-        padding-left: 1em;
         padding-right: 0.5em;
     }
 
@@ -55,53 +62,62 @@
         border-right: 0px;
     }
 
-    .table-1 th{
-    border:1px solid black;
-    
-    }
-    .hoverblank:hover .hover{
-      display:block;
-    }
-    .hover{
-        border:1px dotted black;
-      display:none;
-      background-color: #F0F0F0;
-      position: absolute;
-      width: 100px;
-      z-index:9999;
-      /* position: relative; */
-      top: -5px;
-      left: 5%;
-      border-radius: 20px;
-    }
-    .hoverblank{
-        
-        position: relative;
-        display: inline-block;
-        
-    }
-    .hoverblank1:hover .hover1{
-      display:block;
-    }
-    .hover1{
-        border:1px dotted black;
-      display:none;
-      background-color: #F0F0F0;
-      position: absolute;
-      width: 100px;
-      z-index:9999;
-      /* position: relative; */
-      top: -5px;
-      left:80%;
-      border-radius: 20px;
-    }
-    .hoverblank1{
-        
-        position: relative;
-        display: inline-block;
-        
+    .table-1 th {
+        border: 1px solid black;
+
     }
 
+    .hoverblank:hover .hover {
+        display: block;
+    }
+
+    .hover {
+        border: 1px dotted black;
+        display: none;
+        background-color: #F0F0F0;
+        position: absolute;
+        width: 100px;
+        z-index: 9999;
+        /* position: relative; */
+        top: -5px;
+        left: 5%;
+        border-radius: 20px;
+    }
+
+    .hoverblank {
+
+        position: relative;
+        display: inline-block;
+
+    }
+
+    .hoverblank1:hover .hover1 {
+        display: block;
+    }
+
+    .hover1 {
+        border: 1px dotted black;
+        display: none;
+        background-color: #F0F0F0;
+        position: absolute;
+        width: 100px;
+        z-index: 9999;
+        /* position: relative; */
+        top: -5px;
+        left: 80%;
+        border-radius: 20px;
+    }
+
+    .hoverblank1 {
+
+        position: relative;
+        display: inline-block;
+
+    }
+
+    .carcolor {
+        background-color: silver;
+    }
 </style>
 <div class="row">
     <div class="col-md-9">
@@ -146,7 +162,8 @@
             <div class="panel-body">
                 <table width="100%" class="table columtable">
                     <tr>
-                        <td width="10%" style="text-align: center; vertical-align:middle; font-size: x-large;">
+                        <td width="10%"
+                            style="text-align: center; vertical-align:middle; font-size: large; color: blue;">
                             <span ng-bind-html="dateFormatter(selectedData.usedDate)"></span>
                             <br>
                             {{selectedData.driver}}
@@ -158,9 +175,11 @@
                                         class="custom-li-indentation">車型車號:</span>{{selectedData.type}}&nbsp;{{selectedData.lincenseNo}}
                                 </li>
                                 <li><span class="custom-li-indentation">起訖地點:</span>
-                                    <div>
-                                        起 {{selectedData.starting}}<br>
-                                        迄 {{selectedData.terminal}}
+                                    <div style="width: 40%; border-right: 1px solid #e0e0e0;">
+                                        起:&nbsp;{{selectedData.starting}}
+                                    </div>
+                                    <div style="width: 40%;">
+                                        訖:&nbsp;{{selectedData.terminal}}
                                     </div>
                                 </li>
                                 <li><span class="custom-li-indentation">載貨內容:</span>
@@ -193,11 +212,12 @@
 
         <div class="panel panel-default">
             <div class="panel-body">
-                
+
                 <table class="table table-hover table-textcut " st-table="peopleTableData">
                     <thread>
                         <th>
-                            <select name="" st-search="status"  style="border-style: none;outline: none;margin-left: 30%;text-align: center;text-align-last: center;">
+                            <select name="" st-search="status"
+                                style="border-style: none;outline: none;margin-left: 30%;text-align: center;text-align-last: center;">
                                 <option value="">人員狀態</option>
                                 <option value="car">執行業務中</option>
                                 <option value="clock">等待出車</option>
@@ -207,12 +227,14 @@
                             <!-- <input st-search="status" class="input-sm form-control search-input" type="search" /> -->
                         </th>
                     </thread><br>
-                    <tbody  style="overflow-y: auto;height:170px;display: block;">
+                    <tbody style="overflow-y: auto;height:170px;display: block;">
                         <tr ng-repeat="item in peopleTableData" style="display: inline-table;">
-                            
-                            <td style="text-align: center; width:7vw;"  onclick='go(this.id)' id="person{{item.id}}" class="persontd">
+
+                            <td style="text-align: center; width:7vw;padding-bottom: 5px;padding-top:5px;"
+                                onclick='go(this.id)' id="person{{item.id}}" class="persontd">
                                 <div class="hoverblank">
-                                    <img ng-src="{{item.pic}}" alt="" height="15" width="15"/>&nbsp;&nbsp;&nbsp;&nbsp;{{item.username}}
+                                    <img ng-src="{{item.pic}}" alt="" height="15"
+                                        width="15" />&nbsp;&nbsp;&nbsp;{{item.username}}
                                     <div class="hover">
                                         {{item.statustext}}<br>
                                         {{item.phone}}<br>
@@ -232,7 +254,8 @@
                 <table class="table table-hover table-textcut " st-table="carTableData">
                     <thread>
                         <th>
-                            <select name="" st-search="status"  style="border-style: none;outline: none;margin-left: 30%;text-align: center;text-align-last: center;">
+                            <select name="" st-search="status"
+                                style="border-style: none;outline: none;margin-left: 30%;text-align: center;text-align-last: center;">
                                 <option value="">車輛狀態</option>
                                 <option value="car">執行業務中</option>
                                 <option value="clock">等待出車</option>
@@ -243,12 +266,14 @@
                     </thread>
                     <tbody style="overflow-y: auto;height:170px;display: block;">
                         <tr ng-repeat="item in carTableData">
-                            <td id="car{{item.id}}" class="cartd" onclick='go2(this.id)'>
+                            <td id="car{{item.id}}" class="cartd" onclick='go2(this.id)'
+                                style="padding-bottom: 5px;padding-top:5px;">
                                 <div class="hoverblank1">
-                                <img ng-src="{{item.pic}}" alt="" height="15" width="15"/>&nbsp;&nbsp;&nbsp;&nbsp;{{item.firstName}}&nbsp;&nbsp;&nbsp;{{item.lastName}}
+                                    <img ng-src="{{item.pic}}" alt="" height="15"
+                                        width="15" />&nbsp;&nbsp;&nbsp;&nbsp;{{item.firstName}}&nbsp;&nbsp;&nbsp;{{item.lastName}}
                                     <div class="hover1">
                                         {{item.statustext}}<br>
-                                        {{item.phone}}<br>
+                                        <!-- {{item.phone}}<br> -->
                                         <a href="{{item.elocation}}">eLocation</a>
                                     </div>
                                 </div>
@@ -261,23 +286,23 @@
     </div>
 </div>
 <script>
-    function go(id){
+    function go(id) {
         // alert(status);
-        $('.persontd').removeClass("color");
-        $('.cartd').removeClass("color");
-        var personID='#'+id;
-        var carID=personID.replace("person","car");
-        $(personID).addClass("color");
-        $(carID).addClass("color");
+        $('.persontd').removeClass("carcolor");
+        $('.cartd').removeClass("carcolor");
+        var personID = '#' + id;
+        var carID = personID.replace("person", "car");
+        $(personID).addClass("carcolor");
+        $(carID).addClass("carcolor");
     }
 
-    function go2(id){
-        $('.persontd').removeClass("color");
-        $('.cartd').removeClass("color");
-        var carID='#'+id;
-        var personID=carID.replace("car","person");
-        $(personID).addClass("color");
-        $(carID).addClass("color");
+    function go2(id) {
+        $('.persontd').removeClass("carcolor");
+        $('.cartd').removeClass("carcolor");
+        var carID = '#' + id;
+        var personID = carID.replace("car", "person");
+        $(personID).addClass("carcolor");
+        $(carID).addClass("carcolor");
     }
 </script>
 <!--footer-->

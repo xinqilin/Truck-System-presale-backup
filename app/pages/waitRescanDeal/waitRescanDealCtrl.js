@@ -205,7 +205,7 @@
 			status : 'clock',
 			statustext:'等待出車',
 			phone:'0912-987654',
-			elocation:''
+			elocation:'https://www.google.com.tw/'
 		}, {
 			id : 5,
 			pic:'assets/img/greencheck.png',
@@ -215,7 +215,7 @@
 			status : 'nike',
 			statustext:'排班中',
 			phone:'0912-987654',
-			elocation:''
+			elocation:'https://www.google.com.tw/'
 		}, {
 			id : 6,
 			pic:'assets/img/greencheck.png',
@@ -225,7 +225,7 @@
 			status : 'nike',
 			statustext:'排班中',
 			phone:'0912-987654',
-			elocation:''
+			elocation:'https://www.google.com.tw/'
 		}, {
 			id : 7,
 			pic:'assets/img/ban-16.ico',
@@ -235,7 +235,7 @@
 			status : 'ban',
 			statustext:'休假中',
 			phone:'0912-987654',
-			elocation:''
+			elocation:'https://www.google.com.tw/'
 		}, {
 			id : 8,
 			pic:'assets/img/ban-16.ico',
@@ -245,7 +245,7 @@
 			status : 'ban',
 			statustext:'休假中',
 			phone:'0912-987654',
-			elocation:''
+			elocation:'https://www.google.com.tw/'
 		}, {
 			id : 9,
 			pic:'assets/img/ban-16.ico',
@@ -255,7 +255,7 @@
 			status : 'ban',
 			statustext:'休假中',
 			phone:'0912-987654',
-			elocation:''
+			elocation:'https://www.google.com.tw/'
 		}, {
 			id : 10,
 			pic:'assets/img/truck-016.ico',
@@ -265,7 +265,7 @@
 			status : 'car',
 			statustext:'休執行業務中',
 			phone:'0912-987654',
-			elocation:''
+			elocation:'https://www.google.com.tw/'
 		}
 	 ];
 
@@ -313,7 +313,7 @@
 			status : 'clock',
 			statustext:'等待出車',
 			phone:'0912-987654',
-			elocation:''
+			elocation:'https://www.google.com.tw/'
 		}, {
 			id : 5,
 			pic:'assets/img/greencheck.png',
@@ -323,7 +323,7 @@
 			status : 'nike',
 			statustext:'排班中',
 			phone:'0912-987654',
-			elocation:''
+			elocation:'https://www.google.com.tw/'
 		}, {
 			id : 6,
 			pic:'assets/img/greencheck.png',
@@ -333,9 +333,9 @@
 			status : 'nike',
 			statustext:'排班中',
 			phone:'0912-987654',
-			elocation:''
+			elocation:'https://www.google.com.tw/'
 		}, {
-			id : 7,
+			id : 17,
 			pic:'assets/img/ban-16.ico',
 			firstName : 'GGG',
 			lastName : '500-0971',
@@ -343,9 +343,9 @@
 			status : 'ban',
 			statustext:'休假中',
 			phone:'0912-987654',
-			elocation:''
+			elocation:'https://www.google.com.tw/'
 		}, {
-			id : 8,
+			id : 18,
 			pic:'assets/img/ban-16.ico',
 			firstName : 'HHH',
 			lastName : '500-0971',
@@ -353,9 +353,9 @@
 			status : 'ban',
 			statustext:'休假中',
 			phone:'0912-987654',
-			elocation:''
+			elocation:'https://www.google.com.tw/'
 		}, {
-			id : 9,
+			id : 19,
 			pic:'assets/img/ban-16.ico',
 			firstName : 'HHG',
 			lastName : '500-0971',
@@ -363,7 +363,7 @@
 			status : 'ban',
 			statustext:'休假中',
 			phone:'0912-987654',
-			elocation:''
+			elocation:'https://www.google.com.tw/'
 		}, {
 			id : 10,
 			pic:'assets/img/truck-016.ico',
@@ -373,7 +373,7 @@
 			status : 'car',
 			statustext:'執行業務中',
 			phone:'0912-987654',
-			elocation:''
+			elocation:'https://www.google.com.tw/'
 		}
 	 ];
 
