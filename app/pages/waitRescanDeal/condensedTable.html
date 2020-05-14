@@ -95,17 +95,17 @@
         display: block;
     }
 
-    .hover1 {
-        border: 1px dotted black;
-        display: none;
-        background-color: #F0F0F0;
-        position: absolute;
-        width: 100px;
-        z-index: 9999;
-        /* position: relative; */
-        top: -5px;
-        left: 80%;
-        border-radius: 20px;
+    .hover1{
+        border:1px dotted black;
+      display:none;
+      background-color: #F0F0F0;
+      position: absolute;
+      width: 100px;
+      z-index:9999;
+      /* position: relative; */
+      top: -5px;
+      left:70%;
+      border-radius: 20px;
     }
 
     .hoverblank1 {
@@ -113,6 +113,9 @@
         position: relative;
         display: inline-block;
 
+    }
+    .carcolor{
+        background-color: silver;
     }
 
     .carcolor {
@@ -229,12 +232,10 @@
                     </thread><br>
                     <tbody style="overflow-y: auto;height:170px;display: block;">
                         <tr ng-repeat="item in peopleTableData" style="display: inline-table;">
-
-                            <td style="text-align: center; width:7vw;padding-bottom: 5px;padding-top:5px;"
-                                onclick='go(this.id)' id="person{{item.id}}" class="persontd">
+                            
+                            <td style="text-align: center; width:7vw;padding-bottom: 5px;padding-top:5px;"  onclick='go(this.id)' id="person{{item.id}}" class="persontd">
                                 <div class="hoverblank">
-                                    <img ng-src="{{item.pic}}" alt="" height="15"
-                                        width="15" />&nbsp;&nbsp;&nbsp;{{item.username}}
+                                    <img ng-src="{{item.pic}}" alt="" height="15" width="15"/>&nbsp;&nbsp;&nbsp;{{item.username}}
                                     <div class="hover">
                                         {{item.statustext}}<br>
                                         {{item.phone}}<br>
@@ -266,8 +267,7 @@
                     </thread>
                     <tbody style="overflow-y: auto;height:170px;display: block;">
                         <tr ng-repeat="item in carTableData">
-                            <td id="car{{item.id}}" class="cartd" onclick='go2(this.id)'
-                                style="padding-bottom: 5px;padding-top:5px;">
+                            <td id="car{{item.id}}" class="cartd" onclick='go2(this.id)' style="padding-bottom: 5px;padding-top:5px;">
                                 <div class="hoverblank1">
                                     <img ng-src="{{item.pic}}" alt="" height="15"
                                         width="15" />&nbsp;&nbsp;&nbsp;&nbsp;{{item.firstName}}&nbsp;&nbsp;&nbsp;{{item.lastName}}
@@ -290,17 +290,17 @@
         // alert(status);
         $('.persontd').removeClass("carcolor");
         $('.cartd').removeClass("carcolor");
-        var personID = '#' + id;
-        var carID = personID.replace("person", "car");
+        var personID='#'+id;
+        var carID=personID.replace("person","car");
         $(personID).addClass("carcolor");
         $(carID).addClass("carcolor");
     }
 
-    function go2(id) {
+    function go2(id){
         $('.persontd').removeClass("carcolor");
         $('.cartd').removeClass("carcolor");
-        var carID = '#' + id;
-        var personID = carID.replace("car", "person");
+        var carID='#'+id;
+        var personID=carID.replace("car","person");
         $(personID).addClass("carcolor");
         $(carID).addClass("carcolor");
     }
