@@ -42,7 +42,7 @@
   z-index:9999;
   /* position: relative; */
   top: -20px;
-  right: 10%;
+  right: 5%;
   border-radius: 20px;
 }
 .hoverblank{
@@ -52,6 +52,9 @@
     
 }
 
+.color{
+    background-color:#E0E0E0;
+}
     
 </style>
 <div class="row">
@@ -132,7 +135,8 @@
                     </thread>
                     <tbody  style="overflow-y: auto;height:170px;display: block;">
                         <tr ng-repeat="item in peopleTableData" style="display: inline-table;">
-                            <td style="text-align: center; width:7vw;">
+                            
+                            <td style="text-align: center; width:7vw;"  onclick='go(this.id)' id="person{{item.id}}" class="persontd">
                                 <div class="hoverblank">
                                     <img ng-src="{{item.pic}}" alt="" height="15" width="15"/>&nbsp;&nbsp;&nbsp;&nbsp;{{item.username}}
                                     <div class="hover">
@@ -142,6 +146,7 @@
                                     </div>
                                 </div>
                             </td>
+
                         </tr>
                     </tbody>
                 </table>
@@ -164,7 +169,7 @@
                     </thread>
                     <tbody style="overflow-y: auto;height:170px;display: block;">
                         <tr ng-repeat="item in carTableData">
-                            <td id="car{{item.id}}">
+                            <td id="car{{item.id}}" class="cartd">
                                 <div class="hoverblank">
                                 <img ng-src="{{item.pic}}" alt="" height="15" width="15"/>&nbsp;&nbsp;&nbsp;&nbsp;{{item.firstName}}&nbsp;&nbsp;&nbsp;{{item.lastName}}
                                     <div class="hover">
@@ -205,10 +210,16 @@
       </div>
     </div>
 </div>
+
 <script>
-    $('.person').click(function(){
-        alert(111);
-    });
+    function go(id){
+        $('.persontd').removeClass("color");
+        $('.cartd').removeClass("color");
+        var personID='#'+id;
+        var carID=personID.replace("person","car");
+        $(personID).addClass("color");
+        $(carID).addClass("color");
+    }
 </script>
 <script
   src="https://code.jquery.com/jquery-1.12.4.min.js"
