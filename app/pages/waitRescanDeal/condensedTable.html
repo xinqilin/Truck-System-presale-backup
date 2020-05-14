@@ -13,6 +13,7 @@
         display: flex;
     }
 
+    /* 限制資料內容寬度，避免 */
     .custom-ul>li>div {
         width: 80%;
         overflow-wrap: break-word;
@@ -53,6 +54,54 @@
     .columtable>tbody>tr>td:last-child {
         border-right: 0px;
     }
+
+    .table-1 th{
+    border:1px solid black;
+    
+    }
+    .hoverblank:hover .hover{
+      display:block;
+    }
+    .hover{
+        border:1px dotted black;
+      display:none;
+      background-color: #F0F0F0;
+      position: absolute;
+      width: 100px;
+      z-index:9999;
+      /* position: relative; */
+      top: -5px;
+      left: 5%;
+      border-radius: 20px;
+    }
+    .hoverblank{
+        
+        position: relative;
+        display: inline-block;
+        
+    }
+    .hoverblank1:hover .hover1{
+      display:block;
+    }
+    .hover1{
+        border:1px dotted black;
+      display:none;
+      background-color: #F0F0F0;
+      position: absolute;
+      width: 100px;
+      z-index:9999;
+      /* position: relative; */
+      top: -5px;
+      left:80%;
+      border-radius: 20px;
+    }
+    .hoverblank1{
+        
+        position: relative;
+        display: inline-block;
+        
+    }
+
 </style>
 <div class="row">
     <div class="col-md-9">
@@ -144,22 +193,93 @@
 
         <div class="panel panel-default">
             <div class="panel-body">
-                sassasa
+                
+                <table class="table table-hover table-textcut " st-table="peopleTableData">
+                    <thread>
+                        <th>
+                            <select name="" st-search="status"  style="border-style: none;outline: none;margin-left: 30%;text-align: center;text-align-last: center;">
+                                <option value="">人員狀態</option>
+                                <option value="car">執行業務中</option>
+                                <option value="clock">等待出車</option>
+                                <option value="nike">排班中</option>
+                                <option value="ban">休假中</option>
+                            </select>
+                            <!-- <input st-search="status" class="input-sm form-control search-input" type="search" /> -->
+                        </th>
+                    </thread><br>
+                    <tbody  style="overflow-y: auto;height:170px;display: block;">
+                        <tr ng-repeat="item in peopleTableData" style="display: inline-table;">
+                            
+                            <td style="text-align: center; width:7vw;"  onclick='go(this.id)' id="person{{item.id}}" class="persontd">
+                                <div class="hoverblank">
+                                    <img ng-src="{{item.pic}}" alt="" height="15" width="15"/>&nbsp;&nbsp;&nbsp;&nbsp;{{item.username}}
+                                    <div class="hover">
+                                        {{item.statustext}}<br>
+                                        {{item.phone}}<br>
+                                        <a href="{{item.elocation}}">eLocation</a>
+                                    </div>
+                                </div>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
+
         <div class="panel panel-default">
             <div class="panel-body">
-                sassasa
+                <table class="table table-hover table-textcut " st-table="carTableData">
+                    <thread>
+                        <th>
+                            <select name="" st-search="status"  style="border-style: none;outline: none;margin-left: 30%;text-align: center;text-align-last: center;">
+                                <option value="">車輛狀態</option>
+                                <option value="car">執行業務中</option>
+                                <option value="clock">等待出車</option>
+                                <option value="nike">排班中</option>
+                                <option value="ban">休假中</option>
+                            </select>
+                        </th>
+                    </thread>
+                    <tbody style="overflow-y: auto;height:170px;display: block;">
+                        <tr ng-repeat="item in carTableData">
+                            <td id="car{{item.id}}" class="cartd" onclick='go2(this.id)'>
+                                <div class="hoverblank1">
+                                <img ng-src="{{item.pic}}" alt="" height="15" width="15"/>&nbsp;&nbsp;&nbsp;&nbsp;{{item.firstName}}&nbsp;&nbsp;&nbsp;{{item.lastName}}
+                                    <div class="hover1">
+                                        {{item.statustext}}<br>
+                                        {{item.phone}}<br>
+                                        <a href="{{item.elocation}}">eLocation</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
 </div>
+<script>
+    function go(id){
+        // alert(status);
+        $('.persontd').removeClass("color");
+        $('.cartd').removeClass("color");
+        var personID='#'+id;
+        var carID=personID.replace("person","car");
+        $(personID).addClass("color");
+        $(carID).addClass("color");
+    }
 
-
-
-
-
-
+    function go2(id){
+        $('.persontd').removeClass("color");
+        $('.cartd').removeClass("color");
+        var carID='#'+id;
+        var personID=carID.replace("car","person");
+        $(personID).addClass("color");
+        $(carID).addClass("color");
+    }
+</script>
 <!--footer-->
 <div>
     <div class="form-check form-check-inline">
