@@ -221,8 +221,9 @@
                             </select>
                             
                         </div>
-                        <div  style="text-align: left;" id="addAssDiv">
-                            <button onclick="addAss()" class="btn btn-xs btn-danger">增加助手</button>
+                        <div  style="text-align: left;" >
+                            <button onclick="deleteAss()" class="btn btn-xs btn-danger" id="deleteAssButton">減少助手</button>
+                            <button onclick="addAss()" class="btn btn-xs btn-danger" id="addAssDiv">增加助手</button>
                         </div>
                         
                         </td>
@@ -440,8 +441,10 @@
         $(carID).addClass("carcolor");
     }
     var count=0;
+    $('#deleteAssButton').hide();
     function addAss(){
-        count+=1;
+        count++;
+        $('#deleteAssButton').show();
         var ass=$('<span></span>').append('助手'+count+': &nbsp;');
         var select=$('<select  style="font-size:15px;border-radius: 10px;"></select>').append('<option value="張三二">張三二</option><option value="張三三">張三三</option><option value="張一恩">張一恩</option>');
         var obj=$('<div></div>').append(ass).append(select).appendTo('#driverAndAss');
@@ -450,9 +453,22 @@
             var exceedText=$('<span style="color:red;">助手人數已達上限</span>')
             var exceedDiv=$('<div></div>').append(exceedText).appendTo('#driverAndAss');
             $('#addAssDiv').hide();
-            return;
+            
         }
-        
+        console.log(count);
+    }
+
+    function deleteAss(){
+        if(count==2){
+            $('#driverAndAss').children().last().remove();
+        }
+        count--;
+        $('#addAssDiv').show();
+        if(count<1){
+            $('#deleteAssButton').hide();
+        }
+        $('#driverAndAss').children().last().remove();
+        console.log(count);
     }
 
     var itemCount=1;
