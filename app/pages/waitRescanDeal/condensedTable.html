@@ -1,94 +1,140 @@
 <style>
-    input.search-input {
-        margin-left: -2px;
+    .table>tbody>tr>td {
+        line-height: 25px;
     }
 
-    .bootstrap-select>.dropdown-toggle {
-        width: 100%;
+    .custom-ul {
+        list-style: none;
+        padding: 0;
     }
 
-    .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
-        width: 60px;
+    .custom-ul>li {
+        padding-left: 1.3em;
+        display: flex;
     }
 
-
-    /* filter左右padding */
-
-    tr .form-control {
-        padding-left: 2px;
-        padding-right: 0px;
+    .custom-ul>li>div {
+        width: 80%;
+        overflow-wrap: break-word;
     }
 
-
-    /* table過濾的padding變小 */
-
-    .table>thead>tr>th {
-        padding: 3px;
+    .custom-ul>li:before {
+        content: "\f192";
+        /* FontAwesome Unicode */
+        font-family: "FontAwesome";
+        font-weight: 300;
+        display: inline-block;
+        margin-left: -1.3em;
+        /* same as padding-left set on li */
+        width: 1.3em;
+        /* same as padding-left set on li */
     }
 
-    .table-1 {
-        border: 1px dashed black;
-
+    .custom-ul>li>.custom-li-indentation {
+        padding-left: 1em;
+        padding-right: 0.5em;
     }
 
-    .table-1 th {
-        border: 1px dashed black;
+    .columtable>tbody {
+        border-top: hidden;
+    }
 
+    .columtable>tbody>tr>td {
+        border-right: 1px solid #e0e0e0;
+    }
+
+    /* .columtable>tbody>tr>td>ul {
+        padding-left: 1em;
+    } */
+    .columtable li {
+        text-align: left;
+    }
+
+    .columtable>tbody>tr>td:last-child {
+        border-right: 0px;
     }
 </style>
 <div class="row">
-    <div class="col-md-9 column">
+    <div class="col-md-9">
         <div class="panel panel-default">
             <div class="panel-body">
-                <table class="table table-hover table-textcut " st-table="criticalTicket">
+                <table class="table table-hover table-textcut" st-table="truckInfo">
                     <thead>
                         <tr class="sortable">
-                            <th st-sort="device" width="10%">據點分布</th>
-                            <th st-sort="weaknessid" width="10%">假別</th>
-                            <th st-sort="ticketName" width="30%">事由</th>
-                            <th st-sort="createDate" width="8%">填寫日</th>
-                            <th st-sort="expectedDate" width="15%">開始時間</th>
-                            <th st-sort="expectedDate" width="15%">結束時間</th>
-                            <th st-sort="time" width="3%">時數</th>
-
-                        </tr>
-                        <tr>
-                            <th>
-                                <select st-search="device" class="form-control">
-                                    <option value="">請選擇地點</option>
-                                    <option>台北</option>
-                                    <option>林口</option>
-
-                                </select>
-                            </th>
-                            <th>
-                                <select st-search="weaknessid" class="form-control">
-                                    <option value="">請選擇</option>
-                                    <option value="spe">特休</option>
-                                    <option value="issue">事假</option>
-                                    <option value="sick1">支薪病假</option>
-                                    <option value="sick2">不支薪病假</option>
-                                    <option value="sick2">預支假</option>
-                                </select>
-                            </th>
-
-                            <th>
-                                <input st-search="ticketName" placeholder="請輸入事由" class="form-control" type="search" />
-                            </th>
-                            <th>
-                                <input type="text" id="createTime" class="form-control" disabled style="color:black;">
-                            </th>
-                            <th>
-                                <input type="text" id="start" class="form-control">
-                            </th>
-                            <th>
-                                <input type="text" id="end" class="form-control">
-                            </th>
-                            <th>
-                                <input type="text" disabled class="form-control" id="hour" style="color: black;">
-                            </th>
+                            <th st-sort="usedDate" style="text-align: center;" width="15%">用車日期</th>
+                            <th st-sort="type" style="text-align: center;" width="5%">車型</th>
+                            <th st-sort="lincenseNo" style="text-align: center;" width="10%">車號</th>
+                            <th style="text-align: center;" width="35%">收獲地點</th>
+                            <th style="text-align: center;" width="35%">備註</th>
                         </tr>
                     </thead>
+                    <tbody>
+                        <tr ng-repeat="row in truckInfo" ng-click="showDetail(row)">
+                            <td style="text-align: center;"><span ng-bind-html="dateFormatter(row.usedDate)"></span>
+                            </td>
+                            <td style="text-align: center;">{{row.type}}</td>
+                            <td style="text-align: center;">
+                                <span class="textcut" uib-tooltip="{{row.lincenseNo}}" tooltip-placement="bottom-left"
+                                    tooltip-class="customClass">{{row.lincenseNo}}</span>
+                            </td>
+                            <td style="text-align: center;">
+                                {{row.terminal}}</td>
+                            <td><span class="" uib-tooltip="{{row.remark}}" tooltip-placement="bottom-left"
+                                    tooltip-class="customClass">{{row.remark|textCut:true:30:' ...'}}</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td class="text-center" st-pagination="" st-items-by-page="7" colspan="6">
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        <div class="panel panel-default" ng-if="selectedData.id">
+            <div class="panel-body">
+                <table width="100%" class="table columtable">
+                    <tr>
+                        <td width="10%" style="text-align: center; vertical-align:middle; font-size: x-large;">
+                            <span ng-bind-html="dateFormatter(selectedData.usedDate)"></span>
+                            <br>
+                            {{selectedData.driver}}
+
+                        </td>
+                        <td width="65%">
+                            <ul class="custom-ul">
+                                <li><span
+                                        class="custom-li-indentation">車型車號:</span>{{selectedData.type}}&nbsp;{{selectedData.lincenseNo}}
+                                </li>
+                                <li><span class="custom-li-indentation">起訖地點:</span>
+                                    <div>
+                                        起 {{selectedData.starting}}<br>
+                                        迄 {{selectedData.terminal}}
+                                    </div>
+                                </li>
+                                <li><span class="custom-li-indentation">載貨內容:</span>
+                                    <div>{{selectedData.cargoContent}}</div>
+                                </li>
+                                <li><span class="custom-li-indentation">備註:</span>
+                                    <div>{{selectedData.remark}}</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td width="25%">
+                            <ul class="custom-ul">
+                                <li>
+                                    <span class="custom-li-indentation">結案:</span>
+                                    <div>{{selectedData.arriveTime}}</div>
+                                </li>
+                                <li>
+                                    <span class="custom-li-indentation">回程抵達:</span>
+                                    <div>{{selectedData.returnTime}}</div>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
                 </table>
             </div>
         </div>
@@ -139,12 +185,3 @@
         <input type="button" class="btn btn-success" type="button" value="確認列印" />
     </div>
 </div>
-<script
-    src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.js"></script>
-<link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-    crossorigin="anonymous"></script>
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
