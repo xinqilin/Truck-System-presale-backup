@@ -95,7 +95,7 @@
 			status : 'nike'
 		}, {
 			id : 7,
-			pic:'assets/img/stop.jpg',
+			pic:'assets/img/ban-16.ico',
 			firstName : 'GGG',
 			lastName : '500-0971',
 			username : '張一二',
@@ -151,7 +151,7 @@
 			status : 'nike'
 		}, {
 			id : 7,
-			pic:'assets/img/stop.jpg',
+			pic:'assets/img/ban-16.ico',
 			firstName : 'GGG',
 			lastName : '500-0971',
 			username : '張一二',
