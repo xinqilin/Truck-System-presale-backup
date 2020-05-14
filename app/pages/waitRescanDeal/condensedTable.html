@@ -122,6 +122,8 @@
         background-color: silver;
     }
 </style>
+
+<button class="btn btn-info" ng-click="showAdd()">新增</button>
 <div class="row">
     <div class="col-md-9">
         <div class="panel panel-default">
@@ -209,6 +211,123 @@
                 </table>
             </div>
         </div>
+    <!-- 新增 -->
+        <div class="panel panel-default" ng-show="data">
+            <div class="panel-body">
+                <table width="100%" class="table columtable">
+                    <tr style="font-size:12px;">
+                        <td width="10%"
+                            style="text-align: center; vertical-align:middle; font-size: large; color: blue;">
+                            
+                                <datepicker-group ng-model='date' maxdate='maxdate' mindate='mindate' clear-hide='true'>	         	
+                                </datepicker-group>
+                                <input type="time" style="border-radius: 10px;" value="10:00" style="font-size:15px;">
+                            
+                            <div id="driverAndAss" style="text-align: left;font-size:15px;">駕駛:
+                            <select name="driver" id="" style="font-size:15px;border-radius: 10px;">
+                                <option value="張三一">張三一</option>
+                                <option value="李四五">李四五</option>
+                                <option value="李四四">李四四</option>
+                                <option value="丁一一">丁一一</option>
+                                <option value="丁一二">丁一二</option>
+                                <option value="張三二">張三二</option>
+                                <option value="張一二">張一二</option>
+                                <option value="張一恩">張一恩</option>
+                                <option value="林一二">林一二</option>
+                                <option value="我一二">我一二</option>
+                                <option value="丁十一">丁十一</option>
+                            </select>
+                            
+                        </div>
+                        <div  style="text-align: left;">
+                            <button onclick="addAss()" class="btn btn-xs btn-danger">增加助手</button>
+                        </div>
+                        
+                        </td>
+                        <td width="65%">
+                            <ul class="custom-ul">
+                                <li>
+                                    <div style="width: 53%; border-right: 1px solid #e0e0e0;">
+                                        <span
+                                        class="custom-li-indentation">車型車號:</span>
+                                        <select name="type" id="" style="border-radius: 10px;">
+                                            <option value="1.5噸">1.5噸</option>
+                                            <option value="2.0噸">2.0噸</option>
+                                            <option value="2.5噸">2.5噸</option>
+                                            <option value="3.0噸">3.0噸</option>
+                                            <option value="3.5噸">3.5噸</option>
+                                        </select>
+                                        &nbsp;
+                                        <select name="lincenseNo" id="" style="border-radius: 10px;">
+                                            <option value="KPA-0001">KPA-0001</option>
+                                            <option value="KPA-0002">KPA-0002</option>
+                                            <option value="KPA-0003">KPA-0003</option>
+                                        </select>
+                                    </div>
+                                        <div  style="width: 40%; border-right: 1px solid #e0e0e0;">
+                                            <span  class="custom-li-indentation">地點</span>
+                                            <input type="text" style="border-radius: 10px;">
+                                        </div>
+                                        
+                                </li>
+                                <li><span class="custom-li-indentation">收貨地點:</span>
+                                    &nbsp;<input type="text" value="" name="starting" style="border-radius: 10px;"/>
+                                </li>
+                                <li>
+                                    <span class="custom-li-indentation">送達地點:</span>
+                                    &nbsp;<input type="text" value="" name="terimal" style="border-radius: 10px;"/>
+                                </li>
+                                <li>
+                                    
+                                    <div>
+                                        <span class="custom-li-indentation">載貨內容:</span>
+                                        <textarea name="remark" id="" cols="60" rows="3" style="border-radius: 10px;"></textarea>
+                                    </div>
+                                    <!-- <div style="width: 40%;">
+                                        <span class="custom-li-indentation">數量:</span>
+                                        <input type="text" value="" name="amount" style="border-radius: 10px;"/>
+                                    </div>
+                                    <button onclick="addAmount()" class="btn btn-sm btn-danger">+</button> -->
+                                
+                                </li>
+                                <div id="addArea"></div>
+                                <li>
+                                    <div>
+                                        <span class="custom-li-indentation">備註:</span>
+                                        <textarea name="remark" id="" cols="60" rows="3" style="border-radius: 10px;"></textarea>
+                                    </div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td width="25%">
+                            <ul class="custom-ul">
+                                <li>
+                                    <span class="custom-li-indentation">結案:</span>
+                                </li>
+                                <li>
+                                    <input type="time" name="" id="" style="border-radius: 10px;" value="18:00">
+                                </li>
+                                <li>
+                                    <span class="custom-li-indentation">回程抵達:</span>
+                                </li>
+                                <li>
+                                    <input type="time" name="" id="" style="border-radius: 10px;" value="18:00">
+                                </li>
+                                <li><br></li>
+                                <li>
+                                    <div style="margin-left: 15%;margin-top: 90%;width: 100%;">
+                                        <button class="btn btn-warning" ng-click="hideAdd()">取消</button>
+                                        <button class="btn btn-info" ng-click="hideAdd()">儲存</button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
     </div>
 
     <div class="col-md-3 column">
@@ -304,6 +423,25 @@
         $(personID).addClass("carcolor");
         $(carID).addClass("carcolor");
     }
+    var count=0;
+    function addAss(){
+        count+=1;
+        if(count>=3){
+            alert('助手人數已達上限');
+            return;
+        }
+        var ass=$('<span></span>').append('助手'+count+': &nbsp;');
+        var select=$('<select  style="font-size:15px;border-radius: 10px;"></select>').append('<option value="張三二">張三二</option><option value="張三三">張三三</option><option value="張一恩">張一恩</option>');
+        var obj=$('<div></div>').append(ass).append(select).appendTo('#driverAndAss');
+    }
+
+    function addAmount(){
+        var li=$('<li></li>');
+        var div=$('<div style="width: 53%;"></div>').append('<span class="custom-li-indentation">載貨內容:</span><input type="text" value="" name="cargoContent" style="border-radius: 10px;"/>');
+        var div2=$('<div style="width: 40%;"></div>').append(' <span class="custom-li-indentation">數量:</span><input type="text" value="" name="amount" style="border-radius: 10px;"/>');
+        var obj=$('<div></div>').append(li).append(div).append(div2).appendTo('#addArea');
+    }
+    
 </script>
 <!--footer-->
 <div>

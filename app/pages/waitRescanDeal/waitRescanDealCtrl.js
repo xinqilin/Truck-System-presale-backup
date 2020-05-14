@@ -10,12 +10,39 @@
 		$scope.buttonClass = "btn btn-success";
 		$scope.selectedData = {};
 		$scope.doRescanTicket = [];
-		
+		$scope.newRecord = {};
+
+		$scope.data=false;
+		$scope.showAdd=function(){
+			$scope.data=true;
+		}
+		$scope.hideAdd=function(){
+			$scope.data=false;
+		}
 
 		$scope.showDetail = function (rowData) {
 			$scope.selectedData = rowData;
 			console.log($scope.selectedData);
 		}
+
+		$scope.save = function(){
+			$scope.newRecord.id = _uuid();
+			console.log($scope.selectedData);
+			// doRescanTicket.push($scope.newRecord);
+			$scope.newRecord={};
+		}
+
+		$scope._uuid = function() {
+			var d = Date.now();
+			if (typeof performance !== 'undefined' && typeof performance.now === 'function'){
+			  d += performance.now(); //use high-precision timer if available
+			}
+			return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+			  var r = (d + Math.random() * 16) % 16 | 0;
+			  d = Math.floor(d / 16);
+				return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+			});
+		  }
 
 		$scope.dateFormatter = function (dateString) {
 			var time = new Date(dateString);
