@@ -14,7 +14,7 @@
         .state('waitRescanDeal', {
           url: '/waitRescanDeal',
           templateUrl: 'app/pages/waitRescanDeal/waitRescanDeal.html',
-          title: '派車系統',
+          title: '派車作業',
           controller: 'waitRescanDealCtrl',
           sidebarMeta: {
             icon: 'ion-wrench',
