@@ -10,6 +10,10 @@
 		$scope.buttonClass = "btn btn-success";
 		$scope.selected = {};
 		$scope.doRescanTicket = [];
+		// $scope.color = "white";
+        // $scope.setBlack= function () {
+        //     $scope.color = "black";
+        // }
 		
 
 		$scope.statusMapping = {
@@ -55,7 +59,10 @@
 			firstName : 'AAA',
 			lastName : '500-0966',
 			username : '張三一',
-			status : 'car'
+			status : 'car',
+			statustext:'執行業務中',
+			phone:'0912-123456',
+			elocation:'https://www.google.com.tw/'
 			
 		}, {
 			id : 2,
@@ -63,7 +70,10 @@
 			firstName : 'BBB',
 			lastName : '557-8901',
 			username : '李四五',
-			status : 'car'
+			status : 'car',
+			statustext:'執行業務中',
+			phone:'0912-123456',
+			elocation:'https://www.google.com.tw/'
 		
 		}, {
 			id : 3,
@@ -71,35 +81,50 @@
 			firstName : 'CCC',
 			lastName : '500-0907',
 			username : '李四四',
-			status : 'clock'
+			status : 'clock',
+			statustext:'等待出車',
+			phone:'0912-123456',
+			elocation:'https://www.google.com.tw/'
 		}, {
 			id : 4,
 			pic:'assets/img/clock-016.ico',
 			firstName : 'DDD',
 			lastName : '500-0908',
 			username : '丁一一',
-			status : 'clock'
+			status : 'clock',
+			statustext:'等待出車',
+			phone:'0912-987654',
+			elocation:''
 		}, {
 			id : 5,
 			pic:'assets/img/greencheck.png',
 			firstName : 'EEE',
 			lastName : '500-0977',
 			username : '丁一二',
-			status : 'nike'
+			status : 'nike',
+			statustext:'排班中',
+			phone:'0912-987654',
+			elocation:''
 		}, {
 			id : 6,
 			pic:'assets/img/greencheck.png',
 			firstName : 'FFF',
 			lastName : '500-0972',
 			username : '張三二',
-			status : 'nike'
+			status : 'nike',
+			statustext:'排班中',
+			phone:'0912-987654',
+			elocation:''
 		}, {
 			id : 7,
 			pic:'assets/img/ban-16.ico',
 			firstName : 'GGG',
 			lastName : '500-0971',
 			username : '張一二',
-			status : 'ban'
+			status : 'ban',
+			statustext:'休假中',
+			phone:'0912-987654',
+			elocation:''
 		} ];
 
 
@@ -111,7 +136,10 @@
 			firstName : 'AAA',
 			lastName : '500-0966',
 			username : '張三一',
-			status : 'car'
+			status : 'car',
+			statustext:'執行業務中',
+			phone:'0912-123456',
+			elocation:'https://www.google.com.tw/'
 			
 		}, {
 			id : 2,
@@ -119,7 +147,10 @@
 			firstName : 'BBB',
 			lastName : '557-8901',
 			username : '李四五',
-			status : 'car'
+			status : 'car',
+			statustext:'執行業務中',
+			phone:'0912-123456',
+			elocation:'https://www.google.com.tw/'
 		
 		}, {
 			id : 3,
@@ -127,35 +158,50 @@
 			firstName : 'CCC',
 			lastName : '500-0907',
 			username : '李四四',
-			status : 'clock'
+			status : 'clock',
+			statustext:'等待出車',
+			phone:'0912-123456',
+			elocation:'https://www.google.com.tw/'
 		}, {
 			id : 4,
 			pic:'assets/img/clock-016.ico',
 			firstName : 'DDD',
 			lastName : '500-0908',
 			username : '丁一一',
-			status : 'clock'
+			status : 'clock',
+			statustext:'等待出車',
+			phone:'0912-987654',
+			elocation:''
 		}, {
 			id : 5,
 			pic:'assets/img/greencheck.png',
 			firstName : 'EEE',
 			lastName : '500-0977',
 			username : '丁一二',
-			status : 'nike'
+			status : 'nike',
+			statustext:'排班中',
+			phone:'0912-987654',
+			elocation:''
 		}, {
 			id : 6,
 			pic:'assets/img/greencheck.png',
 			firstName : 'FFF',
 			lastName : '500-0972',
 			username : '張三二',
-			status : 'nike'
+			status : 'nike',
+			statustext:'排班中',
+			phone:'0912-987654',
+			elocation:''
 		}, {
 			id : 7,
 			pic:'assets/img/ban-16.ico',
 			firstName : 'GGG',
 			lastName : '500-0971',
 			username : '張一二',
-			status : 'ban'
+			status : 'ban',
+			statustext:'休假中',
+			phone:'0912-987654',
+			elocation:''
 		} ];
 
 

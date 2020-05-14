@@ -31,6 +31,27 @@
     border:1px solid black;
     
 }
+.hoverblank:hover .hover{
+  display:block;
+}
+.hover{
+  display:none;
+  background-color:	#F0F0F0;
+  position: absolute;
+  width: 100px;
+  z-index:9999;
+  /* position: relative; */
+  top: -20px;
+  right: 10%;
+  border-radius: 20px;
+}
+.hoverblank{
+    
+    position: relative;
+    display: inline-block;
+    
+}
+
     
 </style>
 <div class="row">
@@ -111,7 +132,16 @@
                     </thread>
                     <tbody  style="overflow-y: auto;height:170px;display: block;">
                         <tr ng-repeat="item in peopleTableData" style="display: inline-table;">
-                            <td style="text-align: center; width:7vw;"><a href=""><img ng-src="{{item.pic}}" alt="" height="15" width="15"/>&nbsp;&nbsp;&nbsp;&nbsp;{{item.username}}</a></td>
+                            <td style="text-align: center; width:7vw;">
+                                <div class="hoverblank">
+                                    <img ng-src="{{item.pic}}" alt="" height="15" width="15"/>&nbsp;&nbsp;&nbsp;&nbsp;{{item.username}}
+                                    <div class="hover">
+                                        {{item.statustext}}<br>
+                                        {{item.phone}}<br>
+                                        <a href="{{item.elocation}}">eLocation</a>
+                                    </div>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -134,7 +164,16 @@
                     </thread>
                     <tbody style="overflow-y: auto;height:170px;display: block;">
                         <tr ng-repeat="item in carTableData">
-                            <td><a href=""><img ng-src="{{item.pic}}" alt="" height="15" width="15"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item.firstName}}&nbsp;&nbsp;&nbsp;{{item.lastName}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
+                            <td id="car{{item.id}}">
+                                <div class="hoverblank">
+                                <img ng-src="{{item.pic}}" alt="" height="15" width="15"/>&nbsp;&nbsp;&nbsp;&nbsp;{{item.firstName}}&nbsp;&nbsp;&nbsp;{{item.lastName}}
+                                    <div class="hover">
+                                        {{item.statustext}}<br>
+                                        {{item.phone}}<br>
+                                        <a href="{{item.elocation}}">eLocation</a>
+                                    </div>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -166,6 +205,15 @@
       </div>
     </div>
 </div>
+<script>
+    $('.person').click(function(){
+        alert(111);
+    });
+</script>
+<script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
 <script
     src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.js"></script>
 <link rel="stylesheet"
@@ -175,3 +223,4 @@
     crossorigin="anonymous"></script>
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    
