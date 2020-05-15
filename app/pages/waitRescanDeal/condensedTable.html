@@ -314,7 +314,7 @@
                                 
                                     <div style="text-align: right;vertical-align: bottom;width: 100%;">
                                         <button class="btn btn-sm btn-warning" ng-click="hideAdd()" onclick="resetInsertForm()">取消</button>
-                                        <button class="btn btn-sm btn-info" ng-click="hideAdd()" onclick="resetInsertForm()">儲存</button>
+                                        <button class="btn btn-sm btn-primary" ng-click="hideAdd()" onclick="resetInsertForm()">儲存</button>
                                     </div>
                                 
                             
@@ -423,19 +423,19 @@
     var today=date.getFullYear()+'/'+(date.getMonth()+1)+'/'+date.getDate();
     $('#insertFormTime').val(today+' AM 10:00');
     
+    
     $('#insertFormTime').datetimepicker({
-        format:'yy/m/d A h:i',
+        format:'yy/m/d A H:i',
         step: 30,
     });
     $('#insertFormCloseTime,#insertFormArriveTime').datetimepicker({
     datepicker:false,
-    format:'A h:i',
+    format:'A H:i',
     step: 30,
     });
     $('#arriveTime ,#returnTime').datetimepicker({
     datepicker:false,
-    format:'A h:i',
-    ampm: true,
+    format:'A H:i',
     });
     var count=0;
     var itemCount=1;
