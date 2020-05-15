@@ -325,7 +325,8 @@
                     </div>
                     <script>
                         $('#insertFormTime').datetimepicker({
-                                format:'yy/m/d A H:i',
+                                // format:'yy/m/d A H:i',
+                                format: 'Y/m/d H:i',
                                 step: 30,
                             });
                             $('#insertFormCloseTime,#insertFormArriveTime').datetimepicker({
@@ -362,7 +363,7 @@
                                         deleteAss();
                                     }
                                 }
-                                
+
                             }
 
                             function go(id) {
@@ -439,7 +440,64 @@
                     </script>
                 </uib-tab>
                 <uib-tab heading="新增金額細項">
-                    111
+                    <div class="row">
+                        <div style="width: 60%;text-align: center;margin-left: 35%;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <span class="custom-li-indentation">車輛成本: </span>
+                                    </td>
+                                    <td>
+                                        <input type="text" style="border-radius: 10px;" class="extraVal">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><br></td>
+                                </tr>
+                                <tr>
+                                        <td>
+                                            <span class="custom-li-indentation">駕駛: </span>
+                                        </td>
+                                        <td>
+                                            <input type="text" style="border-radius: 10px;" class="extraVal">
+                                        </td>
+                                </tr>
+                                <tr>
+                                    <td><br></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="custom-li-indentation">助手1: </span>
+                                    </td>
+                                    <td>
+                                        <input type="text" style="border-radius: 10px;" class="extraVal"> 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><br></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="custom-li-indentation">助手2: </span>
+                                    </td>
+                                    <td>
+                                        <input type="text" style="border-radius: 10px;" class="extraVal">
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="width: 40%; margin-left: 45%;">
+                            <div style="text-align: right;vertical-align: bottom;width: 100%;">
+                                <button class="btn btn-sm btn-warning" ng-click="hideAdd()" onclick="resetInsertExceedForm()">取消</button>
+                                <button class="btn btn-sm btn-primary" ng-click="hideAdd()" onclick="resetInsertExceedForm()">儲存</button>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        function resetInsertExceedForm(){
+                            $('.extraVal').val('');
+                        }
+                    </script>
                 </uib-tab>
             </uib-tabset>
         </div>
