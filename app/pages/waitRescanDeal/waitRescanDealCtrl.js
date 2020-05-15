@@ -28,9 +28,6 @@
 				$scope.rowCollection.splice(index, 1, $scope.selectedData);
 			}
 			console.log($scope.selectedData);
-			$scope.selectedData.arriveTime=$scope.selectedData.arriveTime.getHours()+':'+$scope.selectedData.arriveTime.getMinutes();
-			$scope.selectedData.returnTime=$scope.selectedData.returnTime.getHours()+':'+$scope.selectedData.returnTime.getMinutes();
-			console.log($scope.selectedData.arriveTime)
 			$scope.data=false;
 			$scope.isEditMode = false;
 		}
