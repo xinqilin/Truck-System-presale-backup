@@ -20,6 +20,9 @@
 		
 		
 		$scope.saveEdit = function(){
+			$scope.selectedData.arriveTime=$scope.selectedData.arriveTime.getHours()+':'+$scope.selectedData.arriveTime.getMinutes();
+			$scope.selectedData.returnTime=$scope.selectedData.returnTime.getHours()+':'+$scope.selectedData.returnTime.getMinutes();
+			// console.log($scope.selectedData.arriveTime)
 			var index = $scope.rowCollection.indexOf($scope.selectedData);
 			if (index !== -1) {
 				$scope.rowCollection.splice(index, 1, $scope.selectedData);
