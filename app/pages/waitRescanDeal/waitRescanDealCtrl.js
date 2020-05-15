@@ -43,11 +43,14 @@
 		$scope.showAdd=function(){
 			$scope.data=true;
 			$scope.isEditMode = false;
-			$scope.asstCount=0;
 		}
 		$scope.hideAdd=function(){
 			$scope.data=false;
 			$scope.asstCount=0;
+		}
+		$scope.hideAddPage2=function(){
+			$scope.data=false;
+			// $scope.asstCount=0;
 		}
 
 		$scope.showDetail = function (row) {

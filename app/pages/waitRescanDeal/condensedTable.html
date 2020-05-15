@@ -321,7 +321,6 @@
 
                                 </td>
                             </tr>
-                            
                         </table>
                     </div>
                     <script>
@@ -363,6 +362,7 @@
                                     for(let i=1;i<=cutAsst;i++){
                                         deleteAss();
                                     }
+                                    count=0;
                                 }
 
                             }
@@ -390,8 +390,8 @@
                             function addAss(){
                                 count++;
                                 $('#deleteAssButton').show();
-                                var ass=$('<span></span>').append('助手'+count+': &nbsp;');
-                                var select=$('<select  style="font-size:15px;border-radius: 10px;"></select>').append('<option value="張三二">張三二</option><option value="張三三">張三三</option><option value="張一恩">張一恩</option>');
+                                var ass=$('<span class="initAss"></span>').append('助手'+count+': &nbsp;');
+                                var select=$('<select class="initAss" style="font-size:15px;border-radius: 10px;"></select>').append('<option value="張三二">張三二</option><option value="張三三">張三三</option><option value="張一恩">張一恩</option>');
                                 var obj=$('<div></div>').append(ass).append(select).appendTo('#driverAndAss');
                                 if(count>=2){
                                     // alert('助手人數已達上限');
@@ -477,7 +477,7 @@
                                 <tr>
                                     <td><br></td>
                                 </tr>
-                                <tr id="asst2" ng-show="asstCount==2">
+                                <tr id="asst2" ng-show="asstCount>=2">
                                     <td>
                                         <span class="custom-li-indentation">助手2: </span>
                                     </td>
@@ -489,8 +489,8 @@
                         </div>
                         <div style="width: 40%; margin-left: 45%;">
                             <div style="text-align: right;vertical-align: bottom;width: 100%;">
-                                <button class="btn btn-sm btn-warning" ng-click="hideAdd()" onclick="resetInsertExceedForm()">取消</button>
-                                <button class="btn btn-sm btn-primary" ng-click="hideAdd()" onclick="resetInsertExceedForm()">儲存</button>
+                                <button class="btn btn-sm btn-warning" ng-click="hideAddPage2()" onclick="resetInsertExceedForm()">取消</button>
+                                <button class="btn btn-sm btn-primary" ng-click="hideAddPage2()" onclick="resetInsertExceedForm()">儲存</button>
                             </div>
                         </div>
                     </div>
