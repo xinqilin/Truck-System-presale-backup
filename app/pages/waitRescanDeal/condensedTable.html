@@ -207,7 +207,7 @@
                                     <div style="text-align: left;">
                                         <span style="font-size:15px;color: black;">時間:</span>
                                     </div>
-                                    <input type="text" style="border-radius: 10px;font-size:15px;color: black;" value="AM 10:00" id="insertFormTime">
+                                    <input type="text" style="border-radius: 10px;font-size:15px;color: black;" value="" id="insertFormTime">
                                     <br><br>
                                     
                                 </div>
@@ -419,9 +419,9 @@
 
 <script>
     
-    var date=new Date();
-    var today=date.getFullYear()+'/'+(date.getMonth()+1)+'/'+date.getDate();
-    $('#insertFormTime').val(today+' AM 10:00');
+    // var date=new Date();
+    // var today=date.getFullYear()+'/'+(date.getMonth()+1)+'/'+date.getDate();
+    // $('#insertFormTime').val(today+' AM 10:00');
     
     
     $('#insertFormTime').datetimepicker({
@@ -433,15 +433,12 @@
     format:'A H:i',
     step: 30,
     });
-    $('#arriveTime ,#returnTime').datetimepicker({
-    datepicker:false,
-    format:'A H:i',
-    });
+    
     var count=0;
     var itemCount=1;
     function resetInsertForm(){
-        $('#insertFormTime').val(today+' AM 10:00');
-        $('#insertFormDate').val();
+        $('#insertFormTime').val('');
+        // $('#insertFormDate').val();
         $('#insertFormDriver').val('張三一');
         $('#carWeight').val('1.5噸');
         $('#carLincense').val('KPA-0001');
