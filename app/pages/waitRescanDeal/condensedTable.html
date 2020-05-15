@@ -199,12 +199,15 @@
                 <table width="100%" class="table columtable">
                     <tr style="font-size:12px;">
                         <td width="20%"
-                            style="text-align: center; vertical-align:middle; font-size: large; color: blue;">
+                            style="text-align: left; vertical-align:middle;">
                             
                                 <div style="vertical-align: top;">
-                                    <datepicker-group ng-model='date' maxdate='maxdate' mindate='mindate' clear-hide='true' id="insertFormDate">	         	
-                                    </datepicker-group>
-                                    <input type="text" lang="en" style="border-radius: 10px;font-size:15px;color: black;" value="AM 10:00" id="insertFormTime">
+                                    <!-- <datepicker-group ng-model='date' maxdate='maxdate' mindate='mindate' clear-hide='true' id="insertFormDate">	         	
+                                    </datepicker-group> -->
+                                    <div style="text-align: left;">
+                                        <span style="font-size:15px;color: black;">時間:</span>
+                                    </div>
+                                    <input type="text" style="border-radius: 10px;font-size:15px;color: black;" value="AM 10:00" id="insertFormTime">
                                     <br><br>
                                     
                                 </div>
@@ -233,7 +236,7 @@
                         <td width="55%">
                             <ul class="custom-ul">
                                 <li>
-                                    <div style="width: 53%; border-right: 1px solid #e0e0e0;">
+                                    <div style="width: 60%; border-right: 1px solid #e0e0e0;">
                                         <span
                                         class="custom-li-indentation">車型車號:</span>
                                         <select name="type" id="carWeight" style="border-radius: 10px;">
@@ -415,10 +418,18 @@
 
 
 <script>
-    $('#insertFormTime ,#insertFormCloseTime,#insertFormArriveTime').datetimepicker({
+    $(document).ready(function(){
+        var date=new Date();
+        $('#insertFormTime').val(date.getFullYear()+'/'+(date.getMonth()+1)+'/'+date.getDate()+' AM 10:00');
+    });
+    $('#insertFormTime').datetimepicker({
+        format:'yy/m/d A h:i',
+        step: 30,
+    });
+    $('#insertFormCloseTime,#insertFormArriveTime').datetimepicker({
     datepicker:false,
     format:'A h:i',
-    ampm: true,
+    step: 30,
     });
     $('#arriveTime ,#returnTime').datetimepicker({
     datepicker:false,
