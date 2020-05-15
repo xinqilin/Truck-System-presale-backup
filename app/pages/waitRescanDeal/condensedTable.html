@@ -204,8 +204,9 @@
                                 <div style="vertical-align: top;">
                                     <datepicker-group ng-model='date' maxdate='maxdate' mindate='mindate' clear-hide='true' id="insertFormDate">	         	
                                     </datepicker-group>
-                                    <input type="time" lang="en" style="border-radius: 10px;font-size:15px;color: black;" value="10:00" id="insertFormTime">
+                                    <input type="text" lang="en" style="border-radius: 10px;font-size:15px;color: black;" value="AM 10:00" id="insertFormTime">
                                     <br><br>
+                                    
                                 </div>
                             <div id="driverAndAss" style="text-align: left;font-size:15px;color: black;width: 150%;">駕駛:
                             <select name="driver" id="insertFormDriver" style="font-size:15px;color: black;border-radius: 10px;">
@@ -297,13 +298,13 @@
                                     <span class="custom-li-indentation">結案:</span>
                                 </li>
                                 <li>
-                                    <input type="time" name="" id="insertFormCloseTime" style="border-radius: 10px;" value="18:00">
+                                    <input type="text" name="" id="insertFormCloseTime" style="border-radius: 10px;" value="PM 18:00">
                                 </li>
                                 <li>
                                     <span class="custom-li-indentation">回程抵達:</span>
                                 </li>
                                 <li>
-                                    <input type="time" name="" id="insertFormArriveTime" style="border-radius: 10px;" value="18:00">
+                                    <input type="text" name="" id="insertFormArriveTime" style="border-radius: 10px;" value="PM 18:00">
                                 </li>
                             </ul>
                                 <br><br><br>
@@ -414,10 +415,20 @@
 
 
 <script>
+    $('#insertFormTime ,#insertFormCloseTime,#insertFormArriveTime').datetimepicker({
+    datepicker:false,
+    format:'A h:i',
+    ampm: true,
+    });
+    $('#arriveTime ,#returnTime').datetimepicker({
+    datepicker:false,
+    format:'A h:i',
+    ampm: true,
+    });
     var count=0;
     var itemCount=1;
     function resetInsertForm(){
-        $('#insertFormTime').val('10:00');
+        $('#insertFormTime').val('AM 10:00');
         $('#insertFormDate').val();
         $('#insertFormDriver').val('張三一');
         $('#carWeight').val('1.5噸');
@@ -428,8 +439,8 @@
         $('#itemContent').val('');
         $('#itemAmount').val('1');
         $('#insertFormTextArea').val('');
-        $('#insertFormCloseTime').val('18:00');
-        $('#insertFormArriveTime').val('18:00');
+        $('#insertFormCloseTime').val('PM 18:00');
+        $('#insertFormArriveTime').val('PM 18:00');
         if(itemCount!==1){
             var cutTime=itemCount-1;
             for(let i=1;i<=cutTime;i++){
