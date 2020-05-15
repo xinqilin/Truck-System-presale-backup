@@ -230,8 +230,8 @@
                                     
                                 </div>
                                 <div  style="text-align: left;" >
-                                    <button onclick="addAss()" class="btn btn-xs btn-danger" id="addAssDiv">增加助手</button>
-                                    <button onclick="deleteAss()" class="btn btn-xs btn-danger" id="deleteAssButton">減少助手</button>
+                                    <button onclick="addAss()" class="btn btn-xs btn-danger" id="addAssDiv" ng-click="addAsst()">增加助手</button>
+                                    <button onclick="deleteAss()" class="btn btn-xs btn-danger" id="deleteAssButton" ng-click="reduceAsst()">減少助手</button>
                                 </div>
                                 
                                 </td>
@@ -465,7 +465,7 @@
                                 <tr>
                                     <td><br></td>
                                 </tr>
-                                <tr id="asst1">
+                                <tr id="asst1" ng-show="asstCount>=1">
                                     <td>
                                         <span class="custom-li-indentation">助手1: </span>
                                     </td>
@@ -476,7 +476,7 @@
                                 <tr>
                                     <td><br></td>
                                 </tr>
-                                <tr id="asst2">
+                                <tr id="asst2" ng-show="asstCount==2">
                                     <td>
                                         <span class="custom-li-indentation">助手2: </span>
                                     </td>
