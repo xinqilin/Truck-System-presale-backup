@@ -255,7 +255,7 @@
                                     </div>
                                         <div  style="width: 40%; border-right: 1px solid #e0e0e0;">
                                             <span  class="custom-li-indentation">地點</span>
-                                            <select name="type" id="carLocation" style="border-radius: 10px;width: 30%;">
+                                            <select name="type" id="carLocation" style="border-radius: 10px;">
                                                 <option value="台北">台北</option>
                                                 <option value="林口">林口</option>
                                             </select>
@@ -418,10 +418,11 @@
 
 
 <script>
-    $(document).ready(function(){
-        var date=new Date();
-        $('#insertFormTime').val(date.getFullYear()+'/'+(date.getMonth()+1)+'/'+date.getDate()+' AM 10:00');
-    });
+    
+    var date=new Date();
+    var today=date.getFullYear()+'/'+(date.getMonth()+1)+'/'+date.getDate();
+    $('#insertFormTime').val(today+' AM 10:00');
+    
     $('#insertFormTime').datetimepicker({
         format:'yy/m/d A h:i',
         step: 30,
@@ -439,7 +440,7 @@
     var count=0;
     var itemCount=1;
     function resetInsertForm(){
-        $('#insertFormTime').val('AM 10:00');
+        $('#insertFormTime').val(today+' AM 10:00');
         $('#insertFormDate').val();
         $('#insertFormDriver').val('張三一');
         $('#carWeight').val('1.5噸');
