@@ -32,12 +32,22 @@
 			$scope.isEditMode = false;
 		}
 
+		$scope.asstCount=0;
+		$scope.addAsst=function(){
+			$scope.asstCount++;
+		}
+		$scope.reduceAsst=function(){
+			$scope.asstCount--;
+		}
+
 		$scope.showAdd=function(){
 			$scope.data=true;
 			$scope.isEditMode = false;
+			$scope.asstCount=0;
 		}
 		$scope.hideAdd=function(){
 			$scope.data=false;
+			$scope.asstCount=0;
 		}
 
 		$scope.showDetail = function (row) {
@@ -93,13 +103,6 @@
 			return year + '/' + month + '/' + date + '<br>' + ampm + ' ' + hour + ':' + min;
 		}
 
-		$scope.asstCount=0;
-		$scope.addAsst=function(){
-			$scope.asstCount++;
-		}
-		$scope.reduceAsst=function(){
-			$scope.asstCount--;
-		}
 
 		$scope.truckInfo = [
 			{
