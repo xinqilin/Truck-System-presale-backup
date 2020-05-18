@@ -171,10 +171,10 @@
                                     tooltip-class="customClass">{{row.remark|textCut:true:20:' ...'}}</span>
                             </td>
                             <td style="text-align: center; vertical-align: middle;">
-                                <span style="font-size:15px; cursor: pointer;" ng-click="edit($event,row)">
+                                <span style="font-size:15px; cursor: pointer;" ng-click="edit($event,row)" ng-if="index != 1">
                                     <i class="fa fa-pencil"></i>
                                 </span>
-                                <span style="font-size:15px; cursor: pointer;" ng-click="detele($event,row)">
+                                <span style="font-size:15px; cursor: pointer;" ng-click="detele($event,row)" ng-if="index != 1">
                                     <i class="fa fa-times"></i>
                                 </span>
                                 <span style="font-size:15px; cursor: pointer;" ng-if="index == 1">

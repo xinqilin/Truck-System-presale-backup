@@ -121,7 +121,7 @@
 				terminal: '400台中市中區台灣大道一段1號',
 				remark: '在訂單成立後，若店家需要與顧客聯繫相關事項，或是註記出貨注意事項提醒出貨人員。店家可以在訂單頁面，運用「訂單通訊」欄位進行操作。 ',
 				amount: '10',
-				dispense: { '車樣成本': 4500, '丁一一': 3000, '丁十一': 3000 },
+				dispense: { '車輛成本': 4500, '丁一一': 3000, '丁十一': 3000 },
 				arriveTime: '12:30',
 				returnTime: '18:30'
 			},
@@ -138,7 +138,7 @@
 				terminal: '400台中市中區台灣大道一段1號',
 				remark: '在訂單成立後，若店家需要與顧客聯繫相關事項，或是註記出貨注意事項提醒出貨人員。店家可以在訂單頁面，運用「訂單通訊」欄位進行操作。 ',
 				amount: '10',
-				dispense: { '車樣成本': 4500, '丁一一': 3000, '丁十一': 3000 },
+				dispense: { '車輛成本': 4500, '丁一一': 3000, '丁十一': 3000 },
 				arriveTime: '12:30',
 				returnTime: '18:30'
 			}, {
@@ -154,7 +154,7 @@
 				terminal: '400台中市中區台灣大道一段1號',
 				remark: '在訂單成立後，若店家需要與顧客聯繫相關事項，或是註記出貨注意事項提醒出貨人員。店家可以在訂單頁面，運用「訂單通訊」欄位進行操作。 ',
 				amount: '10',
-				dispense: { '車樣成本': 4500, '丁一一': 3000, '丁十一': 3000 },
+				dispense: { '車輛成本': 4500, '丁一一': 3000, '丁十一': 3000 },
 				arriveTime: '12:30',
 				returnTime: '18:30'
 			}, {
@@ -170,7 +170,7 @@
 				terminal: '400台中市中區台灣大道一段1號',
 				remark: '在訂單成立後，若店家需要與顧客聯繫相關事項，或是註記出貨注意事項提醒出貨人員。店家可以在訂單頁面，運用「訂單通訊」欄位進行操作。 ',
 				amount: '10',
-				dispense: { '車樣成本': 4500, '丁一一': 3000, '丁十一': 3000 },
+				dispense: { '車輛成本': 4500, '丁一一': 3000, '丁十一': 3000 },
 				arriveTime: '12:30',
 				returnTime: '18:30'
 			}, {
@@ -186,7 +186,7 @@
 				terminal: '400台中市中區台灣大道一段1號',
 				remark: 'eading professional golfers are to return to competitive action for the first time in months after a shutdown due to the COVID-19 pandemic when three of the world’s top 10 women tee off in South Korea today.',
 				amount: '10',
-				dispense: { '車樣成本': 4500, '丁一一': 3000, '丁十一': 3000 },
+				dispense: { '車輛成本': 4500, '丁一一': 3000, '丁十一': 3000 },
 				arriveTime: '12:30',
 				returnTime: '18:30'
 			}, {
@@ -202,7 +202,7 @@
 				terminal: '400台中市中區台灣大道一段1號',
 				remark: '易碎物品',
 				amount: '10',
-				dispense: { '車樣成本': 4500, '丁一一': 3000, '丁十一': 3000 },
+				dispense: { '車輛成本': 4500, '丁一一': 3000, '丁十一': 3000 },
 				arriveTime: '12:30',
 				returnTime: '18:30'
 			}, {
@@ -218,7 +218,7 @@
 				terminal: '400台中市中區台灣大道一段1號',
 				remark: '在訂單成立後，若店家需要與顧客聯繫相關事項，或是註記出貨注意事項提醒出貨人員。店家可以在訂單頁面，運用「訂單通訊」欄位進行操作。',
 				amount: '10',
-				dispense: { '車樣成本': 4500, '丁一一': 3000, '丁十一': 3000 },
+				dispense: { '車輛成本': 4500, '丁一一': 3000, '丁十一': 3000 },
 				arriveTime: '12:30',
 				returnTime: '18:30'
 			}, {
@@ -234,7 +234,7 @@
 				terminal: '400台中市中區台灣大道一段1號',
 				remark: '在訂單成立後，若店家需要與顧客聯繫相關事項，或是註記出貨注意事項提醒出貨人員。店家可以在訂單頁面，運用「訂單通訊」欄位進行操作。',
 				amount: '10',
-				dispense: { '車樣成本': 4500, '丁一一': 3000, '丁十一': 3000 },
+				dispense: { '車輛成本': 4500, '丁一一': 3000, '丁十一': 3000 },
 				arriveTime: '12:30',
 				returnTime: '18:30'
 			}
@@ -279,6 +279,17 @@
 			phone:'0912-123456',
 			elocation:'https://www.google.com.tw/'
 		}, {
+			id : 10,
+			pic:'assets/img/truck-016.ico',
+			firstName : 'GGH',
+			lastName : '500-0971',
+			username : '我一二',
+			status : 'car',
+			statustext:'休執行業務中',
+			phone:'0912-987654',
+			elocation:'https://www.google.com.tw/'
+		}
+		, {
 			id : 4,
 			pic:'assets/img/clock-016.ico',
 			firstName : 'DDD',
@@ -338,16 +349,6 @@
 			statustext:'休假中',
 			phone:'0912-987654',
 			elocation:'https://www.google.com.tw/'
-		}, {
-			id : 10,
-			pic:'assets/img/truck-016.ico',
-			firstName : 'GGH',
-			lastName : '500-0971',
-			username : '我一二',
-			status : 'car',
-			statustext:'休執行業務中',
-			phone:'0912-987654',
-			elocation:'https://www.google.com.tw/'
 		}
 	 ];
 
@@ -387,6 +388,17 @@
 			phone:'0912-123456',
 			elocation:'https://www.google.com.tw/'
 		}, {
+			id : 10,
+			pic:'assets/img/truck-016.ico',
+			firstName : 'GGH',
+			lastName : '500-0971',
+			username : '我一二',
+			status : 'car',
+			statustext:'執行業務中',
+			phone:'0912-987654',
+			elocation:'https://www.google.com.tw/'
+		}
+		, {
 			id : 4,
 			pic:'assets/img/clock-016.ico',
 			firstName : 'DDD',
@@ -444,16 +456,6 @@
 			username : '林一二',
 			status : 'ban',
 			statustext:'休假中',
-			phone:'0912-987654',
-			elocation:'https://www.google.com.tw/'
-		}, {
-			id : 10,
-			pic:'assets/img/truck-016.ico',
-			firstName : 'GGH',
-			lastName : '500-0971',
-			username : '我一二',
-			status : 'car',
-			statustext:'執行業務中',
 			phone:'0912-987654',
 			elocation:'https://www.google.com.tw/'
 		}
