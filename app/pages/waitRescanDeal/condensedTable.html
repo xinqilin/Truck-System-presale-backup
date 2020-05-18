@@ -139,7 +139,7 @@
     }
 </style>
 
-<button class="btn btn-info" ng-click="showAdd()">新增</button>
+<button class="btn btn-primary" ng-click="showAdd()">新增</button>
 <div class="row">
     <div class="col-md-9">
         <div class="panel panel-default">
@@ -230,8 +230,8 @@
                                     
                                 </div>
                                 <div  style="text-align: left;" >
-                                    <button onclick="addAss()" class="btn btn-xs btn-danger" id="addAssDiv" ng-click="addAsst()">增加助手</button>
-                                    <button onclick="deleteAss()" class="btn btn-xs btn-danger" id="deleteAssButton" ng-click="reduceAsst()">減少助手</button>
+                                    <button onclick="addAss()" class="btn btn-xs btn-primary" id="addAssDiv" ng-click="addAsst()">增加助手</button>
+                                    <button onclick="deleteAss()" class="btn btn-xs btn-primary" id="deleteAssButton" ng-click="reduceAsst()">減少助手</button>
                                 </div>
                                 
                                 </td>
@@ -265,11 +265,11 @@
                                                 
                                         </li>
                                         <li><span class="custom-li-indentation">收貨地點:</span>
-                                            &nbsp;<input type="text" value="" name="starting" style="border-radius: 10px;" placeholder="請填入收貨地點" id="receiveLocation"/>
+                                            &nbsp;<input type="text" value="" name="starting" style="border-radius: 10px;" placeholder="請填入收貨地點" id="receiveLocation" size="50">
                                         </li>
                                         <li>
                                             <span class="custom-li-indentation">送達地點:</span>
-                                            &nbsp;<input type="text" value="" name="terimal" style="border-radius: 10px;" placeholder="請填入送達地點" id="arriveLocation"/>
+                                            &nbsp;<input type="text" value="" name="terimal" style="border-radius: 10px;" placeholder="請填入送達地點" id="arriveLocation" size="50"/>
                                         </li>
                                         <li>
                                             <div>
@@ -283,8 +283,8 @@
                                             
                                             </div>
                                             <div style="text-align: left;">
-                                                <button onclick="addAmount()" class="btn btn-xs btn-danger">新增種類</button>
-                                                <button onclick="removeAmount()" class="btn btn-xs btn-danger" id="removeItemButton">刪除種類</button>
+                                                <button onclick="addAmount()" class="btn btn-xs btn-primary">新增種類</button>
+                                                <button onclick="removeAmount()" class="btn btn-xs btn-primary" id="removeItemButton">刪除種類</button>
                                             </div>
                                             </div>
                                         </li>
@@ -303,13 +303,13 @@
                                             <span class="custom-li-indentation">結案:</span>
                                         </li>
                                         <li>
-                                            <input type="text" name="" id="insertFormCloseTime" style="border-radius: 10px;" value="PM 18:00">
+                                            <input type="text" name="" id="insertFormCloseTime" style="border-radius: 10px;" value="">
                                         </li>
                                         <li>
                                             <span class="custom-li-indentation">回程抵達:</span>
                                         </li>
                                         <li>
-                                            <input type="text" name="" id="insertFormArriveTime" style="border-radius: 10px;" value="PM 18:00">
+                                            <input type="text" name="" id="insertFormArriveTime" style="border-radius: 10px;" value="">
                                         </li>
                                     </ul>
                                         <br><br><br>
