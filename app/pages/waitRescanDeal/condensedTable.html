@@ -575,7 +575,6 @@
                             </select>
                         </th>
                     </thread>
-                    
                     <tbody style="overflow-y: auto;height:170px;display: block;">
                         <tr ng-repeat="item in carTableData">
                             <td id="car{{item.id}}" class="cartd" onclick='go2(this.id)' style="padding-bottom: 5px;padding-top:5px;">
@@ -585,7 +584,7 @@
                                     <div class="hover1" style="text-align: center;">
                                         {{item.statustext}}<br>
                                         <!-- {{item.phone}}<br> -->
-                                        <a href="{{item.elocation}}">eLocation</a>
+                                        <a  href="{{item.elocation}}">eLocation</a>
                                     </div>
                                 </div>
                             </td>
